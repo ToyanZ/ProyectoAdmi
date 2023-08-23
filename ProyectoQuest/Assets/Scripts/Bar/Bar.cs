@@ -7,12 +7,13 @@ using UnityEngine.UI;
 public class Bar : MonoBehaviour
 {
     public enum FillingDirection { Normal, Reverse}
-    public enum NumericType { Value, Percentage, Ratio}
+    public enum NumericType { Value, Percentage, Ratio, Seconds}
     public enum NumericFormat { Raw, Integer, PointOne, PointTwo}
     
     public FillingDirection fillingDirection = FillingDirection.Normal;
     public Image filler;
-    public TMP_Text counter;
+    public TMP_Text current;
+    public TMP_Text max;
     public NumericType counterType = NumericType.Percentage;
     public NumericFormat counterFormat = NumericFormat.Integer;
     public void Refresh(StatElement statElement)
@@ -49,13 +50,17 @@ public class Bar : MonoBehaviour
         switch (counterType)
         {
             case NumericType.Value:
-                counter.text = current.ToString(format);
+                this.current.text = current.ToString(format);
+                break;
+            case NumericType.Seconds:
+                this.current.text = current.ToString(format) + "s";
                 break;
             case NumericType.Ratio:
-                counter.text = ((int)current).ToString(format);
+                this.current.text = ((int)current).ToString(format);
+                max.text = "| " + statElement.GetMaxValue().ToString(format);
                 break;
             case NumericType.Percentage:
-                counter.text = (current/statElement.GetMaxValue()*100).ToString(format) + "%";
+                this.current.text = (current / statElement.GetMaxValue()*100).ToString(format) + "%";
                 break;
         }
         
