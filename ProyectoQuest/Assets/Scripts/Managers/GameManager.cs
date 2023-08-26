@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
@@ -25,4 +27,24 @@ public class GameManager : MonoBehaviour
         }
         else Destroy(gameObject);
     }
+
+    public GameObject popUp;
+    public TMP_Text statement;
+    public Button buttonPrefab;
+    public Target target;
+    public void LoadQuestion(Question question)
+    {
+        statement.text = question.statement;
+        //Usar un for
+        Button b1 = Instantiate(buttonPrefab);
+        Button b2 = Instantiate(buttonPrefab);
+        Button b3 = Instantiate(buttonPrefab);
+        Button b4 = Instantiate(buttonPrefab);
+
+        b1.onClick.AddListener(() => { question.SelectAnswer(0); });
+        b2.onClick.AddListener(() => { question.SelectAnswer(1); });
+        b3.onClick.AddListener(() => { question.SelectAnswer(2); });
+        b4.onClick.AddListener(() => { question.SelectAnswer(3); });
+    }
+
 }

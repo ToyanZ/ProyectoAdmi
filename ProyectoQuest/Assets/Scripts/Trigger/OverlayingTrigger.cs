@@ -13,7 +13,18 @@ public class OverlayingTrigger : Trigger
 
     private void Update()
     {
-        if(targets.Count > 0) OnTriggerStay?.Invoke();
+        if(targets.Count > 0)
+        {
+            if (load < loadTime)
+            {
+                load += Time.fixedDeltaTime;
+                OnTriggerLoad?.Invoke();
+            }
+            else
+            {
+                OnTriggerStay?.Invoke();
+            }
+        }
     }
 
 
@@ -24,6 +35,7 @@ public class OverlayingTrigger : Trigger
         {
             if (!targets.Contains(target)) targets.Add(target);
             OnTriggerEnter?.Invoke();
+            load = 0;
         }
     }
     private void OnTriggerExit2D(Collider2D collision)
@@ -33,6 +45,7 @@ public class OverlayingTrigger : Trigger
         {
             targets.Remove(target);
             OnTriggerExit?.Invoke();
+            load = 0;
         }
     }
 }

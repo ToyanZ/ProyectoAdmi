@@ -5,7 +5,10 @@ using UnityEngine.Events;
 
 public abstract class Trigger : MonoBehaviour
 {
+    public float loadTime = 0;
+    protected float load = 0;
     public UnityEvent OnTriggerEnter;
+    public UnityEvent OnTriggerLoad;
     public UnityEvent OnTriggerStay;
     public UnityEvent OnTriggerExit;
 

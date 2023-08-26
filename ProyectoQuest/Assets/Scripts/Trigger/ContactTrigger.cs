@@ -12,7 +12,18 @@ public class ContactTrigger : Trigger
     }
     private void Update()
     {
-        if (targets.Count > 0) OnTriggerStay?.Invoke();
+        if (targets.Count > 0)
+        {
+            if (load < loadTime)
+            {
+                load += Time.fixedDeltaTime;
+                OnTriggerLoad?.Invoke();
+            }
+            else
+            {
+                OnTriggerStay?.Invoke();
+            }
+        }
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -21,6 +32,7 @@ public class ContactTrigger : Trigger
         {
             if (!targets.Contains(target)) targets.Add(target);
             OnTriggerEnter?.Invoke();
+            load = 0;
         }
     }
     private void OnCollisionExit2D(Collision2D collision)
@@ -30,6 +42,7 @@ public class ContactTrigger : Trigger
         {
             targets.Remove(target);
             OnTriggerExit?.Invoke();
+            load = 0;
         }
     }
 }
