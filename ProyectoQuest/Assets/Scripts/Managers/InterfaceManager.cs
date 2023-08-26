@@ -14,6 +14,11 @@ public class InterfaceManager : MonoBehaviour
 
     private void Awake()
     {
+        
+    }
+
+    private void CreateInstance()
+    {
         if (instance == null)
         {
             instance = this;
