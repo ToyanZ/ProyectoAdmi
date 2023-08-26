@@ -4,9 +4,7 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    public Rigidbody2D rigidBody;
-    public float walkSpeed = 60;
-    public float gravityScale = 0;
+    public Target target;
     
     
     private float horizontal;
@@ -14,12 +12,12 @@ public class Player : MonoBehaviour
 
     private void Update()
     {
-        rigidBody.gravityScale = gravityScale;
+        target.rigidBody.gravityScale = target.gravityScale;
         horizontal = Input.GetAxisRaw("Horizontal");
         vertical = Input.GetAxisRaw("Vertical");
     }
     private void FixedUpdate()
     {
-        rigidBody.velocity = new Vector2(horizontal, vertical) * walkSpeed * Time.fixedDeltaTime;
+        target.rigidBody.velocity = new Vector2(horizontal, vertical) * target.walkSpeed * Time.fixedDeltaTime;
     }
 }
