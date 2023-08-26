@@ -2306,7 +2306,7 @@ GameObject:
   - component: {fileID: 964588387}
   - component: {fileID: 964588386}
   m_Layer: 5
-  m_Name: Cel TXT
+  m_Name: Phone number TXT
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2352,7 +2352,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "N\xFAmero Telef\xF3nico"
+  m_text: "N\xFAmero Celular"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: c4630ad21c066c447ba5e9601ed8e3fd, type: 2}
   m_sharedMaterial: {fileID: -36180238880517948, guid: c4630ad21c066c447ba5e9601ed8e3fd, type: 2}
@@ -3324,7 +3324,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Option A
+  m_text: 4to Medio
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: c4630ad21c066c447ba5e9601ed8e3fd, type: 2}
   m_sharedMaterial: {fileID: -36180238880517948, guid: c4630ad21c066c447ba5e9601ed8e3fd, type: 2}
@@ -4748,11 +4748,13 @@ MonoBehaviour:
   m_Value: 0
   m_Options:
     m_Options:
-    - m_Text: Option A
+    - m_Text: 4to Medio
       m_Image: {fileID: 0}
-    - m_Text: Option B
+    - m_Text: 3ro Medio
       m_Image: {fileID: 0}
-    - m_Text: Option C
+    - m_Text: 2do Medio
+      m_Image: {fileID: 0}
+    - m_Text: 1ro Medio
       m_Image: {fileID: 0}
   m_OnValueChanged:
     m_PersistentCalls:
@@ -4815,6 +4817,10 @@ PrefabInstance:
       propertyPath: inputEmail
       value: 
       objectReference: {fileID: 266362864}
+    - target: {fileID: 2128027775078695975, guid: d466bf526226d33448ae5d5bec4b4c7d, type: 3}
+      propertyPath: inputGrade
+      value: 
+      objectReference: {fileID: 1762195235}
     - target: {fileID: 2128027775078695975, guid: d466bf526226d33448ae5d5bec4b4c7d, type: 3}
       propertyPath: inputPhone
       value: 

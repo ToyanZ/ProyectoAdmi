@@ -23,7 +23,6 @@ public class CameraZoom : MonoBehaviour
     {
         camController.tCamera.orthographicSize = ortographicSize;
     }
-
     /*
     private void FixedUpdate()
     {
@@ -37,8 +36,7 @@ public class CameraZoom : MonoBehaviour
                 zoomIn = !zoomIn;
             }
         }
-    }
-    */
+    }*/
 
     public void ZoomInOut(float zoomIn = 0, float zoomOut = 0, float timeIn = 0, float timeOut = 0, float middlePauseTime = 0) { }
     

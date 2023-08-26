@@ -10,11 +10,17 @@ public class InterfaceManager : MonoBehaviour
     public TMP_InputField inputRut;
     public TMP_InputField inputEmail;
     public TMP_InputField inputPhone;
+    public TMP_Dropdown inputGrade;
 
 
     private void Awake()
     {
         
+    }
+    private void Update()
+    {
+        string aadasss = inputGrade.options[0].text;
+        Debug.Log(aadasss);
     }
 
     private void CreateInstance()
