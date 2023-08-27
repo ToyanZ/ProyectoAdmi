@@ -9,6 +9,8 @@ public class ContactTrigger : Trigger
     private void Start()
     {
         targets = new List<Target>();
+
+        if (useGlobalLoadTime) loadTime = GameManager.instance.triggerLoadTime;
     }
     private void Update()
     {
@@ -16,8 +18,9 @@ public class ContactTrigger : Trigger
         {
             if (load < loadTime)
             {
-                load += Time.fixedDeltaTime;
+                load += Time.deltaTime;
                 OnTriggerLoad?.Invoke();
+                if (load >= loadTime) OnTriggerLoadDone?.Invoke();
             }
             else
             {
@@ -45,4 +48,9 @@ public class ContactTrigger : Trigger
             load = 0;
         }
     }
+
+    public override float GetMaxValue() { return loadTime; }
+    public override float GetCurrentValue() { return load; }
+    public override bool GetBoolValue() { return false; }
+    public override string GetStringValue() { return ""; }
 }

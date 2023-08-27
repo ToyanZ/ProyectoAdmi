@@ -4,5 +4,6 @@ using UnityEngine;
 
 public class Character : MonoBehaviour
 {
-    Player player;
+    public Player player;
+    
 }
