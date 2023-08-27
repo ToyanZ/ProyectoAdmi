@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Net.Sockets;
 using Unity.VisualScripting;
 using UnityEngine;
 using static UnityEngine.GraphicsBuffer;
@@ -15,16 +16,21 @@ public class OverlayingTrigger : Trigger
 
     private void Update()
     {
-        if(targets.Count > 0)
+        
+
+        if (targets.Count > 0)
         {
             if (load < loadTime)
             {
+                if (loadingLocked) return;
+
                 load += Time.deltaTime;
                 OnTriggerLoad?.Invoke();
                 if(load >= loadTime) OnTriggerLoadDone?.Invoke();
             }
             else
             {
+                if (stayLocked) return;
                 OnTriggerStay?.Invoke();
             }
         }
@@ -33,6 +39,8 @@ public class OverlayingTrigger : Trigger
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        if (enterLocked) return;
+
         Target target = collision.GetComponent<Target>();
         if (target != null)
         {
@@ -43,6 +51,8 @@ public class OverlayingTrigger : Trigger
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
+        if (exitLocked) return;
+
         Target target = collision.GetComponent<Target>();
         if (target != null)
         {

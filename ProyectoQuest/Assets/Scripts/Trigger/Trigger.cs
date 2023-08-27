@@ -8,6 +8,12 @@ public abstract class Trigger : StatElement
     [Space(20)]
     public float loadTime = 0;
     public bool useGlobalLoadTime = true;
+    
+    [Space(20)]
+    [SerializeField] protected bool enterLocked = false;
+    [SerializeField] protected bool loadingLocked = false;
+    [SerializeField] protected bool stayLocked = false;
+    [SerializeField] protected bool exitLocked = false;
     protected float load = 0;
     
     [Space(20)]
@@ -27,4 +33,8 @@ public abstract class Trigger : StatElement
     {
         return targets;
     }
+    public void EnterLock() { enterLocked = true; }
+    public void LoadLock() { loadingLocked = true; }
+    public void StayLock() { stayLocked = true; }
+    public void ExitLock() { exitLocked = true; }
 }

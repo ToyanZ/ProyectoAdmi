@@ -15,16 +15,31 @@ public class Bar : MonoBehaviour
     public FillingDirection fillingDirection = FillingDirection.Normal;
     public Image filler;
     public float smoothedModeTime = 0.5f;
+    public bool startFull = false;
 
     [Space(20)]
     public NumericType counterType = NumericType.Percentage;
     public NumericFormat counterFormat = NumericFormat.Integer;
+    
+    [Space(5)]
+    public bool updateTitle = false;
+    public TMP_Text title;
+    
+    [Space(5)]
     public TMP_Text current;
     public TMP_Text max;
 
     private bool filling = false;
+
+
+    private void Start()
+    {
+        filler.fillAmount = startFull ? 1 : 0;
+    }
+
     public void Refresh(StatElement statElement)
     {
+        if (updateTitle) title.text = statElement.GetStringValue();
         if (statElement.GetCurrentValue() < 0) return;
 
         switch(fillMode)
@@ -94,7 +109,7 @@ public class Bar : MonoBehaviour
     {
 
         float max = statElement.GetMaxValue(); //4
-        float start = max * filler.fillAmount; //4 * 0.5 = 2
+        float start = max * filler.fillAmount * 1.0f; //4 * 0.5 = 2
         
 
         float end = statElement.GetCurrentValue(); //1
@@ -112,16 +127,22 @@ public class Bar : MonoBehaviour
 
     private void FillerUpdate(float currentVal, float maxVal)
     {
-        
-        switch (fillingDirection)
+        if(maxVal > 0)
         {
-            case FillingDirection.Normal:
-                filler.fillAmount = currentVal / maxVal;
-                break;
-            case FillingDirection.Reverse:
-                currentVal = maxVal - currentVal;
-                filler.fillAmount = currentVal / maxVal;
-                break;
+            switch (fillingDirection)
+            {
+                case FillingDirection.Normal:
+                    filler.fillAmount = currentVal / maxVal;
+                    break;
+                case FillingDirection.Reverse:
+                    currentVal = maxVal - currentVal;
+                    filler.fillAmount = currentVal / maxVal;
+                    break;
+            }
+        }
+        else
+        {
+            filler.fillAmount = 0;
         }
 
 
@@ -154,7 +175,14 @@ public class Bar : MonoBehaviour
                 max.text = "| " + maxVal.ToString(format);
                 break;
             case NumericType.Percentage:
-                current.text = (currentVal / maxVal * 100).ToString(format) + "%";
+                if (maxVal == 0)
+                {
+                    current.text = 0.0f.ToString(format) + "%";
+                }
+                else
+                {
+                    current.text = (currentVal / maxVal * 100).ToString(format) + "%";
+                }
                 max.text = "";
                 break;
         }

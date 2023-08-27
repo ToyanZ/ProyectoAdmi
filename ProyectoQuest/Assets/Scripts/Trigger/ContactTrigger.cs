@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Net.Sockets;
 using Unity.VisualScripting;
 using UnityEngine;
 using static UnityEngine.GraphicsBuffer;
@@ -14,22 +15,29 @@ public class ContactTrigger : Trigger
     }
     private void Update()
     {
+        
+
         if (targets.Count > 0)
         {
             if (load < loadTime)
             {
+                if (loadingLocked) return;
+
                 load += Time.deltaTime;
                 OnTriggerLoad?.Invoke();
                 if (load >= loadTime) OnTriggerLoadDone?.Invoke();
             }
             else
             {
+                if (stayLocked) return;
                 OnTriggerStay?.Invoke();
             }
         }
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
+        if (enterLocked) return;
+
         Target target = collision.gameObject.GetComponent<Target>();
         if (target != null)
         {
@@ -40,6 +48,8 @@ public class ContactTrigger : Trigger
     }
     private void OnCollisionExit2D(Collision2D collision)
     {
+        if (exitLocked) return;
+
         Target target = collision.gameObject.GetComponent<Target>();
         if (target != null)
         {

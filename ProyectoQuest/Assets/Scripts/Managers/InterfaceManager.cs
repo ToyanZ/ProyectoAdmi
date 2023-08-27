@@ -21,22 +21,15 @@ public class InterfaceManager : MonoBehaviour
     public TMP_Text statement;
     public List<AnswerButton> buttons;
 
-    //Character AreaStats
+    
     [Space(20)]
     public UnityEvent OnAnswerSelected;
-    //public List<Bar> statBars;
-    //public float updateStatTime = 1;
+    public GameObject missionCompletedPopUp;
 
     private void Awake()
     {
         instance = this;
     }
-    private void Update()
-    {
-        //string aadasss = inputGrade.options[0].text;
-        //Debug.Log(aadasss);
-    }
-
     private void CreateInstance()
     {
         if (instance == null)
@@ -46,6 +39,13 @@ public class InterfaceManager : MonoBehaviour
         }
         else Destroy(gameObject);
     }
+    private void Update()
+    {
+        //string aadasss = inputGrade.options[0].text;
+        //Debug.Log(aadasss);
+    }
+
+    
 
     public void LoadQuestion(Question question)
     {
@@ -80,36 +80,4 @@ public class InterfaceManager : MonoBehaviour
         statement.text = "";
     }
     
-    /*
-    private IEnumerator UpdateTargetAreaStats()
-    {
-        int max = 0;
-        foreach (Area area in GameManager.instance.target.areas)
-        {
-            max += area.affinity;
-        }
-
-        float time = 0;
-        while (time < updateStatTime)
-        {
-            float currentVal = 0;
-
-            for (int i = 0; i < GameManager.instance.target.areas.Count; i++)
-            {
-                if (statBars.Count < i) continue;
-
-                float prevVal = statBars[i].filler.fillAmount;
-                float scale = (time / updateStatTime);
-                currentVal = GameManager.instance.target.areas[i].affinity * scale;
-                
-                
-
-                //statBars[i].Refresh(currentVal, max);
-            }
-
-            time += Time.deltaTime;
-            yield return new WaitForSeconds(Time.deltaTime);
-        }
-    }
-    */
 }

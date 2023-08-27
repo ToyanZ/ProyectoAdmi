@@ -4,24 +4,10 @@ using UnityEngine;
 
 public class Question : MonoBehaviour
 {
-    //private float countDown = 0;
+    public bool answered = false;
     public string statement = "";
     public List<Answer> answers;
     
-    /*
-    private void Start()
-    {
-        countDown = GameManager.instance.questionTriggerTime;
-    }
-    public void StartCounting()
-    {
-        countDown = GameManager.instance.questionTriggerTime;
-    }
-    public void CountDown()
-    {
-        countDown -= Time.deltaTime;
-        StatUpdate(this);
-    }*/
 
     public void LoadPopUp()
     {
@@ -31,7 +17,7 @@ public class Question : MonoBehaviour
     {
         Answer answer = answers.Find(answer => answer.statement == statement);
 
-        foreach(Area area in GameManager.instance.target.areas)
+        foreach(Area area in GameManager.instance.character.player.target.areas)
         {
             for (int i = 0; i < answer.stats.Count; i++)
             {
@@ -48,26 +34,10 @@ public class Question : MonoBehaviour
                 }
             }
         }
-
+        answered = true;
         //GameManager.instance.UpdateAffinityPointCount();
         GameManager.instance.affinityPointMax += 1;
-        InterfaceManager.instance.OnAnswerSelected?.Invoke();
+        InterfaceManager.instance.OnAnswerSelected?.Invoke(); //Update HUD
     }
 
-
-
-
-
-
-
-
-
-
-
-    /*
-    public override bool GetBoolValue() { return false; }
-    public override float GetCurrentValue() { return countDown; }
-    public override float GetMaxValue() { return GameManager.instance.questionTriggerTime; }
-    public override string GetStringValue() { return ""; }
-    */
 }
