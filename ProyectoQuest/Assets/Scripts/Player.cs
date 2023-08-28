@@ -5,8 +5,8 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     public Target target;
-    
-    
+    public CharacterController controller;
+
     private float horizontal;
     private float vertical;
     private bool canMove = true;
@@ -25,7 +25,10 @@ public class Player : MonoBehaviour
             target.rigidBody.velocity = Vector2.zero;
             return;
         }
-        target.rigidBody.velocity = new Vector2(horizontal, vertical) * target.walkSpeed * Time.fixedDeltaTime;
+
+
+        //target.rigidBody.velocity = new Vector2(horizontal, vertical) * target.walkSpeed * Time.fixedDeltaTime;
+        target.rigidBody.velocity = controller.GetDirection() * target.walkSpeed * Time.fixedDeltaTime;
     }
 
     public void SetMove(bool can)
