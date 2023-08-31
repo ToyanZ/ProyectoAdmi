@@ -1909,7 +1909,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 20, y: -29.999878}
+  m_AnchoredPosition: {x: 40, y: -29.999878}
   m_SizeDelta: {x: 300, y: -139.9999}
   m_Pivot: {x: 0, y: 0.5}
 --- !u!114 &204336736
@@ -3424,9 +3424,9 @@ MonoBehaviour:
   deadZoneY: 0.7
   offsetX: 0
   offsetY: 0
-  smoothingX: 0.2
-  smoothingY: 0.2
-  relativeSmoothing: 0.2
+  smoothingX: 0.122
+  smoothingY: 0.125
+  relativeSmoothing: 0.12
   trackingEnabled: 1
 --- !u!1 &550603372
 GameObject:
@@ -57225,7 +57225,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 2
+  m_SortingOrder: 102
   m_Sprite: {fileID: 21300000, guid: ed8aeb16a22a4d947b93c521880ebad5, type: 3}
   m_Color: {r: 0.85882354, g: 0.56095344, b: 0, a: 1}
   m_FlipX: 0
@@ -77435,6 +77435,10 @@ PrefabInstance:
       propertyPath: target
       value: 
       objectReference: {fileID: 1497703675}
+    - target: {fileID: 2128027775478248107, guid: d466bf526226d33448ae5d5bec4b4c7d, type: 3}
+      propertyPath: buildType
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2128027775478248107, guid: d466bf526226d33448ae5d5bec4b4c7d, type: 3}
       propertyPath: triggerLoadTime
       value: 1.25

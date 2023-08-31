@@ -17,6 +17,9 @@ public class GameManager : MonoBehaviour
     public GameState gameState = GameState.Menu;
     public MenuState menuState = MenuState.Check;
     public MatchState matchState = MatchState.Walking;
+
+    [Space(20)]
+    public BuildType buildType = BuildType.Pc;
     //public Action 
 
     [Space(20)]

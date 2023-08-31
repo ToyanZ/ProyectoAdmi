@@ -84,6 +84,8 @@ public class Bar : MonoBehaviour
                 break;
         }
 
+        if (current > statElement.GetMaxValue()) current = statElement.GetMaxValue();
+
         switch (counterType)
         {
             case NumericType.Value:
@@ -159,6 +161,9 @@ public class Bar : MonoBehaviour
                 format = "0.00";
                 break;
         }
+
+
+        if (currentVal > maxVal) currentVal = maxVal;
 
         switch (counterType)
         {

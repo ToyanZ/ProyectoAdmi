@@ -26,9 +26,15 @@ public class Player : MonoBehaviour
             return;
         }
 
-
-        //target.rigidBody.velocity = new Vector2(horizontal, vertical) * target.walkSpeed * Time.fixedDeltaTime;
-        target.rigidBody.velocity = controller.GetDirection() * target.walkSpeed * Time.fixedDeltaTime;
+        switch (GameManager.instance.buildType)
+        {
+            case GameManager.BuildType.Pc:
+                target.rigidBody.velocity = new Vector2(horizontal, vertical) * target.walkSpeed * Time.fixedDeltaTime;
+                break;
+            case GameManager.BuildType.Phone:
+                target.rigidBody.velocity = controller.GetDirection() * target.walkSpeed * Time.fixedDeltaTime;
+                break;
+        }
     }
 
     public void SetMove(bool can)
