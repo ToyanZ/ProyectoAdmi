@@ -7,6 +7,7 @@ public abstract class Trigger : StatElement
 {
     [Space(20)]
     public float loadTime = 0;
+    public float stayTime = 0;
     public bool useGlobalLoadTime = true;
     
     [Space(20)]
@@ -15,12 +16,14 @@ public abstract class Trigger : StatElement
     [SerializeField] protected bool stayLocked = false;
     [SerializeField] protected bool exitLocked = false;
     protected float load = 0;
+    protected float stay = 0;
     
     [Space(20)]
     public UnityEvent OnTriggerEnter;
     public UnityEvent OnTriggerLoad;
     public UnityEvent OnTriggerLoadDone;
     public UnityEvent OnTriggerStay;
+    public UnityEvent OnTriggerStayDone;
     public UnityEvent OnTriggerExit;
 
     protected List<Target> targets;

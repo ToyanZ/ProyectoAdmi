@@ -31,7 +31,14 @@ public class OverlayingTrigger : Trigger
             else
             {
                 if (stayLocked) return;
-                OnTriggerStay?.Invoke();
+
+                if (stay < stayTime)
+                {
+                    stay += Time.deltaTime;
+                    OnTriggerStay?.Invoke();
+
+                    if (stay > stayTime) OnTriggerStayDone?.Invoke();
+                }
             }
         }
     }

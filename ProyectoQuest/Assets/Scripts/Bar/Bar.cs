@@ -194,4 +194,55 @@ public class Bar : MonoBehaviour
 
     }
     
+    public void SimpleRefresh(float current, float max)
+    {
+        filler.fillAmount = current/max;
+    }
+
+    public void SimpleRefresh(float current, float max, NumericType numericType,NumericFormat numericFormat, string title = "")
+    {
+        filler.fillAmount = current / max;
+
+        string format = "";
+        switch (numericFormat)
+        {
+            case NumericFormat.Integer:
+                format = "0";
+                break;
+            case NumericFormat.PointOne:
+                format = "0.0";
+                break;
+            case NumericFormat.PointTwo:
+                format = "0.00";
+                break;
+        }
+        switch (numericType)
+        {
+            case NumericType.Value:
+                this.current.text = current.ToString(format);
+                this.max.text = "";
+                break;
+            case NumericType.Seconds:
+                this.current.text = current.ToString(format) + "s";
+                this.max.text = "";
+                break;
+            case NumericType.Ratio:
+                this.current.text = (current).ToString(format);
+                this.max.text = "| " + max.ToString(format);
+                break;
+            case NumericType.Percentage:
+                if (max == 0)
+                {
+                    this.current.text = 0.0f.ToString(format) + "%";
+                }
+                else
+                {
+                    this.current.text = (current / max * 100).ToString(format) + "%";
+                }
+                this.max.text = "";
+                break;
+        }
+
+        if(title != "") this.title.text = title;
+    }
 }

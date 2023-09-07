@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
@@ -26,6 +27,9 @@ public class GameManager : MonoBehaviour
     public Character character;
     public float triggerLoadTime = 1.5f;
     public int affinityPointMax = 0;
+    public float answerTimeMin = 3;
+    public float answerTimeAvg = 8;
+    public float answerTimeMax = 11;
     
     //User info
     [Space(20)]
@@ -37,6 +41,12 @@ public class GameManager : MonoBehaviour
 
     [Space(20)]
     public List<Question> questions;
+
+    [Space(20)]
+    public UnityEvent OnAnswerCompleted;
+    public Bar progressBar;
+
+
     private void Awake()
     {
         if(instance == null)
@@ -132,14 +142,18 @@ public class GameManager : MonoBehaviour
         {
             if (questions.Count == 0) { questions = FindObjectsOfType<Question>().ToList(); }
             bool allAnswered = true;
+
+            int i = 0;
             foreach (Question question in questions)
             {
+                i += 1;
                 if (!question.answered)
                 {
                     allAnswered = false;
                     break;
                 }
             }
+            progressBar.SimpleRefresh(i, questions.Count, Bar.NumericType.Ratio, Bar.NumericFormat.Integer);
             character.player.SetMove(true);
             return allAnswered ? MatchState.End : MatchState.Walking;
         }

@@ -25,12 +25,20 @@ public class ContactTrigger : Trigger
 
                 load += Time.deltaTime;
                 OnTriggerLoad?.Invoke();
+                
                 if (load >= loadTime) OnTriggerLoadDone?.Invoke();
             }
             else
             {
                 if (stayLocked) return;
-                OnTriggerStay?.Invoke();
+                
+                if (stay < stayTime)
+                {
+                    stay += Time.deltaTime;
+                    OnTriggerStay?.Invoke();
+
+                    if (stay > stayTime) OnTriggerStayDone?.Invoke();
+                }
             }
         }
     }

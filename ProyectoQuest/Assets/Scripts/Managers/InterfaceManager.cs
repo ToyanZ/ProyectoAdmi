@@ -4,7 +4,6 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
-using UnityEngine.UIElements;
 
 public class InterfaceManager : MonoBehaviour
 {
@@ -20,6 +19,8 @@ public class InterfaceManager : MonoBehaviour
     public GameObject popUp;
     public TMP_Text statement;
     public List<AnswerButton> buttons;
+    public Bar answerTimerBar;
+    public List<Image> attackPoints;
 
     
     [Space(20)]
