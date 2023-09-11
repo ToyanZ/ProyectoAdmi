@@ -40,7 +40,10 @@ public class GameManager : MonoBehaviour
     [HideInInspector] public string gradeUser;
 
     [Space(20)]
-    public List<Question> questions;
+    public float matchProgressBarUpdateTime = 2f;
+    public float questionHandlerBarUpdateTime = 1f;
+    public float answerCompletedBarUpdateTime = 0.7f;
+    public List<QuestionHandler> questionHandlers;
 
     [Space(20)]
     public UnityEvent OnAnswerCompleted;
@@ -59,8 +62,6 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
-        if (character == null) character = FindObjectOfType<Character>();
-
         StateMachine();
     }
     private void StateMachine()
@@ -110,6 +111,11 @@ public class GameManager : MonoBehaviour
 
     private void Match()
     {
+        if (character == null) character = FindObjectOfType<Character>();
+        if (questionHandlers == null) questionHandlers = new List<QuestionHandler>();
+        if (questionHandlers.Count == 0) questionHandlers = FindObjectsOfType<QuestionHandler>().ToList();
+
+
         switch (matchState)
         {
             case MatchState.Walking:
@@ -140,32 +146,61 @@ public class GameManager : MonoBehaviour
         }
         else
         {
-            if (questions.Count == 0) { questions = FindObjectsOfType<Question>().ToList(); }
-            bool allAnswered = true;
+            //if (questionHandlers.Count == 0) { questionHandlers = FindObjectsOfType<QuestionHandler>().ToList(); }
 
-            int i = 0;
-            foreach (Question question in questions)
+            float totalQuestions = 0.0f;
+            foreach (QuestionHandler questionHandler in questionHandlers)
             {
-                i += 1;
-                if (!question.answered)
+                foreach (Question question in questionHandler.questions)
                 {
-                    allAnswered = false;
-                    break;
+                    totalQuestions += 1.0f;
                 }
             }
-            progressBar.SimpleRefresh(i, questions.Count, Bar.NumericType.Ratio, Bar.NumericFormat.Integer);
+
+
+            float answeredQuestions = 0.0f;
+            bool allAnswered = true;
+            foreach (QuestionHandler questionHandler in questionHandlers)
+            {
+                foreach(Question question in questionHandler.questions)
+                {
+                    
+                    if (question.answered) answeredQuestions += 1.0f;
+                    if (allAnswered) if (!question.answered) allAnswered = false;
+                }
+                questionHandler.ProgressUpdate();
+            }
+            StartCoroutine(MatchProgressUpdate(answeredQuestions, totalQuestions));
             character.player.SetMove(true);
+            
             return allAnswered ? MatchState.End : MatchState.Walking;
+        }
+    }
+
+    IEnumerator MatchProgressUpdate(float current, float max)
+    {
+        float time = matchProgressBarUpdateTime;
+        float start = progressBar.filler.fillAmount;
+        while (time > 0.0f)
+        {
+            time -= Time.deltaTime;
+            float progress = Mathf.Lerp(start, current, 1 - (time / matchProgressBarUpdateTime));
+            
+            progressBar.SimpleRefresh(progress, max, Bar.NumericType.Ratio, Bar.NumericFormat.Integer);
+            yield return new WaitForSeconds(Time.deltaTime);
         }
     }
 
     private bool End()
     {
-        InterfaceManager.instance.missionCompletedPopUp.SetActive(true);
+        Invoke("ShowEndHUD", 2f);
         return true;
     }
 
-
+    void ShowEndHUD()
+    {
+        InterfaceManager.instance.missionCompletedPopUp.SetActive(true);
+    }
 
 
 

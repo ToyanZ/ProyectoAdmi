@@ -24,13 +24,14 @@ public class Question : MonoBehaviour
     }
     public void SelectAnswer(string statement)
     {
+        answered = true;
+        
         Answer answer = answers.Find(answer => answer.statement == statement);
 
         foreach(Area area in GameManager.instance.character.player.target.areas)
         {
             AddPointIfAnswerMatch(answer, area);
         }
-        answered = true;
 
 
         //GameManager.instance.UpdateAffinityPointCount();
@@ -92,7 +93,7 @@ public class Question : MonoBehaviour
     {
         yield return new WaitForSeconds(0.2f);
         float time2 = 0;
-        while (time2 < 0.5f)
+        while (time2 < GameManager.instance.answerCompletedBarUpdateTime)
         {
             time2 += Time.deltaTime;
             completed.SimpleRefresh(Mathf.Clamp01(time2), 0.5f);

@@ -5,7 +5,7 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     public Target target;
-    public CharacterController controller;
+    public Joystick joystick;
 
     private float horizontal;
     private float vertical;
@@ -32,7 +32,7 @@ public class Player : MonoBehaviour
                 target.rigidBody.velocity = new Vector2(horizontal, vertical) * target.walkSpeed * Time.fixedDeltaTime;
                 break;
             case GameManager.BuildType.Phone:
-                target.rigidBody.velocity = controller.GetDirection() * target.walkSpeed * Time.fixedDeltaTime;
+                target.rigidBody.velocity = joystick.GetDirection() * target.walkSpeed * Time.fixedDeltaTime;
                 break;
         }
     }
