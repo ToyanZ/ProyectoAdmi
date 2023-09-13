@@ -31,15 +31,7 @@ public class InterfaceManager : MonoBehaviour
     {
         instance = this;
     }
-    private void CreateInstance()
-    {
-        if (instance == null)
-        {
-            instance = this;
-            DontDestroyOnLoad(gameObject);
-        }
-        else Destroy(gameObject);
-    }
+    
     private void Update()
     {
         //string aadasss = inputGrade.options[0].text;
