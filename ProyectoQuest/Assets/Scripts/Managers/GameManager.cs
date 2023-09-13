@@ -52,7 +52,15 @@ public class GameManager : MonoBehaviour
 
     private void Awake()
     {
-        instance = this;
+        if (instance == null)
+        {
+            instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
     }
 
     private void Update()
@@ -84,7 +92,7 @@ public class GameManager : MonoBehaviour
             case MenuState.MainMenu:
                 if (!MainMenu())
                 {
-                    InterfaceManager.instance.OnAnswerSelected?.Invoke();
+                    //InterfaceManager.instance.OnAnswerSelected?.Invoke();
                     gameState = GameState.Match;
                 } 
                 break;
@@ -106,8 +114,16 @@ public class GameManager : MonoBehaviour
 
     private void Match()
     {
-        if (character == null) character = FindObjectOfType<Character>();
-        if (questionHandlers == null) questionHandlers = new List<QuestionHandler>();
+        if (character == null)
+        {
+            character = FindObjectOfType<Character>();
+            return;
+        }
+        if (questionHandlers == null)
+        {
+            questionHandlers = new List<QuestionHandler>();
+            return;
+        }
         if (questionHandlers.Count == 0) questionHandlers = FindObjectsOfType<QuestionHandler>().ToList();
 
 

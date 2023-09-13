@@ -6,11 +6,19 @@ using UnityEngine.SceneManagement;
 public class LevelManager : MonoBehaviour
 {
     public static LevelManager instance;
-    public List<string> miniGamesSceneNames;
+    public List<MiniGameInfo> miniGamesInfo;
     string nextScene;
     private void Awake()
     {
-        instance = this;
+        if (instance == null)
+        {
+            instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
     }
 
     public void LoadGame(string gameName, string nextScene)
@@ -21,11 +29,23 @@ public class LevelManager : MonoBehaviour
     public void LoadRandomGame(string linkedLevel)
     {
         nextScene = linkedLevel;
-        int index = Random.Range(0, miniGamesSceneNames.Count);
-        SceneManager.LoadScene(miniGamesSceneNames[index]);
+
+        int index = Random.Range(0, miniGamesInfo.Count);
+        MiniGameInfo miniGameInfo = miniGamesInfo[index];
+        while (miniGameInfo.played)
+        {
+            index = Random.Range(0, miniGamesInfo.Count);
+            miniGameInfo = miniGamesInfo[index];
+        }
+        miniGameInfo.played = true;
+        SceneManager.LoadScene(miniGameInfo.name);
     }
     public void LoadLinkedLevel()
     {
         SceneManager.LoadScene(nextScene);
+    }
+    public void LoadScene(string sceneName)
+    {
+        SceneManager.LoadScene(sceneName);
     }
 }
