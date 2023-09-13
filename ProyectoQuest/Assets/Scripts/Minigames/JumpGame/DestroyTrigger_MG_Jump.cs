@@ -9,12 +9,12 @@ public class DestroyTrigger_MG_Jump : MonoBehaviour
 {
     public VideoPlayer video;
     public RawImage imagen;
-
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if(collision.CompareTag("Floor"))
         {
-            InstantiateManager_MG_Jump.instance.InstantiateNewFloor(collision.transform);
+            collision.GetComponent<JumpTrigger_MG_Jump>().SendSpawnNewObject(collision.transform);
+            //InstantiateManager_MG_Jump.instance.InstantiateNewFloorDestroyZone(collision.transform);
             Debug.Log("Choca con una plataforma");
             Destroy(collision.gameObject);
         }
@@ -26,6 +26,10 @@ public class DestroyTrigger_MG_Jump : MonoBehaviour
             InstantiateManager_MG_Jump.instance.LostGame();
             if(video != null) video.Play();
 
+        }
+        if (collision.CompareTag("Enemy"))
+        {
+            InstantiateManager_MG_Jump.instance.InstantiateNewEnemy(collision.transform);
         }
     }
 }

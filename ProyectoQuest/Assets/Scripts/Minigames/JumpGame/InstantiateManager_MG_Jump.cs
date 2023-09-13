@@ -7,8 +7,9 @@ using UnityEngine.SceneManagement;
 public class InstantiateManager_MG_Jump : MonoBehaviour
 {
     public GameObject[] platforms;
-    public static InstantiateManager_MG_Jump instance;
+    public GameObject[] enemies;
     public GameObject[] canvas;
+    public static InstantiateManager_MG_Jump instance;
     //public Vector3 addPosition = new Vector3(0, 10f, 0);
 
     private void Awake()
@@ -18,13 +19,15 @@ public class InstantiateManager_MG_Jump : MonoBehaviour
 
     private void Start()
     {
-        FirstInstantiates(20);
         for (int i = 0; i < canvas.Length; i++)
         {
             canvas[i].SetActive(false);
         }
         canvas[0].SetActive(true);
         Time.timeScale = 0;
+        FirstInstantiates(20);
+        FirstInstantiates(40);
+        FirstInstantiates(60);
     }
 
     public void StartGame()
@@ -42,20 +45,34 @@ public class InstantiateManager_MG_Jump : MonoBehaviour
 
     public void InstantiateNewFloor(Transform newSpawnPosition)
     {
-        Vector3 randomYPosition = new Vector3(0, Random.Range(5, 15), 0);
+        Debug.Log("Se creo un objeto");
+        Vector3 randomYPosition = new Vector3(0, Random.Range(8, 10), 0);
         Vector3 randomInstantite = new Vector3(Random.Range(-4, 4), newSpawnPosition.position.y, newSpawnPosition.position.z);  
-        Instantiate(platforms[Random.Range(0, platforms.Length)], randomInstantite + randomYPosition, Quaternion.identity);    
+        Instantiate(platforms[Random.Range(0, platforms.Length)], randomInstantite + randomYPosition, Quaternion.identity);
+    }
+    public void InstantiateNewFloorDestroyZone(Transform newSpawnPosition)
+    {
+        Vector3 randomYPosition = new Vector3(0, Random.Range(15, 20), 0);
+        Vector3 randomInstantite = new Vector3(Random.Range(-4, 4), newSpawnPosition.position.y, newSpawnPosition.position.z);
+        Instantiate(platforms[Random.Range(0, platforms.Length)], randomInstantite + randomYPosition, Quaternion.identity);
     }
 
     public void FirstInstantiates(float addDistance)
     {
-        Vector3 distance = new Vector3(Random.Range(-4, 4), addDistance, 0);
-        Instantiate(platforms[Random.Range(0, platforms.Length)], distance , Quaternion.identity);    
+        Vector3 distance = new Vector3(Random.Range(-10, 10), addDistance, 0);
+        Instantiate(enemies[Random.Range(0, platforms.Length)], distance , Quaternion.identity);    
     }
 
     public void LoadScene(string sceneName)
     {
         SceneManager.LoadScene(sceneName);
+    }
+
+    public void InstantiateNewEnemy(Transform newSpawnPosition)
+    {
+        Vector3 randomYPosition = new Vector3(0, Random.Range(20, 30), 0);
+        Vector3 randomInstantite = new Vector3(Random.Range(-4, 4), newSpawnPosition.position.y, newSpawnPosition.position.z);
+        Instantiate(platforms[Random.Range(0, platforms.Length)], randomInstantite + randomYPosition, Quaternion.identity);
     }
         
 }

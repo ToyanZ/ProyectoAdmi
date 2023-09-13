@@ -6,19 +6,17 @@ public class JumpTrigger_MG_Jump : MonoBehaviour
 {
     public float upForce;
     public bool isDestroyed;
-
-    
-
+    public bool disableSpawnPlatform = true;
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Player"))
         {
-            Debug.Log("Hace colision");
             JumpUp(collision);
-            if (isDestroyed)
+            if (disableSpawnPlatform)
             {
-                InstantiateManager_MG_Jump.instance.InstantiateNewFloor(collision.transform);
-                Destroy(this.gameObject);
+                SendSpawnNewObject(collision.transform);
+                disableSpawnPlatform = false;
+                if(isDestroyed) Destroy(this.gameObject);
             }
         }
     }
@@ -29,5 +27,13 @@ public class JumpTrigger_MG_Jump : MonoBehaviour
 
         collision.gameObject.GetComponent<Rigidbody2D>().velocity = impulso;
         
+    }
+
+    public void SendSpawnNewObject(Transform playerPosition)
+    {
+        if (disableSpawnPlatform) 
+        { 
+            InstantiateManager_MG_Jump.instance.InstantiateNewFloor(playerPosition);
+        }
     }
 }
