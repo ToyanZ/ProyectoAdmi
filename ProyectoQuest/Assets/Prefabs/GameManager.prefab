@@ -1,5 +1,52 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &416543894007213183
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7003856889112237680}
+  - component: {fileID: 4463913024131634518}
+  m_Layer: 0
+  m_Name: LevelManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7003856889112237680
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 416543894007213183}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2128027775478248106}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4463913024131634518
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 416543894007213183}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3101a62a7b2b52d43b7cbe31c822776c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  miniGamesSceneNames:
+  - MiniGames
+  - SampleScene
 --- !u!1 &2128027775078695969
 GameObject:
   m_ObjectHideFlags: 0
@@ -48,6 +95,16 @@ MonoBehaviour:
   inputRut: {fileID: 0}
   inputEmail: {fileID: 0}
   inputPhone: {fileID: 0}
+  inputGrade: {fileID: 0}
+  popUp: {fileID: 0}
+  statement: {fileID: 0}
+  buttons: []
+  answerTimerBar: {fileID: 0}
+  attackPoints: []
+  OnAnswerSelected:
+    m_PersistentCalls:
+      m_Calls: []
+  missionCompletedPopUp: {fileID: 0}
 --- !u!1 &2128027775478248100
 GameObject:
   m_ObjectHideFlags: 0
@@ -78,6 +135,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2128027775078695968}
+  - {fileID: 7003856889112237680}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -93,4 +151,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a9a158bd140607846a4d8ef0ba12a821, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  questionTriggerTime: 1.5
+  gameState: 0
+  menuState: 0
+  matchState: 0
+  buildType: 1
+  character: {fileID: 0}
+  triggerLoadTime: 1.25
+  affinityPointMax: 0
+  answerTimeMin: 3
+  answerTimeAvg: 8
+  answerTimeMax: 11
+  nameUser: 
+  rutUser: 
+  emailUser: 
+  phoneNumberUser: 
+  gradeUser: 
+  matchProgressBarUpdateTime: 2
+  questionHandlerBarUpdateTime: 1.5
+  answerCompletedBarUpdateTime: 0.8
+  questionHandlers: []
+  OnAnswerCompleted:
+    m_PersistentCalls:
+      m_Calls: []
+  progressBar: {fileID: 0}

@@ -12,7 +12,7 @@ public class GameManager : MonoBehaviour
     public enum BuildType { Pc, Phone}
     public enum GameState { Menu, Match}
     public enum MenuState { Check, SignIn, MainMenu}
-    public enum MatchState { Walking, Answering, End}
+    public enum MatchState { Walking, Answering, MiniGame, End}
     public static GameManager instance;
 
     public GameState gameState = GameState.Menu;
@@ -124,6 +124,9 @@ public class GameManager : MonoBehaviour
             case MatchState.Answering:
                 matchState = Answering();
                 break;
+            case MatchState.MiniGame:
+
+                break;
             case MatchState.End:
                 if(!End())
                 {
@@ -173,14 +176,16 @@ public class GameManager : MonoBehaviour
             StartCoroutine(MatchProgressUpdate(answeredQuestions, totalQuestions));
             character.player.SetMove(true);
             
-            return allAnswered ? MatchState.End : MatchState.Walking;
+            //solucionar el preogreso del juego repartido por escenas
+            //bool gameDone =
+            return allAnswered ? MatchState.MiniGame : MatchState.Walking;
         }
     }
 
     IEnumerator MatchProgressUpdate(float current, float max)
     {
         float time = matchProgressBarUpdateTime;
-        float start = progressBar.filler.fillAmount;
+        float start = progressBar.filler.fillAmount * max;
         while (time > 0.0f)
         {
             time -= Time.deltaTime;
