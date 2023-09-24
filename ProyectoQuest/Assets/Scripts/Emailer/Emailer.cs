@@ -7,34 +7,23 @@ using UnityEngine;
 
 public class Emailer : MonoBehaviour
 {
-    //[SerializeField] TMPro.TextMeshProUGUI txtData;
-    [SerializeField] UnityEngine.UI.Button btnSubmit;
-    [SerializeField] bool sendDirect = true;
-
     const string kSenderEmailAddress = "jordan.rob997@gmail.com";
-    const string kSenderPassword = "zdkz vkpe qiah hkdb";
+    const string kSenderPassword = "zdkz vkpe qiah hkdb"; //App password gmail access;
     const string kReceiverEmailAddress = "jordan.rob997@gmail.com";
 
     void Start()
     {
-        UnityEngine.Assertions.Assert.IsNotNull("---hola---");
-        UnityEngine.Assertions.Assert.IsNotNull(btnSubmit);
-        btnSubmit.onClick.AddListener(delegate {
-            if (sendDirect)
-            {
-                SendAnEmail("---hola---");
-            }
-        });
+        
     }
 
     // Method 1: Direct message
-    private static void SendAnEmail(string message)
+    private void SendAnEmail(string message)
     {
         // Create mail
         MailMessage mail = new MailMessage();
         mail.From = new MailAddress(kSenderEmailAddress);
         mail.To.Add(kReceiverEmailAddress);
-        mail.Subject = "Email Title";
+        mail.Subject =gameObject.GetComponent<InterfaceManager>().userRut + " Formulario Quest";
         mail.Body = message;
 
         // Setup server 
@@ -63,5 +52,24 @@ public class Emailer : MonoBehaviour
         {
             Debug.Log("Email sent!");
         }
+    }
+
+    private string WriteMessage()
+    {
+        InterfaceManager interfaceScript = gameObject.GetComponent<InterfaceManager>();
+        string formMessage = "Nombre: " + interfaceScript.userName + "\n" +
+                             "Rut: " + interfaceScript.userRut + "\n" +
+                             "Email: " + interfaceScript.userEmail + "\n" +
+                             "Celular: " + interfaceScript.userPhone + "\n" +
+                             "Curso actual: " + interfaceScript.userGrade;
+
+        return formMessage;
+    }
+
+    public void CallSendEmail()
+    {
+        string message = WriteMessage();
+        SendAnEmail(message);
+            
     }
 }
