@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 00c08b2450400c94aa2666d528a50e2b
+guid: 0cadcb6f7e3c3b24e88b912190cd7e43
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -104,7 +104,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Abogado_0
+      name: Persona_5_0
       rect:
         serializedVersion: 2
         x: 0
@@ -118,14 +118,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: baab6a2083225c949b39d1067d36d643
-      internalID: 1725069629
+      spriteID: f8e5e03b2395b0547bccc70b77b4ecef
+      internalID: -638437899
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Abogado_1
+      name: Persona_5_1
       rect:
         serializedVersion: 2
         x: 16
@@ -139,14 +139,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ab224c1c0ecb17e4891b918bf3c6095b
-      internalID: -81704843
+      spriteID: e31b2c9f1940155448d2d5d648f9a074
+      internalID: -1523794937
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Abogado_2
+      name: Persona_5_2
       rect:
         serializedVersion: 2
         x: 32
@@ -160,14 +160,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ea0548adc3116e845a9e666bba41f3de
-      internalID: 1929840048
+      spriteID: bdfaeeaae6f2e9443b4980faf40d6ef7
+      internalID: -103040007
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Abogado_3
+      name: Persona_5_3
       rect:
         serializedVersion: 2
         x: 48
@@ -181,14 +181,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cc5508aeca7d3ca41980fd5376d576eb
-      internalID: 1675915978
+      spriteID: a55ab94f9475eca478a6f16bbd9b2c08
+      internalID: 382321891
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Abogado_4
+      name: Persona_5_4
       rect:
         serializedVersion: 2
         x: 0
@@ -202,14 +202,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2b51564de8f94b44d972e2bee61ba348
-      internalID: 332477947
+      spriteID: 9bfe70e699985864787e7a1772cabbbb
+      internalID: 690835944
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Abogado_5
+      name: Persona_5_5
       rect:
         serializedVersion: 2
         x: 16
@@ -223,14 +223,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d2896c75e488a484ca0a5e9b71fb8389
-      internalID: 1994343964
+      spriteID: cb39ca7a42425034db22d0b67645feb1
+      internalID: -1165234602
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Abogado_6
+      name: Persona_5_6
       rect:
         serializedVersion: 2
         x: 32
@@ -244,14 +244,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d1dc10dcd4f7bf24ba89ad75b229851a
-      internalID: 741890280
+      spriteID: f64a3fac96d1fef43bbaa4d9e72e1e59
+      internalID: -389837501
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Abogado_7
+      name: Persona_5_7
       rect:
         serializedVersion: 2
         x: 48
@@ -265,14 +265,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9921d9855a9e48a46b1ee3409ab9a33a
-      internalID: 221032567
+      spriteID: 50791e53474030c41ac5d8515cc3106b
+      internalID: 333850133
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Abogado_8
+      name: Persona_5_8
       rect:
         serializedVersion: 2
         x: 64
@@ -286,14 +286,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0ec57010ccc4ea74c8b2832447c7be14
-      internalID: -1882429436
+      spriteID: 6a5a3f6a803de8446af82b0db9f5dd91
+      internalID: 1962641779
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Abogado_9
+      name: Persona_5_9
       rect:
         serializedVersion: 2
         x: 80
@@ -307,14 +307,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bca3845067e290846b1dee282fdad190
-      internalID: 1772910661
+      spriteID: 135535e65ed089f4180ab0483ac14dee
+      internalID: 1975764038
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Abogado_10
+      name: Persona_5_10
       rect:
         serializedVersion: 2
         x: 96
@@ -328,14 +328,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7647c00effe5c8c4e8bea83fd5f3a08b
-      internalID: 2032404463
+      spriteID: a9af3e72d34b5ad429b77673e9f6ec0c
+      internalID: 1371478883
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Abogado_11
+      name: Persona_5_11
       rect:
         serializedVersion: 2
         x: 112
@@ -349,14 +349,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7660806b500b94843b5d9aa239016a9e
-      internalID: -1607454206
+      spriteID: 2bf6852b3aba8be4c8cab8a33e201089
+      internalID: 519287206
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Abogado_12
+      name: Persona_5_12
       rect:
         serializedVersion: 2
         x: 128
@@ -370,14 +370,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5298a2c52f09c9a4b95a5f2f6a028b57
-      internalID: 678511578
+      spriteID: a06707d1b71d3d2468b4e5802859311f
+      internalID: -953448379
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Abogado_13
+      name: Persona_5_13
       rect:
         serializedVersion: 2
         x: 144
@@ -391,14 +391,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 844afebc81efaa94a9218afd1a621f83
-      internalID: -1614707261
+      spriteID: d126681152e569b48a5062590102bc13
+      internalID: -1203751772
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Abogado_14
+      name: Persona_5_14
       rect:
         serializedVersion: 2
         x: 160
@@ -412,14 +412,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b3f295bffeabd614eb0c5d61645ef4e1
-      internalID: 1048628560
+      spriteID: ae415fc8aeb5fc0428f53301ad1b1e0e
+      internalID: -1456876232
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Abogado_15
+      name: Persona_5_15
       rect:
         serializedVersion: 2
         x: 176
@@ -433,14 +433,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2d653368f4fc0c34db81eb2c4d242578
-      internalID: -1613050312
+      spriteID: d60b84c2b0b6436409234acbeb803259
+      internalID: 1918550460
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Abogado_16
+      name: Persona_5_16
       rect:
         serializedVersion: 2
         x: 192
@@ -454,14 +454,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 20443147dd16a8b40bb66f064d6be822
-      internalID: 572592507
+      spriteID: 94895ff6d19ab2f409eb6363d6233377
+      internalID: -402987
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Abogado_17
+      name: Persona_5_17
       rect:
         serializedVersion: 2
         x: 208
@@ -475,14 +475,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d6d8223980d8cdf4f8f09a53002fc977
-      internalID: -296595430
+      spriteID: 7d920152fca3700488cc9bad998870b3
+      internalID: -12202059
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Abogado_18
+      name: Persona_5_18
       rect:
         serializedVersion: 2
         x: 224
@@ -496,14 +496,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 02fb608ea829bea468f678e67472d207
-      internalID: -89282285
+      spriteID: 751c54db3a8267842bac4b1f95240b4b
+      internalID: -321749493
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Abogado_19
+      name: Persona_5_19
       rect:
         serializedVersion: 2
         x: 240
@@ -517,14 +517,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 46f0dbd93e6fb014e8ceb5cca68c15ba
-      internalID: 1989571883
+      spriteID: c78532c1dbd20f049bce6ce405b3d7bc
+      internalID: -471608476
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Abogado_20
+      name: Persona_5_20
       rect:
         serializedVersion: 2
         x: 256
@@ -538,14 +538,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5e2a7c96f14c67c4398db750380ed2df
-      internalID: -722480846
+      spriteID: af0f21b23a51a374d97a84931dcebfeb
+      internalID: 1121443857
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Abogado_21
+      name: Persona_5_21
       rect:
         serializedVersion: 2
         x: 272
@@ -559,14 +559,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d00b0e81638e46944b841447ecc2bcc5
-      internalID: -1584842187
+      spriteID: 857420369fa061548a83c1af5c35431b
+      internalID: 1879077668
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Abogado_22
+      name: Persona_5_22
       rect:
         serializedVersion: 2
         x: 288
@@ -580,14 +580,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1b4eb2c694e79d145b4b497d17663588
-      internalID: -790724564
+      spriteID: 0e920cd5739bce246a923b55ebf43bbb
+      internalID: 1956359895
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Abogado_23
+      name: Persona_5_23
       rect:
         serializedVersion: 2
         x: 304
@@ -601,14 +601,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a55f32e520f6d8f40b4890e09fecadf9
-      internalID: 1218104217
+      spriteID: 3583948d3a2b1434c90252f5120e75c2
+      internalID: -114886503
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Abogado_24
+      name: Persona_5_24
       rect:
         serializedVersion: 2
         x: 320
@@ -622,14 +622,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 46596c7dd9e39f44b8b37b043f16f5c4
-      internalID: -1687278827
+      spriteID: 7dc60b0ecf1b68646b7673827ee93067
+      internalID: -1751643490
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Abogado_25
+      name: Persona_5_25
       rect:
         serializedVersion: 2
         x: 336
@@ -643,14 +643,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6bf837c0cf0f0ed45a82ad059aeb3e39
-      internalID: -1893481638
+      spriteID: 40513e16ae2169347825f9e063b0d179
+      internalID: -193990277
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Abogado_26
+      name: Persona_5_26
       rect:
         serializedVersion: 2
         x: 352
@@ -664,14 +664,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2fb968b5bf397bb49aa30bf6be4c2d64
-      internalID: -1736042193
+      spriteID: 6839ab0fda2ff9f48b496dc22de24bf0
+      internalID: -1574807455
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Abogado_27
+      name: Persona_5_27
       rect:
         serializedVersion: 2
         x: 368
@@ -685,14 +685,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9d03db44420f61c4f8a5666e0db78f38
-      internalID: -983682966
+      spriteID: e369ae8e758633545a5c5eaa73055923
+      internalID: 785875855
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Abogado_28
+      name: Persona_5_28
       rect:
         serializedVersion: 2
         x: 0
@@ -706,14 +706,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3f8f077f206645346b1d38ae53574feb
-      internalID: -1938039282
+      spriteID: 9f8bdae28c142b4408568a0a46becd03
+      internalID: -1455958127
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Abogado_29
+      name: Persona_5_29
       rect:
         serializedVersion: 2
         x: 16
@@ -727,14 +727,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0b8fafb26a576944c905327dab22401a
-      internalID: -108076960
+      spriteID: d7d35e5d4f1a2fb4285570dbcee17da0
+      internalID: 574328739
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Abogado_30
+      name: Persona_5_30
       rect:
         serializedVersion: 2
         x: 32
@@ -748,14 +748,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9773f726b0095e241a74f65ee13be7b8
-      internalID: -858912875
+      spriteID: f3633b8fdec60984da56ed43a6cdf224
+      internalID: -1777233275
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Abogado_31
+      name: Persona_5_31
       rect:
         serializedVersion: 2
         x: 48
@@ -769,14 +769,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 43183a84fbe01c04a8724d8014b44bdf
-      internalID: -1680124528
+      spriteID: 3163362b401f2d34cb02089cce424910
+      internalID: 595915907
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Abogado_32
+      name: Persona_5_32
       rect:
         serializedVersion: 2
         x: 64
@@ -790,14 +790,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0dfd828e0b4b2f547b85e6ad05949568
-      internalID: -1921074949
+      spriteID: 6e72e19e65d4f784cbdc051ab27db463
+      internalID: -1113299457
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Abogado_33
+      name: Persona_5_33
       rect:
         serializedVersion: 2
         x: 80
@@ -811,14 +811,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8aba0f067cb8e7546956e42aa379133c
-      internalID: -773882709
+      spriteID: 20e12a46b4c14bd4a873ca40ebc6c797
+      internalID: 875455509
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Abogado_34
+      name: Persona_5_34
       rect:
         serializedVersion: 2
         x: 96
@@ -832,14 +832,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1f2358b2a034fad49b70446073137638
-      internalID: -1742740995
+      spriteID: 15514c8d3fc1cf0478f93f433666659d
+      internalID: -738373826
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Abogado_35
+      name: Persona_5_35
       rect:
         serializedVersion: 2
         x: 112
@@ -853,14 +853,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 410d01e5fc9fe0c47b8bed5f4b5e692f
-      internalID: -587677780
+      spriteID: 6e38f4feed8c8534fb737c45b40f6e24
+      internalID: 2082876936
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Abogado_36
+      name: Persona_5_36
       rect:
         serializedVersion: 2
         x: 128
@@ -874,14 +874,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 78ed460907a1f9242a4e9226498ed9e6
-      internalID: -218808387
+      spriteID: 4d7834e55bad5e24bb827d0581690074
+      internalID: 16027094
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Abogado_37
+      name: Persona_5_37
       rect:
         serializedVersion: 2
         x: 144
@@ -895,14 +895,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0fa158a0c777b5b49bfca1db46ded7b4
-      internalID: -1232217915
+      spriteID: 88b8ea1935d916d4a822c2c93c54f453
+      internalID: 199294386
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Abogado_38
+      name: Persona_5_38
       rect:
         serializedVersion: 2
         x: 160
@@ -916,14 +916,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bbbf9be34a8bbea4485aea170148f7d2
-      internalID: -1377823665
+      spriteID: 7b10eacd3cd5919498857868e998fc4a
+      internalID: -1454656397
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Abogado_39
+      name: Persona_5_39
       rect:
         serializedVersion: 2
         x: 176
@@ -937,14 +937,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 160563da48581204985e8dd4b0def5cf
-      internalID: -375076057
+      spriteID: c2c43c8b16f36fb4b837306d2238d825
+      internalID: -35510488
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Abogado_40
+      name: Persona_5_40
       rect:
         serializedVersion: 2
         x: 192
@@ -958,14 +958,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 82702e172ca66bc429d08b2887cc41ce
-      internalID: 1705670632
+      spriteID: a6db8ad6a55ba794a86ad7eab553efb0
+      internalID: 374964849
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Abogado_41
+      name: Persona_5_41
       rect:
         serializedVersion: 2
         x: 208
@@ -979,14 +979,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 96e9a7610388c8440910bd9a3c37bc17
-      internalID: 388128702
+      spriteID: d95ea7c24abb7fd4bb477607cb1dadfe
+      internalID: -61522522
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Abogado_42
+      name: Persona_5_42
       rect:
         serializedVersion: 2
         x: 224
@@ -1000,14 +1000,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d823da3f9e86d764b822fc987ea8b90e
-      internalID: -699565784
+      spriteID: d0ab5e1b7bf0cb2418b0e3bd27e187c2
+      internalID: -2078334935
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Abogado_43
+      name: Persona_5_43
       rect:
         serializedVersion: 2
         x: 240
@@ -1021,14 +1021,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 09243f0a07d493446bb6321ed8c6b9ce
-      internalID: -2132482925
+      spriteID: 7f4006ce368d8f948b41a9077c3b3b12
+      internalID: -1717134345
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Abogado_44
+      name: Persona_5_44
       rect:
         serializedVersion: 2
         x: 256
@@ -1042,14 +1042,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8ad6cd7a4d4401147924eb077680d5cf
-      internalID: 1883791384
+      spriteID: 7977199f5361db14bae881d91c1cbab6
+      internalID: -2000681720
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Abogado_45
+      name: Persona_5_45
       rect:
         serializedVersion: 2
         x: 272
@@ -1063,14 +1063,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 217aa847dfabfb248b88e1f846589683
-      internalID: 1978174739
+      spriteID: 5ef412c6e6b9aaf49b8a945dc4c287aa
+      internalID: -1930513218
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Abogado_46
+      name: Persona_5_46
       rect:
         serializedVersion: 2
         x: 288
@@ -1084,14 +1084,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d950f2cf96a5164438734843a738d75a
-      internalID: 323995341
+      spriteID: 3391ead72cbd64047b7629c38139da7f
+      internalID: 1741952438
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Abogado_47
+      name: Persona_5_47
       rect:
         serializedVersion: 2
         x: 304
@@ -1105,14 +1105,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a668659f37b5b604b9a5987825022f81
-      internalID: 1790968924
+      spriteID: dc81e519ec8e30c4f96ba098ca6fbde7
+      internalID: 992607800
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Abogado_48
+      name: Persona_5_48
       rect:
         serializedVersion: 2
         x: 320
@@ -1126,14 +1126,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d99c4969c4cb5244caf73941b78b4971
-      internalID: 1944006658
+      spriteID: 96053fffe48b4364e85590186b1f61e2
+      internalID: -1023324501
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Abogado_49
+      name: Persona_5_49
       rect:
         serializedVersion: 2
         x: 336
@@ -1147,14 +1147,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9f91c79ad5354344082920463bc335bd
-      internalID: -1087562997
+      spriteID: 3bf2025ef2a3c2f4aa9f3ec190384ed0
+      internalID: -815485373
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Abogado_50
+      name: Persona_5_50
       rect:
         serializedVersion: 2
         x: 352
@@ -1168,14 +1168,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 130bce931a1bf484fa684d7789218a6f
-      internalID: -1021431745
+      spriteID: 7d14fe2b89a68704e9848c8276c603c7
+      internalID: 1683570002
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Abogado_51
+      name: Persona_5_51
       rect:
         serializedVersion: 2
         x: 368
@@ -1189,8 +1189,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b9b871d188106e64083fb1651881e134
-      internalID: -422267666
+      spriteID: 7d80ced09bb278a4ca5de93fa9eb0091
+      internalID: -1392528940
       vertices: []
       indices: 
       edges: []
@@ -1206,58 +1206,58 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Abogado_29: -108076960
-      Abogado_43: -2132482925
-      Abogado_26: -1736042193
-      Abogado_23: 1218104217
-      Abogado_35: -587677780
-      Abogado_17: -296595430
-      Abogado_42: -699565784
-      Abogado_32: -1921074949
-      Abogado_5: 1994343964
-      Abogado_4: 332477947
-      Abogado_27: -983682966
-      Abogado_18: -89282285
-      Abogado_10: 2032404463
-      Abogado_0: 1725069629
-      Abogado_8: -1882429436
-      Abogado_30: -858912875
-      Abogado_46: 323995341
-      Abogado_50: -1021431745
-      Abogado_19: 1989571883
-      Abogado_3: 1675915978
-      Abogado_25: -1893481638
-      Abogado_14: 1048628560
-      Abogado_15: -1613050312
-      Abogado_31: -1680124528
-      Abogado_51: -422267666
-      Abogado_48: 1944006658
-      Abogado_41: 388128702
-      Abogado_6: 741890280
-      Abogado_13: -1614707261
-      Abogado_37: -1232217915
-      Abogado_28: -1938039282
-      Abogado_47: 1790968924
-      Abogado_16: 572592507
-      Abogado_20: -722480846
-      Abogado_22: -790724564
-      Abogado_44: 1883791384
-      Abogado_7: 221032567
-      Abogado_9: 1772910661
-      Abogado_21: -1584842187
-      Abogado_38: -1377823665
-      Abogado_1: -81704843
-      Abogado_11: -1607454206
-      Abogado_2: 1929840048
-      Abogado_24: -1687278827
-      Abogado_34: -1742740995
-      Abogado_49: -1087562997
-      Abogado_33: -773882709
-      Abogado_40: 1705670632
-      Abogado_45: 1978174739
-      Abogado_12: 678511578
-      Abogado_39: -375076057
-      Abogado_36: -218808387
+      Persona_5_23: -114886503
+      Persona_5_37: 199294386
+      Persona_5_13: -1203751772
+      Persona_5_0: -638437899
+      Persona_5_41: -61522522
+      Persona_5_24: -1751643490
+      Persona_5_10: 1371478883
+      Persona_5_43: -1717134345
+      Persona_5_1: -1523794937
+      Persona_5_21: 1879077668
+      Persona_5_17: -12202059
+      Persona_5_12: -953448379
+      Persona_5_51: -1392528940
+      Persona_5_44: -2000681720
+      Persona_5_4: 690835944
+      Persona_5_28: -1455958127
+      Persona_5_26: -1574807455
+      Persona_5_35: 2082876936
+      Persona_5_3: 382321891
+      Persona_5_47: 992607800
+      Persona_5_42: -2078334935
+      Persona_5_45: -1930513218
+      Persona_5_34: -738373826
+      Persona_5_9: 1975764038
+      Persona_5_40: 374964849
+      Persona_5_50: 1683570002
+      Persona_5_31: 595915907
+      Persona_5_14: -1456876232
+      Persona_5_46: 1741952438
+      Persona_5_27: 785875855
+      Persona_5_32: -1113299457
+      Persona_5_36: 16027094
+      Persona_5_48: -1023324501
+      Persona_5_33: 875455509
+      Persona_5_25: -193990277
+      Persona_5_8: 1962641779
+      Persona_5_49: -815485373
+      Persona_5_2: -103040007
+      Persona_5_20: 1121443857
+      Persona_5_15: 1918550460
+      Persona_5_19: -471608476
+      Persona_5_6: -389837501
+      Persona_5_5: -1165234602
+      Persona_5_11: 519287206
+      Persona_5_30: -1777233275
+      Persona_5_39: -35510488
+      Persona_5_22: 1956359895
+      Persona_5_7: 333850133
+      Persona_5_38: -1454656397
+      Persona_5_18: -321749493
+      Persona_5_16: -402987
+      Persona_5_29: 574328739
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

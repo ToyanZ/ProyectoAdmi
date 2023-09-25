@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 00c08b2450400c94aa2666d528a50e2b
+guid: ea7aa573520c8e24592d8c3fc60d0c74
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -104,7 +104,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Abogado_0
+      name: Awela_0
       rect:
         serializedVersion: 2
         x: 0
@@ -118,14 +118,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: baab6a2083225c949b39d1067d36d643
-      internalID: 1725069629
+      spriteID: 66084102e449d1a4f879cb974c822bb2
+      internalID: -1411903001
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Abogado_1
+      name: Awela_1
       rect:
         serializedVersion: 2
         x: 16
@@ -139,14 +139,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ab224c1c0ecb17e4891b918bf3c6095b
-      internalID: -81704843
+      spriteID: a4af91991140874428ff51ad3559dd16
+      internalID: -1194998302
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Abogado_2
+      name: Awela_2
       rect:
         serializedVersion: 2
         x: 32
@@ -160,14 +160,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ea0548adc3116e845a9e666bba41f3de
-      internalID: 1929840048
+      spriteID: 00ecd803b7b2a624fa0ff802c93ba245
+      internalID: -960413620
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Abogado_3
+      name: Awela_3
       rect:
         serializedVersion: 2
         x: 48
@@ -181,14 +181,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cc5508aeca7d3ca41980fd5376d576eb
-      internalID: 1675915978
+      spriteID: 67487e349a50542489cc0efb89c5ef4b
+      internalID: 527437775
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Abogado_4
+      name: Awela_4
       rect:
         serializedVersion: 2
         x: 0
@@ -202,14 +202,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2b51564de8f94b44d972e2bee61ba348
-      internalID: 332477947
+      spriteID: 7e7949980929ae1449d80cd18b35879e
+      internalID: -2141853369
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Abogado_5
+      name: Awela_5
       rect:
         serializedVersion: 2
         x: 16
@@ -223,14 +223,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d2896c75e488a484ca0a5e9b71fb8389
-      internalID: 1994343964
+      spriteID: 252505fcc4a6f774f99b8fcb40155df5
+      internalID: -1630875783
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Abogado_6
+      name: Awela_6
       rect:
         serializedVersion: 2
         x: 32
@@ -244,14 +244,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d1dc10dcd4f7bf24ba89ad75b229851a
-      internalID: 741890280
+      spriteID: 91a0444b011f0304985bca49f06cc910
+      internalID: -853031177
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Abogado_7
+      name: Awela_7
       rect:
         serializedVersion: 2
         x: 48
@@ -265,14 +265,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9921d9855a9e48a46b1ee3409ab9a33a
-      internalID: 221032567
+      spriteID: c94e3191161e92141afa4dabe0b5853a
+      internalID: -1758494106
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Abogado_8
+      name: Awela_8
       rect:
         serializedVersion: 2
         x: 64
@@ -286,14 +286,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0ec57010ccc4ea74c8b2832447c7be14
-      internalID: -1882429436
+      spriteID: 4819c2719a2f3a74a8aa0c307075f806
+      internalID: 1471924304
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Abogado_9
+      name: Awela_9
       rect:
         serializedVersion: 2
         x: 80
@@ -307,14 +307,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bca3845067e290846b1dee282fdad190
-      internalID: 1772910661
+      spriteID: 5ea35c72915f2b6448422338c4f84408
+      internalID: 1515141088
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Abogado_10
+      name: Awela_10
       rect:
         serializedVersion: 2
         x: 96
@@ -328,14 +328,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7647c00effe5c8c4e8bea83fd5f3a08b
-      internalID: 2032404463
+      spriteID: 7017728ef156bed4680dce82133bd881
+      internalID: -245192965
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Abogado_11
+      name: Awela_11
       rect:
         serializedVersion: 2
         x: 112
@@ -349,14 +349,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7660806b500b94843b5d9aa239016a9e
-      internalID: -1607454206
+      spriteID: 79372282f05cc9f499aaf52dbb080353
+      internalID: -2089564974
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Abogado_12
+      name: Awela_12
       rect:
         serializedVersion: 2
         x: 128
@@ -370,14 +370,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5298a2c52f09c9a4b95a5f2f6a028b57
-      internalID: 678511578
+      spriteID: 625fa12e6ab876944982ed81229deeef
+      internalID: -69959378
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Abogado_13
+      name: Awela_13
       rect:
         serializedVersion: 2
         x: 144
@@ -391,14 +391,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 844afebc81efaa94a9218afd1a621f83
-      internalID: -1614707261
+      spriteID: dd32f5b00918e78458ee314f25894e7b
+      internalID: -843873918
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Abogado_14
+      name: Awela_14
       rect:
         serializedVersion: 2
         x: 160
@@ -412,14 +412,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b3f295bffeabd614eb0c5d61645ef4e1
-      internalID: 1048628560
+      spriteID: 01f547d7d459bcb4c8d55db3dc900b85
+      internalID: -813357508
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Abogado_15
+      name: Awela_15
       rect:
         serializedVersion: 2
         x: 176
@@ -433,14 +433,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2d653368f4fc0c34db81eb2c4d242578
-      internalID: -1613050312
+      spriteID: c03097e0735dc8941b97c759604e6d02
+      internalID: 825107712
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Abogado_16
+      name: Awela_16
       rect:
         serializedVersion: 2
         x: 192
@@ -454,14 +454,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 20443147dd16a8b40bb66f064d6be822
-      internalID: 572592507
+      spriteID: cd0de6c4d28cb5f43ab21af78ddf7b71
+      internalID: -311113330
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Abogado_17
+      name: Awela_17
       rect:
         serializedVersion: 2
         x: 208
@@ -475,14 +475,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d6d8223980d8cdf4f8f09a53002fc977
-      internalID: -296595430
+      spriteID: 05e4d009f3b1d474791b4aae60a01738
+      internalID: -319527454
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Abogado_18
+      name: Awela_18
       rect:
         serializedVersion: 2
         x: 224
@@ -496,14 +496,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 02fb608ea829bea468f678e67472d207
-      internalID: -89282285
+      spriteID: 3e39c1916d3f1e940b5998bbdf2b6bbf
+      internalID: -1275754572
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Abogado_19
+      name: Awela_19
       rect:
         serializedVersion: 2
         x: 240
@@ -517,14 +517,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 46f0dbd93e6fb014e8ceb5cca68c15ba
-      internalID: 1989571883
+      spriteID: 08a8f40846d3b3a4a87fda58e2321728
+      internalID: -933024600
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Abogado_20
+      name: Awela_20
       rect:
         serializedVersion: 2
         x: 256
@@ -538,14 +538,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5e2a7c96f14c67c4398db750380ed2df
-      internalID: -722480846
+      spriteID: d4dd389c675abcf40992bd2f562f14fc
+      internalID: -1899437758
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Abogado_21
+      name: Awela_21
       rect:
         serializedVersion: 2
         x: 272
@@ -559,14 +559,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d00b0e81638e46944b841447ecc2bcc5
-      internalID: -1584842187
+      spriteID: 87c4f983b10e70b4ba60fbfc98770323
+      internalID: 880816405
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Abogado_22
+      name: Awela_22
       rect:
         serializedVersion: 2
         x: 288
@@ -580,14 +580,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1b4eb2c694e79d145b4b497d17663588
-      internalID: -790724564
+      spriteID: c4540aeaadf6d2146b586b7cd0d89b4b
+      internalID: 1754677909
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Abogado_23
+      name: Awela_23
       rect:
         serializedVersion: 2
         x: 304
@@ -601,14 +601,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a55f32e520f6d8f40b4890e09fecadf9
-      internalID: 1218104217
+      spriteID: cf7a4a614bacbee4b870cefb8a018711
+      internalID: 873367903
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Abogado_24
+      name: Awela_24
       rect:
         serializedVersion: 2
         x: 320
@@ -622,14 +622,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 46596c7dd9e39f44b8b37b043f16f5c4
-      internalID: -1687278827
+      spriteID: 47d96d5d65fe110489df7620090ef6c6
+      internalID: 887247098
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Abogado_25
+      name: Awela_25
       rect:
         serializedVersion: 2
         x: 336
@@ -643,14 +643,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6bf837c0cf0f0ed45a82ad059aeb3e39
-      internalID: -1893481638
+      spriteID: c07a8a97f85341641b6c8eb4fc82a8ea
+      internalID: 1213686465
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Abogado_26
+      name: Awela_26
       rect:
         serializedVersion: 2
         x: 352
@@ -664,14 +664,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2fb968b5bf397bb49aa30bf6be4c2d64
-      internalID: -1736042193
+      spriteID: 16d72e9b30451984fbf44c627f5a9d79
+      internalID: 1523763298
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Abogado_27
+      name: Awela_27
       rect:
         serializedVersion: 2
         x: 368
@@ -685,14 +685,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9d03db44420f61c4f8a5666e0db78f38
-      internalID: -983682966
+      spriteID: 414883b3c93b8ea48830d1e092578f7e
+      internalID: -1018558631
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Abogado_28
+      name: Awela_28
       rect:
         serializedVersion: 2
         x: 0
@@ -706,14 +706,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3f8f077f206645346b1d38ae53574feb
-      internalID: -1938039282
+      spriteID: 742bd6d569c578743b8f3d461cf1e1a9
+      internalID: 1444190611
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Abogado_29
+      name: Awela_29
       rect:
         serializedVersion: 2
         x: 16
@@ -727,14 +727,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0b8fafb26a576944c905327dab22401a
-      internalID: -108076960
+      spriteID: ef041e19f7838d64881d10c993a5cca1
+      internalID: -1636981040
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Abogado_30
+      name: Awela_30
       rect:
         serializedVersion: 2
         x: 32
@@ -748,14 +748,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9773f726b0095e241a74f65ee13be7b8
-      internalID: -858912875
+      spriteID: 9566d04489b4d434cb2354a66b4bc283
+      internalID: -2054456009
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Abogado_31
+      name: Awela_31
       rect:
         serializedVersion: 2
         x: 48
@@ -769,14 +769,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 43183a84fbe01c04a8724d8014b44bdf
-      internalID: -1680124528
+      spriteID: e1edf2dc44e1d2845b199222307f78c0
+      internalID: -560642016
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Abogado_32
+      name: Awela_32
       rect:
         serializedVersion: 2
         x: 64
@@ -790,14 +790,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0dfd828e0b4b2f547b85e6ad05949568
-      internalID: -1921074949
+      spriteID: ca2acbdfab0b3964288b888257527e4f
+      internalID: 730834985
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Abogado_33
+      name: Awela_33
       rect:
         serializedVersion: 2
         x: 80
@@ -811,14 +811,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8aba0f067cb8e7546956e42aa379133c
-      internalID: -773882709
+      spriteID: 7799729825fbd2a49939a608c8fb13e5
+      internalID: 1950560224
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Abogado_34
+      name: Awela_34
       rect:
         serializedVersion: 2
         x: 96
@@ -832,14 +832,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1f2358b2a034fad49b70446073137638
-      internalID: -1742740995
+      spriteID: a6108070b6f9dec48891701f27b5abd8
+      internalID: 1344088235
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Abogado_35
+      name: Awela_35
       rect:
         serializedVersion: 2
         x: 112
@@ -853,14 +853,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 410d01e5fc9fe0c47b8bed5f4b5e692f
-      internalID: -587677780
+      spriteID: f88b07c3225a45a4bb4e1f54b33eccbc
+      internalID: 832294501
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Abogado_36
+      name: Awela_36
       rect:
         serializedVersion: 2
         x: 128
@@ -874,14 +874,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 78ed460907a1f9242a4e9226498ed9e6
-      internalID: -218808387
+      spriteID: 397a31485fd8cbe4b8a11f2f479212bd
+      internalID: -1781716567
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Abogado_37
+      name: Awela_37
       rect:
         serializedVersion: 2
         x: 144
@@ -895,14 +895,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0fa158a0c777b5b49bfca1db46ded7b4
-      internalID: -1232217915
+      spriteID: a2b1879308bf1cc48bffbb8a89c38321
+      internalID: -882551294
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Abogado_38
+      name: Awela_38
       rect:
         serializedVersion: 2
         x: 160
@@ -916,14 +916,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bbbf9be34a8bbea4485aea170148f7d2
-      internalID: -1377823665
+      spriteID: c8d6e3d52da5e744c999949878e7e67f
+      internalID: -1313907099
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Abogado_39
+      name: Awela_39
       rect:
         serializedVersion: 2
         x: 176
@@ -937,14 +937,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 160563da48581204985e8dd4b0def5cf
-      internalID: -375076057
+      spriteID: 0fc0133a4bb72984680250ec2c3e5f46
+      internalID: 1877823304
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Abogado_40
+      name: Awela_40
       rect:
         serializedVersion: 2
         x: 192
@@ -958,14 +958,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 82702e172ca66bc429d08b2887cc41ce
-      internalID: 1705670632
+      spriteID: 18675acc472a49846972ff6b4c15b645
+      internalID: -1325709613
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Abogado_41
+      name: Awela_41
       rect:
         serializedVersion: 2
         x: 208
@@ -979,14 +979,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 96e9a7610388c8440910bd9a3c37bc17
-      internalID: 388128702
+      spriteID: 9c9ed5b6e0cb03a4dadfb7c676b2265c
+      internalID: -563163059
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Abogado_42
+      name: Awela_42
       rect:
         serializedVersion: 2
         x: 224
@@ -1000,14 +1000,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d823da3f9e86d764b822fc987ea8b90e
-      internalID: -699565784
+      spriteID: d4c6d77ccbc94474da7913bb5f0fa262
+      internalID: 1677707321
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Abogado_43
+      name: Awela_43
       rect:
         serializedVersion: 2
         x: 240
@@ -1021,14 +1021,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 09243f0a07d493446bb6321ed8c6b9ce
-      internalID: -2132482925
+      spriteID: 3e2a2e550a72b6c468684e1cccb43ab1
+      internalID: -1634701035
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Abogado_44
+      name: Awela_44
       rect:
         serializedVersion: 2
         x: 256
@@ -1042,14 +1042,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8ad6cd7a4d4401147924eb077680d5cf
-      internalID: 1883791384
+      spriteID: 3578f689863b2134489992e868a39175
+      internalID: 115696749
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Abogado_45
+      name: Awela_45
       rect:
         serializedVersion: 2
         x: 272
@@ -1063,14 +1063,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 217aa847dfabfb248b88e1f846589683
-      internalID: 1978174739
+      spriteID: 31e7772198175aa4fa67879a55aa3385
+      internalID: -1096746912
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Abogado_46
+      name: Awela_46
       rect:
         serializedVersion: 2
         x: 288
@@ -1084,14 +1084,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d950f2cf96a5164438734843a738d75a
-      internalID: 323995341
+      spriteID: 931c69b45503775418419f9fc94f70af
+      internalID: 592972833
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Abogado_47
+      name: Awela_47
       rect:
         serializedVersion: 2
         x: 304
@@ -1105,14 +1105,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a668659f37b5b604b9a5987825022f81
-      internalID: 1790968924
+      spriteID: c530aa2109cc1784ea03d1daed046999
+      internalID: -864533020
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Abogado_48
+      name: Awela_48
       rect:
         serializedVersion: 2
         x: 320
@@ -1126,14 +1126,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d99c4969c4cb5244caf73941b78b4971
-      internalID: 1944006658
+      spriteID: 59fd2986bb0bba8419ffe1caa095c9e4
+      internalID: -1759767523
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Abogado_49
+      name: Awela_49
       rect:
         serializedVersion: 2
         x: 336
@@ -1147,14 +1147,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9f91c79ad5354344082920463bc335bd
-      internalID: -1087562997
+      spriteID: 63bc5c1f4d4ace24984938e06be0efc0
+      internalID: 1695749337
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Abogado_50
+      name: Awela_50
       rect:
         serializedVersion: 2
         x: 352
@@ -1168,14 +1168,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 130bce931a1bf484fa684d7789218a6f
-      internalID: -1021431745
+      spriteID: d50624dafcf5cf049a92431ffb4009fa
+      internalID: -688683308
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Abogado_51
+      name: Awela_51
       rect:
         serializedVersion: 2
         x: 368
@@ -1189,8 +1189,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b9b871d188106e64083fb1651881e134
-      internalID: -422267666
+      spriteID: 7649e266976c39447bbf2f613a8f87d3
+      internalID: 1379082154
       vertices: []
       indices: 
       edges: []
@@ -1206,58 +1206,58 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Abogado_29: -108076960
-      Abogado_43: -2132482925
-      Abogado_26: -1736042193
-      Abogado_23: 1218104217
-      Abogado_35: -587677780
-      Abogado_17: -296595430
-      Abogado_42: -699565784
-      Abogado_32: -1921074949
-      Abogado_5: 1994343964
-      Abogado_4: 332477947
-      Abogado_27: -983682966
-      Abogado_18: -89282285
-      Abogado_10: 2032404463
-      Abogado_0: 1725069629
-      Abogado_8: -1882429436
-      Abogado_30: -858912875
-      Abogado_46: 323995341
-      Abogado_50: -1021431745
-      Abogado_19: 1989571883
-      Abogado_3: 1675915978
-      Abogado_25: -1893481638
-      Abogado_14: 1048628560
-      Abogado_15: -1613050312
-      Abogado_31: -1680124528
-      Abogado_51: -422267666
-      Abogado_48: 1944006658
-      Abogado_41: 388128702
-      Abogado_6: 741890280
-      Abogado_13: -1614707261
-      Abogado_37: -1232217915
-      Abogado_28: -1938039282
-      Abogado_47: 1790968924
-      Abogado_16: 572592507
-      Abogado_20: -722480846
-      Abogado_22: -790724564
-      Abogado_44: 1883791384
-      Abogado_7: 221032567
-      Abogado_9: 1772910661
-      Abogado_21: -1584842187
-      Abogado_38: -1377823665
-      Abogado_1: -81704843
-      Abogado_11: -1607454206
-      Abogado_2: 1929840048
-      Abogado_24: -1687278827
-      Abogado_34: -1742740995
-      Abogado_49: -1087562997
-      Abogado_33: -773882709
-      Abogado_40: 1705670632
-      Abogado_45: 1978174739
-      Abogado_12: 678511578
-      Abogado_39: -375076057
-      Abogado_36: -218808387
+      Awela_14: -813357508
+      Awela_1: -1194998302
+      Awela_22: 1754677909
+      Awela_20: -1899437758
+      Awela_16: -311113330
+      Awela_21: 880816405
+      Awela_34: 1344088235
+      Awela_38: -1313907099
+      Awela_35: 832294501
+      Awela_15: 825107712
+      Awela_44: 115696749
+      Awela_7: -1758494106
+      Awela_17: -319527454
+      Awela_27: -1018558631
+      Awela_45: -1096746912
+      Awela_12: -69959378
+      Awela_51: 1379082154
+      Awela_18: -1275754572
+      Awela_24: 887247098
+      Awela_39: 1877823304
+      Awela_6: -853031177
+      Awela_13: -843873918
+      Awela_3: 527437775
+      Awela_26: 1523763298
+      Awela_9: 1515141088
+      Awela_40: -1325709613
+      Awela_47: -864533020
+      Awela_25: 1213686465
+      Awela_23: 873367903
+      Awela_4: -2141853369
+      Awela_0: -1411903001
+      Awela_33: 1950560224
+      Awela_10: -245192965
+      Awela_41: -563163059
+      Awela_36: -1781716567
+      Awela_11: -2089564974
+      Awela_42: 1677707321
+      Awela_30: -2054456009
+      Awela_8: 1471924304
+      Awela_28: 1444190611
+      Awela_46: 592972833
+      Awela_32: 730834985
+      Awela_29: -1636981040
+      Awela_43: -1634701035
+      Awela_49: 1695749337
+      Awela_2: -960413620
+      Awela_5: -1630875783
+      Awela_31: -560642016
+      Awela_19: -933024600
+      Awela_50: -688683308
+      Awela_48: -1759767523
+      Awela_37: -882551294
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

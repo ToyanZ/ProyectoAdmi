@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: ea7aa573520c8e24592d8c3fc60d0c74
+guid: 05c8853b69a211946a98f3f89cc62d47
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -104,7 +104,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Awela_0
+      name: DinoKid_1_0
       rect:
         serializedVersion: 2
         x: 0
@@ -118,14 +118,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 66084102e449d1a4f879cb974c822bb2
-      internalID: -1411903001
+      spriteID: 77e715afcaa2c624f8360ca4578317c7
+      internalID: -541026031
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Awela_1
+      name: DinoKid_1_1
       rect:
         serializedVersion: 2
         x: 16
@@ -139,14 +139,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a4af91991140874428ff51ad3559dd16
-      internalID: -1194998302
+      spriteID: a87035b8ad152954db35c023fa486804
+      internalID: -1163090
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Awela_2
+      name: DinoKid_1_2
       rect:
         serializedVersion: 2
         x: 32
@@ -160,14 +160,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 00ecd803b7b2a624fa0ff802c93ba245
-      internalID: -960413620
+      spriteID: 69f91487056aea54285de652125d53fd
+      internalID: 445093445
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Awela_3
+      name: DinoKid_1_3
       rect:
         serializedVersion: 2
         x: 48
@@ -181,14 +181,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 67487e349a50542489cc0efb89c5ef4b
-      internalID: 527437775
+      spriteID: 0c95e1ab74ca657479cf6afc09e016a4
+      internalID: -709662260
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Awela_4
+      name: DinoKid_1_4
       rect:
         serializedVersion: 2
         x: 0
@@ -202,14 +202,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7e7949980929ae1449d80cd18b35879e
-      internalID: -2141853369
+      spriteID: f1ba75261dfba4f43b94b66445cbbb7a
+      internalID: 1002217345
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Awela_5
+      name: DinoKid_1_5
       rect:
         serializedVersion: 2
         x: 16
@@ -223,14 +223,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 252505fcc4a6f774f99b8fcb40155df5
-      internalID: -1630875783
+      spriteID: 8abc0999f3b413046b86e4adb2b5004c
+      internalID: -1779262478
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Awela_6
+      name: DinoKid_1_6
       rect:
         serializedVersion: 2
         x: 32
@@ -244,14 +244,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 91a0444b011f0304985bca49f06cc910
-      internalID: -853031177
+      spriteID: b58ebaa1cbc60be4d807f9eb82e6eda3
+      internalID: 381133290
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Awela_7
+      name: DinoKid_1_7
       rect:
         serializedVersion: 2
         x: 48
@@ -265,14 +265,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c94e3191161e92141afa4dabe0b5853a
-      internalID: -1758494106
+      spriteID: e11c23b7f37344545af2cd142d773486
+      internalID: -1364278382
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Awela_8
+      name: DinoKid_1_8
       rect:
         serializedVersion: 2
         x: 64
@@ -286,14 +286,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4819c2719a2f3a74a8aa0c307075f806
-      internalID: 1471924304
+      spriteID: b762f6c226c36e94aaacaf6d4216855c
+      internalID: -472254381
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Awela_9
+      name: DinoKid_1_9
       rect:
         serializedVersion: 2
         x: 80
@@ -307,14 +307,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5ea35c72915f2b6448422338c4f84408
-      internalID: 1515141088
+      spriteID: 3d1633949f50d1545aa873d5a60fc4f7
+      internalID: 1719858525
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Awela_10
+      name: DinoKid_1_10
       rect:
         serializedVersion: 2
         x: 96
@@ -328,14 +328,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7017728ef156bed4680dce82133bd881
-      internalID: -245192965
+      spriteID: 8ebec3a33c60f9a4387a482c04f671e7
+      internalID: 1526286428
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Awela_11
+      name: DinoKid_1_11
       rect:
         serializedVersion: 2
         x: 112
@@ -349,14 +349,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 79372282f05cc9f499aaf52dbb080353
-      internalID: -2089564974
+      spriteID: 9a75328c34fba0e4fb8fe1f6e7cda22a
+      internalID: 1946771347
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Awela_12
+      name: DinoKid_1_12
       rect:
         serializedVersion: 2
         x: 128
@@ -370,14 +370,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 625fa12e6ab876944982ed81229deeef
-      internalID: -69959378
+      spriteID: 071155d7adb8fd64286af6ce64f998ed
+      internalID: -1533241050
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Awela_13
+      name: DinoKid_1_13
       rect:
         serializedVersion: 2
         x: 144
@@ -391,14 +391,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: dd32f5b00918e78458ee314f25894e7b
-      internalID: -843873918
+      spriteID: 4583b9cd473209645bcb8d386348fb92
+      internalID: -1946063689
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Awela_14
+      name: DinoKid_1_14
       rect:
         serializedVersion: 2
         x: 160
@@ -412,14 +412,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 01f547d7d459bcb4c8d55db3dc900b85
-      internalID: -813357508
+      spriteID: 0d3fa77ceabdd0041963bae93e1dba4d
+      internalID: 150693416
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Awela_15
+      name: DinoKid_1_15
       rect:
         serializedVersion: 2
         x: 176
@@ -433,14 +433,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c03097e0735dc8941b97c759604e6d02
-      internalID: 825107712
+      spriteID: 4852e3e54d8690446a0a5a2859524568
+      internalID: -265832421
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Awela_16
+      name: DinoKid_1_16
       rect:
         serializedVersion: 2
         x: 192
@@ -454,14 +454,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cd0de6c4d28cb5f43ab21af78ddf7b71
-      internalID: -311113330
+      spriteID: 6d1c3b9a0ce4b5143aaa9482bd90984e
+      internalID: -672944454
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Awela_17
+      name: DinoKid_1_17
       rect:
         serializedVersion: 2
         x: 208
@@ -475,14 +475,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 05e4d009f3b1d474791b4aae60a01738
-      internalID: -319527454
+      spriteID: a5c6689ed978e154f8e326e91416f650
+      internalID: 300691485
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Awela_18
+      name: DinoKid_1_18
       rect:
         serializedVersion: 2
         x: 224
@@ -496,14 +496,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3e39c1916d3f1e940b5998bbdf2b6bbf
-      internalID: -1275754572
+      spriteID: cc7ab3a2d105f484e870bff43e5fbaa6
+      internalID: -693409276
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Awela_19
+      name: DinoKid_1_19
       rect:
         serializedVersion: 2
         x: 240
@@ -517,14 +517,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 08a8f40846d3b3a4a87fda58e2321728
-      internalID: -933024600
+      spriteID: e1239db729f5740438290ecf771e5cfa
+      internalID: -1180428244
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Awela_20
+      name: DinoKid_1_20
       rect:
         serializedVersion: 2
         x: 256
@@ -538,14 +538,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d4dd389c675abcf40992bd2f562f14fc
-      internalID: -1899437758
+      spriteID: 4a2f2b9b84684e640851e5154191e2f5
+      internalID: -587101976
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Awela_21
+      name: DinoKid_1_21
       rect:
         serializedVersion: 2
         x: 272
@@ -559,14 +559,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 87c4f983b10e70b4ba60fbfc98770323
-      internalID: 880816405
+      spriteID: 5549924ccb9341149875ec1f55bb0193
+      internalID: 1296418261
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Awela_22
+      name: DinoKid_1_22
       rect:
         serializedVersion: 2
         x: 288
@@ -580,14 +580,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c4540aeaadf6d2146b586b7cd0d89b4b
-      internalID: 1754677909
+      spriteID: 0a34a220089d5bf4992220eb4efbeba2
+      internalID: -311325439
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Awela_23
+      name: DinoKid_1_23
       rect:
         serializedVersion: 2
         x: 304
@@ -601,14 +601,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cf7a4a614bacbee4b870cefb8a018711
-      internalID: 873367903
+      spriteID: 496587c0713e5884bbbc94f1b7f2b4df
+      internalID: -1202146649
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Awela_24
+      name: DinoKid_1_24
       rect:
         serializedVersion: 2
         x: 320
@@ -622,14 +622,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 47d96d5d65fe110489df7620090ef6c6
-      internalID: 887247098
+      spriteID: 36ae73d3eb82a804ebbadebb7bff54cd
+      internalID: -2003150808
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Awela_25
+      name: DinoKid_1_25
       rect:
         serializedVersion: 2
         x: 336
@@ -643,14 +643,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c07a8a97f85341641b6c8eb4fc82a8ea
-      internalID: 1213686465
+      spriteID: 13a6693a8b9de904dad65fd9afa74bd1
+      internalID: 1165147718
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Awela_26
+      name: DinoKid_1_26
       rect:
         serializedVersion: 2
         x: 352
@@ -664,14 +664,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 16d72e9b30451984fbf44c627f5a9d79
-      internalID: 1523763298
+      spriteID: 66ebe3dbb04b9844b9819ebcaefe20e4
+      internalID: -88133800
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Awela_27
+      name: DinoKid_1_27
       rect:
         serializedVersion: 2
         x: 368
@@ -685,14 +685,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 414883b3c93b8ea48830d1e092578f7e
-      internalID: -1018558631
+      spriteID: 40575e7eca351f148b79b2f420c7677f
+      internalID: -595561470
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Awela_28
+      name: DinoKid_1_28
       rect:
         serializedVersion: 2
         x: 0
@@ -706,14 +706,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 742bd6d569c578743b8f3d461cf1e1a9
-      internalID: 1444190611
+      spriteID: 06466814d4e2f4a4887789c2bec867ff
+      internalID: -1030883162
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Awela_29
+      name: DinoKid_1_29
       rect:
         serializedVersion: 2
         x: 16
@@ -727,14 +727,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ef041e19f7838d64881d10c993a5cca1
-      internalID: -1636981040
+      spriteID: ff6f198454841914f81aa556f785b53f
+      internalID: -1802043262
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Awela_30
+      name: DinoKid_1_30
       rect:
         serializedVersion: 2
         x: 32
@@ -748,14 +748,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9566d04489b4d434cb2354a66b4bc283
-      internalID: -2054456009
+      spriteID: 1e350acd140fadd4bbf88c9279bcd5b1
+      internalID: -483402932
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Awela_31
+      name: DinoKid_1_31
       rect:
         serializedVersion: 2
         x: 48
@@ -769,14 +769,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e1edf2dc44e1d2845b199222307f78c0
-      internalID: -560642016
+      spriteID: aca3211df9f5374458566dbafb904f9a
+      internalID: 1736489395
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Awela_32
+      name: DinoKid_1_32
       rect:
         serializedVersion: 2
         x: 64
@@ -790,14 +790,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ca2acbdfab0b3964288b888257527e4f
-      internalID: 730834985
+      spriteID: 4f9af05ef520222459de4bd97a641908
+      internalID: 923072837
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Awela_33
+      name: DinoKid_1_33
       rect:
         serializedVersion: 2
         x: 80
@@ -811,14 +811,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7799729825fbd2a49939a608c8fb13e5
-      internalID: 1950560224
+      spriteID: c0100e55748161b4bbb7757ba0b998a6
+      internalID: 491066334
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Awela_34
+      name: DinoKid_1_34
       rect:
         serializedVersion: 2
         x: 96
@@ -832,14 +832,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a6108070b6f9dec48891701f27b5abd8
-      internalID: 1344088235
+      spriteID: c611e0afd06c69b4cb21c61bb81a5d2e
+      internalID: -938441082
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Awela_35
+      name: DinoKid_1_35
       rect:
         serializedVersion: 2
         x: 112
@@ -853,14 +853,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f88b07c3225a45a4bb4e1f54b33eccbc
-      internalID: 832294501
+      spriteID: e335065b37de0144c980560b96263b08
+      internalID: -1342148096
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Awela_36
+      name: DinoKid_1_36
       rect:
         serializedVersion: 2
         x: 128
@@ -874,14 +874,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 397a31485fd8cbe4b8a11f2f479212bd
-      internalID: -1781716567
+      spriteID: c85b969150403374fb7c4bd04419b91c
+      internalID: -1098543754
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Awela_37
+      name: DinoKid_1_37
       rect:
         serializedVersion: 2
         x: 144
@@ -895,14 +895,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a2b1879308bf1cc48bffbb8a89c38321
-      internalID: -882551294
+      spriteID: 9d348d89915504d4c88ef1268cbe0838
+      internalID: -23605208
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Awela_38
+      name: DinoKid_1_38
       rect:
         serializedVersion: 2
         x: 160
@@ -916,14 +916,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c8d6e3d52da5e744c999949878e7e67f
-      internalID: -1313907099
+      spriteID: 7359abf94b76f9b41b79d1c7bac741d6
+      internalID: 1215206257
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Awela_39
+      name: DinoKid_1_39
       rect:
         serializedVersion: 2
         x: 176
@@ -937,14 +937,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0fc0133a4bb72984680250ec2c3e5f46
-      internalID: 1877823304
+      spriteID: 6bea0903b6f6cf04a8536af3008922b7
+      internalID: -1169994721
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Awela_40
+      name: DinoKid_1_40
       rect:
         serializedVersion: 2
         x: 192
@@ -958,14 +958,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 18675acc472a49846972ff6b4c15b645
-      internalID: -1325709613
+      spriteID: 1dbeea0f38b4a7d448a759ee74ec45fd
+      internalID: 1132600029
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Awela_41
+      name: DinoKid_1_41
       rect:
         serializedVersion: 2
         x: 208
@@ -979,14 +979,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9c9ed5b6e0cb03a4dadfb7c676b2265c
-      internalID: -563163059
+      spriteID: d47d5b286a7c25f45841b3311f6326bb
+      internalID: 2070297407
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Awela_42
+      name: DinoKid_1_42
       rect:
         serializedVersion: 2
         x: 224
@@ -1000,14 +1000,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d4c6d77ccbc94474da7913bb5f0fa262
-      internalID: 1677707321
+      spriteID: 559d5d0c902c84241a685bc0769e8e5b
+      internalID: -86032030
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Awela_43
+      name: DinoKid_1_43
       rect:
         serializedVersion: 2
         x: 240
@@ -1021,14 +1021,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3e2a2e550a72b6c468684e1cccb43ab1
-      internalID: -1634701035
+      spriteID: f55cf72b94bdc1a4290a803bcbb87298
+      internalID: 1334391676
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Awela_44
+      name: DinoKid_1_44
       rect:
         serializedVersion: 2
         x: 256
@@ -1042,14 +1042,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3578f689863b2134489992e868a39175
-      internalID: 115696749
+      spriteID: bd6e1bd9a204b97429ec2849cd2b0bac
+      internalID: 1308972955
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Awela_45
+      name: DinoKid_1_45
       rect:
         serializedVersion: 2
         x: 272
@@ -1063,14 +1063,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 31e7772198175aa4fa67879a55aa3385
-      internalID: -1096746912
+      spriteID: c99bc0e0952b0274999eebaab46ed95e
+      internalID: 1840208195
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Awela_46
+      name: DinoKid_1_46
       rect:
         serializedVersion: 2
         x: 288
@@ -1084,14 +1084,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 931c69b45503775418419f9fc94f70af
-      internalID: 592972833
+      spriteID: bdacf79edfbf37e4398797e87d3c69fa
+      internalID: 981118978
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Awela_47
+      name: DinoKid_1_47
       rect:
         serializedVersion: 2
         x: 304
@@ -1105,14 +1105,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c530aa2109cc1784ea03d1daed046999
-      internalID: -864533020
+      spriteID: ad9525d63fd84a54eb73d2731338f7ce
+      internalID: -411302266
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Awela_48
+      name: DinoKid_1_48
       rect:
         serializedVersion: 2
         x: 320
@@ -1126,14 +1126,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 59fd2986bb0bba8419ffe1caa095c9e4
-      internalID: -1759767523
+      spriteID: c190b8cf1d3d19b4a8924868938d1ac2
+      internalID: 1485434062
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Awela_49
+      name: DinoKid_1_49
       rect:
         serializedVersion: 2
         x: 336
@@ -1147,14 +1147,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 63bc5c1f4d4ace24984938e06be0efc0
-      internalID: 1695749337
+      spriteID: 7089f5cdf79d4004897ab7a1d74072d9
+      internalID: -44144095
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Awela_50
+      name: DinoKid_1_50
       rect:
         serializedVersion: 2
         x: 352
@@ -1168,14 +1168,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d50624dafcf5cf049a92431ffb4009fa
-      internalID: -688683308
+      spriteID: c5941bd46c48b8a40acf39247d442b61
+      internalID: -51947763
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Awela_51
+      name: DinoKid_1_51
       rect:
         serializedVersion: 2
         x: 368
@@ -1189,8 +1189,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7649e266976c39447bbf2f613a8f87d3
-      internalID: 1379082154
+      spriteID: 5551980484ab96a4ca8b13f72e2fc6a8
+      internalID: 1356651191
       vertices: []
       indices: 
       edges: []
@@ -1206,58 +1206,58 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Awela_14: -813357508
-      Awela_1: -1194998302
-      Awela_22: 1754677909
-      Awela_20: -1899437758
-      Awela_16: -311113330
-      Awela_21: 880816405
-      Awela_34: 1344088235
-      Awela_38: -1313907099
-      Awela_35: 832294501
-      Awela_15: 825107712
-      Awela_44: 115696749
-      Awela_7: -1758494106
-      Awela_17: -319527454
-      Awela_27: -1018558631
-      Awela_45: -1096746912
-      Awela_12: -69959378
-      Awela_51: 1379082154
-      Awela_18: -1275754572
-      Awela_24: 887247098
-      Awela_39: 1877823304
-      Awela_6: -853031177
-      Awela_3: 527437775
-      Awela_9: 1515141088
-      Awela_13: -843873918
-      Awela_40: -1325709613
-      Awela_26: 1523763298
-      Awela_47: -864533020
-      Awela_25: 1213686465
-      Awela_23: 873367903
-      Awela_4: -2141853369
-      Awela_0: -1411903001
-      Awela_33: 1950560224
-      Awela_10: -245192965
-      Awela_41: -563163059
-      Awela_36: -1781716567
-      Awela_11: -2089564974
-      Awela_42: 1677707321
-      Awela_30: -2054456009
-      Awela_8: 1471924304
-      Awela_28: 1444190611
-      Awela_46: 592972833
-      Awela_32: 730834985
-      Awela_29: -1636981040
-      Awela_43: -1634701035
-      Awela_49: 1695749337
-      Awela_2: -960413620
-      Awela_5: -1630875783
-      Awela_31: -560642016
-      Awela_19: -933024600
-      Awela_50: -688683308
-      Awela_48: -1759767523
-      Awela_37: -882551294
+      DinoKid_1_11: 1946771347
+      DinoKid_1_4: 1002217345
+      DinoKid_1_7: -1364278382
+      DinoKid_1_21: 1296418261
+      DinoKid_1_3: -709662260
+      DinoKid_1_5: -1779262478
+      DinoKid_1_38: 1215206257
+      DinoKid_1_48: 1485434062
+      DinoKid_1_6: 381133290
+      DinoKid_1_30: -483402932
+      DinoKid_1_23: -1202146649
+      DinoKid_1_34: -938441082
+      DinoKid_1_39: -1169994721
+      DinoKid_1_45: 1840208195
+      DinoKid_1_29: -1802043262
+      DinoKid_1_0: -541026031
+      DinoKid_1_18: -693409276
+      DinoKid_1_27: -595561470
+      DinoKid_1_36: -1098543754
+      DinoKid_1_43: 1334391676
+      DinoKid_1_47: -411302266
+      DinoKid_1_2: 445093445
+      DinoKid_1_9: 1719858525
+      DinoKid_1_41: 2070297407
+      DinoKid_1_51: 1356651191
+      DinoKid_1_46: 981118978
+      DinoKid_1_1: -1163090
+      DinoKid_1_15: -265832421
+      DinoKid_1_8: -472254381
+      DinoKid_1_13: -1946063689
+      DinoKid_1_17: 300691485
+      DinoKid_1_28: -1030883162
+      DinoKid_1_12: -1533241050
+      DinoKid_1_14: 150693416
+      DinoKid_1_16: -672944454
+      DinoKid_1_44: 1308972955
+      DinoKid_1_31: 1736489395
+      DinoKid_1_19: -1180428244
+      DinoKid_1_24: -2003150808
+      DinoKid_1_40: 1132600029
+      DinoKid_1_26: -88133800
+      DinoKid_1_32: 923072837
+      DinoKid_1_25: 1165147718
+      DinoKid_1_49: -44144095
+      DinoKid_1_42: -86032030
+      DinoKid_1_20: -587101976
+      DinoKid_1_22: -311325439
+      DinoKid_1_33: 491066334
+      DinoKid_1_10: 1526286428
+      DinoKid_1_50: -51947763
+      DinoKid_1_35: -1342148096
+      DinoKid_1_37: -23605208
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
