@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using static UnityEngine.GraphicsBuffer;
 
@@ -17,9 +18,13 @@ public class CameraTracking : MonoBehaviour
     [Space(10)]
     [Range(0f, 1f)][SerializeField] private float smoothingX = 0.3f;
     [Range(0f, 1f)][SerializeField] private float smoothingY = 0.3f;
+    [Range(0f, 1f)][SerializeField] private float smoothingGoTo = 0.3f;
 
     [Space(5)]
     [Range(0f, 1f)][SerializeField] private float relativeSmoothing = 0.3f;
+
+    [Space(5)]
+    public AnimationCurve animationCurve;
 
     [Space(20)]
     [SerializeField] private bool trackingEnabled = true;
@@ -32,6 +37,7 @@ public class CameraTracking : MonoBehaviour
     private Vector3 relVelocityY = Vector3.zero;
     private float z;
     
+    private Vector2 refVelocity = Vector2.zero;
 
     private void Start()
     {
@@ -98,7 +104,24 @@ public class CameraTracking : MonoBehaviour
         trackingEnabled = true;
     }
 
+    public void GoTo(GameObject go)
+    {
+        StartCoroutine(GoToIE(go));
+    }
+    IEnumerator GoToIE(GameObject go)
+    {
+        Vector3 start = camController.tCamera.transform.position;
+        Vector3 end = go.transform.position;
+        float time = 0;
+        while(time < 0.5f)
+        {
+            time += Time.deltaTime;
+            Vector2 dir = Vector2.Lerp(start, end, animationCurve.Evaluate(time / 0.5f));
+            camController.tCamera.transform.position = new Vector3(dir.x, dir.y, start.z);
+            yield return new WaitForSeconds(Time.deltaTime);
+        }
 
+    }
 
     private void OnDrawGizmos()
     {

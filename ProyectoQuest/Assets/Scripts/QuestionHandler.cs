@@ -1,12 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.UI;
 
 public class QuestionHandler : MonoBehaviour
 {
     public List<Question> questions;
     public Image barImage;
+    public UnityEvent OnGroupCompleted;
     public void ProgressUpdate()
     {
         StartCoroutine(Progress());
@@ -30,5 +32,9 @@ public class QuestionHandler : MonoBehaviour
             barImage.fillAmount = Mathf.Lerp(startPct, endPct, 1 - (time / maxTime));
             yield return new WaitForSeconds(Time.deltaTime);
         }
+
+        if(count == questions.Count) OnGroupCompleted?.Invoke();
     }
+
+
 }
