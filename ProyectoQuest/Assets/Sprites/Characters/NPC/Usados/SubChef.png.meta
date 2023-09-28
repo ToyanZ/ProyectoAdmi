@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 5e7ebeef23ae1d542b130d789e0b45b6
+guid: 70e9f8cebf1f1da47bebc796241dc8ca
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -104,7 +104,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: PatoMalo_0
+      name: SubChef_0
       rect:
         serializedVersion: 2
         x: 0
@@ -118,14 +118,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8839cb59c46307f429f92a52e1129cae
-      internalID: -1946064880
+      spriteID: 6d3fcd6e47a6cf3439da8ddb1a41c2b2
+      internalID: -1892060836
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PatoMalo_1
+      name: SubChef_1
       rect:
         serializedVersion: 2
         x: 16
@@ -139,14 +139,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4f10367f033be9d4bbfc0a04cc0b72af
-      internalID: -1450913601
+      spriteID: 6fe00b8bdc266cc4bb4d61b9a9770083
+      internalID: 978781606
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PatoMalo_2
+      name: SubChef_2
       rect:
         serializedVersion: 2
         x: 32
@@ -160,14 +160,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9a2fc69c3a9cdbb49ac890edae4e622b
-      internalID: -1974680127
+      spriteID: 7c06227338d521b4980a4418e3cffe1b
+      internalID: -1297598397
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PatoMalo_3
+      name: SubChef_3
       rect:
         serializedVersion: 2
         x: 48
@@ -181,14 +181,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 92c4ff318eb33a641aa49445c25b80b3
-      internalID: 341105716
+      spriteID: 3e3ca0e01edf3db46b5ec0bbc06f0e9b
+      internalID: -2063971788
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PatoMalo_4
+      name: SubChef_4
       rect:
         serializedVersion: 2
         x: 0
@@ -202,14 +202,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 91b2873161862724fb0ff39403a336f3
-      internalID: -782362408
+      spriteID: 3865149bb884fa44186b6af60b805727
+      internalID: 786015017
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PatoMalo_5
+      name: SubChef_5
       rect:
         serializedVersion: 2
         x: 16
@@ -223,14 +223,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b65d781389ab5fc44821947e2217cacf
-      internalID: 1233032289
+      spriteID: c975b4f144e079b4492249867a7f52b7
+      internalID: 252817611
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PatoMalo_6
+      name: SubChef_6
       rect:
         serializedVersion: 2
         x: 32
@@ -244,14 +244,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fd86487e53f21704ca691e51f1a59358
-      internalID: -875641595
+      spriteID: f317e13f33f107c459e56941a762b5d7
+      internalID: -2072580117
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PatoMalo_7
+      name: SubChef_7
       rect:
         serializedVersion: 2
         x: 48
@@ -265,14 +265,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e7011e8efccdd2846b7d3d2494f25caa
-      internalID: -1837961842
+      spriteID: 8d3d467069e9d6a448e7d1d58c34c307
+      internalID: -1018338014
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PatoMalo_8
+      name: SubChef_8
       rect:
         serializedVersion: 2
         x: 64
@@ -286,14 +286,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 739891f27e538764fabe8346712078c7
-      internalID: 1462942048
+      spriteID: 0790cf8b28c08ff4093edac399338b49
+      internalID: 1735580619
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PatoMalo_9
+      name: SubChef_9
       rect:
         serializedVersion: 2
         x: 80
@@ -307,14 +307,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: dcd8b006651ec8f44b2f1281e0db6cdb
-      internalID: 1788031829
+      spriteID: 27360b5c4195ab54cbca8c22ad790d90
+      internalID: -1035056536
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PatoMalo_10
+      name: SubChef_10
       rect:
         serializedVersion: 2
         x: 96
@@ -328,14 +328,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fdcad22b8eef99e49af0204c67a76688
-      internalID: 1351792296
+      spriteID: 13b3673a7e7e13d449afe23ba90752f2
+      internalID: 620507796
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PatoMalo_11
+      name: SubChef_11
       rect:
         serializedVersion: 2
         x: 112
@@ -349,14 +349,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 29846c2627be9774786100bc06121158
-      internalID: -1692664493
+      spriteID: 0aaeb31b147e0874c87f91bd540e3d5a
+      internalID: 681292968
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PatoMalo_12
+      name: SubChef_12
       rect:
         serializedVersion: 2
         x: 128
@@ -370,14 +370,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4d83a5111252b4b4cb4c4fdce58580c6
-      internalID: -54654169
+      spriteID: cb6458a5331c85e41a7467617df2768d
+      internalID: -1091675459
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PatoMalo_13
+      name: SubChef_13
       rect:
         serializedVersion: 2
         x: 144
@@ -391,14 +391,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: aaa7705222d44ec45906f3d0bd092a65
-      internalID: 1860301386
+      spriteID: 9611d52ea1b163a478509ed0590d740e
+      internalID: 1130531873
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PatoMalo_14
+      name: SubChef_14
       rect:
         serializedVersion: 2
         x: 160
@@ -412,14 +412,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9e66d9a289cd0734f8fa306ab389b752
-      internalID: -811107051
+      spriteID: eefed9f06598c434296212b9cb339096
+      internalID: -1550269418
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PatoMalo_15
+      name: SubChef_15
       rect:
         serializedVersion: 2
         x: 176
@@ -433,14 +433,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: df26738a5548756449fae734c857d1e9
-      internalID: 983202532
+      spriteID: 388d9753b55096543a8a6453ac0de8c1
+      internalID: -1139838871
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PatoMalo_16
+      name: SubChef_16
       rect:
         serializedVersion: 2
         x: 192
@@ -454,14 +454,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ef97b913b58ee1e46aca6c2156bbae3d
-      internalID: 1110769750
+      spriteID: fb5c4c068a3654244b86340da3bd5da8
+      internalID: 1576215893
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PatoMalo_17
+      name: SubChef_17
       rect:
         serializedVersion: 2
         x: 208
@@ -475,14 +475,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: dc0ca038299021a4d896794ce5e26190
-      internalID: -1834700076
+      spriteID: 43be7c86bcc1f934c8fb88293f9b362e
+      internalID: -390737264
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PatoMalo_18
+      name: SubChef_18
       rect:
         serializedVersion: 2
         x: 224
@@ -496,14 +496,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 25ad8c1d9dda0f44d85e6c270583907e
-      internalID: 554549442
+      spriteID: d6d42d86d5385e44b9fae1f263c46cdb
+      internalID: -1398159899
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PatoMalo_19
+      name: SubChef_19
       rect:
         serializedVersion: 2
         x: 240
@@ -517,14 +517,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fc2ab04bed18628419ff233382fcfece
-      internalID: 723813920
+      spriteID: 40b5a43cbacfcbb43a944e62bb815858
+      internalID: -64172853
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PatoMalo_20
+      name: SubChef_20
       rect:
         serializedVersion: 2
         x: 256
@@ -538,14 +538,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3f8513fc39d10534881434e44c5907e0
-      internalID: 532514824
+      spriteID: 302bcedbf94f9af4daf4f07ef55f18aa
+      internalID: -534960850
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PatoMalo_21
+      name: SubChef_21
       rect:
         serializedVersion: 2
         x: 272
@@ -559,14 +559,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f30491ee2d4bf0849b94a3fe035f5c5a
-      internalID: -103011340
+      spriteID: 453e8ffcb870e344eb497c63525defca
+      internalID: 1784936764
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PatoMalo_22
+      name: SubChef_22
       rect:
         serializedVersion: 2
         x: 288
@@ -580,14 +580,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1bc10ad6c7771f249b1d62558bb1595e
-      internalID: -525742052
+      spriteID: a1e0047a4b6cbe04fb6c9f24bd969c73
+      internalID: 1601553798
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PatoMalo_23
+      name: SubChef_23
       rect:
         serializedVersion: 2
         x: 304
@@ -601,14 +601,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 89d5a7e7744eabb4fa1110be179aae39
-      internalID: 1950568029
+      spriteID: 753367db3415f6144830998dce77d01f
+      internalID: 472051312
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PatoMalo_24
+      name: SubChef_24
       rect:
         serializedVersion: 2
         x: 320
@@ -622,14 +622,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7301f7a5717a6484d9fd5d525dafbd66
-      internalID: 878685224
+      spriteID: bcd783a984244d94ab0887583b7b6d81
+      internalID: 465683806
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PatoMalo_25
+      name: SubChef_25
       rect:
         serializedVersion: 2
         x: 336
@@ -643,14 +643,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fc5c3622aa9c62c45abf7b1aee26d9ce
-      internalID: 213992478
+      spriteID: 48ac7fe0351b402489b1f256dac25162
+      internalID: -1420117398
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PatoMalo_26
+      name: SubChef_26
       rect:
         serializedVersion: 2
         x: 352
@@ -664,14 +664,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 66b075590f3f6e34591280b8032660cf
-      internalID: -689072121
+      spriteID: 124f5912bb45c7b4eb08f089b64b08ea
+      internalID: 938639563
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PatoMalo_27
+      name: SubChef_27
       rect:
         serializedVersion: 2
         x: 368
@@ -685,14 +685,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bc7c7bc36c0365041afef16bba9ff933
-      internalID: -772917521
+      spriteID: 8e424f998a2a22c4aa8e2997984f22c5
+      internalID: -445342901
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PatoMalo_28
+      name: SubChef_28
       rect:
         serializedVersion: 2
         x: 0
@@ -706,14 +706,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 83390900ce73252488bb2fb809227297
-      internalID: -1489335380
+      spriteID: acf2111871338c44d83727ee350f269e
+      internalID: 247853055
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PatoMalo_29
+      name: SubChef_29
       rect:
         serializedVersion: 2
         x: 16
@@ -727,14 +727,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d543f88af58f43c42943affe797ed8ff
-      internalID: -995918309
+      spriteID: 87d32b6d89bd6364da7c6aec3cc2bb79
+      internalID: 1385707018
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PatoMalo_30
+      name: SubChef_30
       rect:
         serializedVersion: 2
         x: 32
@@ -748,14 +748,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b467543c1f3cafe4ea701ff86a7da672
-      internalID: 964736974
+      spriteID: 938ae4ae22acb764aa7e3c4f8ce1f26a
+      internalID: -1437760587
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PatoMalo_31
+      name: SubChef_31
       rect:
         serializedVersion: 2
         x: 48
@@ -769,14 +769,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 98c5afafcdba4af458ecebf633385ae0
-      internalID: 57941347
+      spriteID: b93a958323cf23245a3da237c2f48ce8
+      internalID: -42862960
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PatoMalo_32
+      name: SubChef_32
       rect:
         serializedVersion: 2
         x: 64
@@ -790,14 +790,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ff798464eaf569c41b89ef4a9ec94db2
-      internalID: 1047838593
+      spriteID: 3091eae53721fb04a9b8cb4edba54acb
+      internalID: 984045435
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PatoMalo_33
+      name: SubChef_33
       rect:
         serializedVersion: 2
         x: 80
@@ -811,14 +811,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d2083e2c52693e54f98da0d1d2f33efc
-      internalID: 231889578
+      spriteID: 111cb22a6d698d14fa1505d3d541bb79
+      internalID: 1682614013
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PatoMalo_34
+      name: SubChef_34
       rect:
         serializedVersion: 2
         x: 96
@@ -832,14 +832,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9b2ed3cd28deff3439e80cc8edd4191b
-      internalID: 199126
+      spriteID: 7383ad172e96e55429df59b26ed91d74
+      internalID: -106712643
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PatoMalo_35
+      name: SubChef_35
       rect:
         serializedVersion: 2
         x: 112
@@ -853,14 +853,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3158ebd0910867b4fa83cf475d427ad0
-      internalID: 97232048
+      spriteID: 52bc6484cb222e446825d8d5ae6502e1
+      internalID: 1152243033
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PatoMalo_36
+      name: SubChef_36
       rect:
         serializedVersion: 2
         x: 128
@@ -874,14 +874,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f929c428f96d472488e182de24252895
-      internalID: 1245988678
+      spriteID: 60046079edc611b478c2634cb9467e39
+      internalID: 415477232
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PatoMalo_37
+      name: SubChef_37
       rect:
         serializedVersion: 2
         x: 144
@@ -895,14 +895,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4ac6c4362ffda654c9f577a41f41f11f
-      internalID: -426998597
+      spriteID: 12d63964a496f15448079480357d9c42
+      internalID: 1815066336
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PatoMalo_38
+      name: SubChef_38
       rect:
         serializedVersion: 2
         x: 160
@@ -916,14 +916,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a014e506fde3b23468166ed83a4775a5
-      internalID: -2139200624
+      spriteID: 873647f92fdcced4b8f667c684a172b0
+      internalID: 1221914013
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PatoMalo_39
+      name: SubChef_39
       rect:
         serializedVersion: 2
         x: 176
@@ -937,14 +937,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0de875cf2ec9b6f418e6710d7874f5c9
-      internalID: 1312346568
+      spriteID: 66d4ed328f4485b459ab2b1b535c1900
+      internalID: -1205495430
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PatoMalo_40
+      name: SubChef_40
       rect:
         serializedVersion: 2
         x: 192
@@ -958,14 +958,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4ce7fe95e24c46147b12b00f22780bf5
-      internalID: 1160180419
+      spriteID: 989f3c110ef45824490a9b1308144567
+      internalID: 1567706817
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PatoMalo_41
+      name: SubChef_41
       rect:
         serializedVersion: 2
         x: 208
@@ -979,14 +979,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a24ed8c409279224e867a5223b42f699
-      internalID: 1937134855
+      spriteID: 844c7db4e634167449e6b08e487087f7
+      internalID: 867237974
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PatoMalo_42
+      name: SubChef_42
       rect:
         serializedVersion: 2
         x: 224
@@ -1000,14 +1000,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4d422a251793dca469d2e3c2078a3307
-      internalID: -1980028917
+      spriteID: 9044f5ed5d9e28d45bfdd0edec0b65ed
+      internalID: -233488801
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PatoMalo_43
+      name: SubChef_43
       rect:
         serializedVersion: 2
         x: 240
@@ -1021,14 +1021,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bad7e1ad0c679824ea19976e347af1b1
-      internalID: -1082234774
+      spriteID: c65b4a7eb6573f54a8a40fa7fed001bd
+      internalID: 1443933378
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PatoMalo_44
+      name: SubChef_44
       rect:
         serializedVersion: 2
         x: 256
@@ -1042,14 +1042,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 79e608e90a39738488a8323aa2479109
-      internalID: -1705145615
+      spriteID: e53808886e5b74944b1f623ba969012a
+      internalID: -491267938
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PatoMalo_45
+      name: SubChef_45
       rect:
         serializedVersion: 2
         x: 272
@@ -1063,14 +1063,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a4ea3fb65a16e834db24e744f8f97e52
-      internalID: -21784383
+      spriteID: 1e47c5686825cee48a4255e2f7a703e0
+      internalID: -580262044
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PatoMalo_46
+      name: SubChef_46
       rect:
         serializedVersion: 2
         x: 288
@@ -1084,14 +1084,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9c4a51a9eae925749a6aa457baf01b59
-      internalID: -408081067
+      spriteID: 2a7dd75e904623949943ba59a57083eb
+      internalID: -1870917012
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PatoMalo_47
+      name: SubChef_47
       rect:
         serializedVersion: 2
         x: 304
@@ -1105,14 +1105,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e52d41c27901a854fbe3ed7cf650e8e7
-      internalID: 542841813
+      spriteID: 85d2171fb0066864b8e65fb3157fed3a
+      internalID: 2098877821
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PatoMalo_48
+      name: SubChef_48
       rect:
         serializedVersion: 2
         x: 320
@@ -1126,14 +1126,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2f606486661970f4b8dafb805a8febb7
-      internalID: 1449297006
+      spriteID: 029e1923970007646810f419a768a140
+      internalID: 1625985501
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PatoMalo_49
+      name: SubChef_49
       rect:
         serializedVersion: 2
         x: 336
@@ -1147,14 +1147,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0d0d521303f67ec47a9dfd716d44ba05
-      internalID: -1454654067
+      spriteID: 24b7f2dbd3db56848955b56a28aafe8a
+      internalID: -1161758011
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PatoMalo_50
+      name: SubChef_50
       rect:
         serializedVersion: 2
         x: 352
@@ -1168,14 +1168,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2b03680c23d6c55498159dc0be865d33
-      internalID: -1479653514
+      spriteID: 2a8c873cdf41eab459531525cc591ee3
+      internalID: -1027784070
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PatoMalo_51
+      name: SubChef_51
       rect:
         serializedVersion: 2
         x: 368
@@ -1189,8 +1189,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 787ee063061ff5f4aa369fd6d54ad3ce
-      internalID: -2096099060
+      spriteID: c091fc00e90fdd64e85bb1591c51dbc4
+      internalID: -1350065851
       vertices: []
       indices: 
       edges: []
@@ -1206,58 +1206,58 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      PatoMalo_16: 1110769750
-      PatoMalo_39: 1312346568
-      PatoMalo_3: 341105716
-      PatoMalo_49: -1454654067
-      PatoMalo_45: -21784383
-      PatoMalo_4: -782362408
-      PatoMalo_46: -408081067
-      PatoMalo_29: -995918309
-      PatoMalo_48: 1449297006
-      PatoMalo_17: -1834700076
-      PatoMalo_19: 723813920
-      PatoMalo_1: -1450913601
-      PatoMalo_13: 1860301386
-      PatoMalo_25: 213992478
-      PatoMalo_50: -1479653514
-      PatoMalo_33: 231889578
-      PatoMalo_12: -54654169
-      PatoMalo_41: 1937134855
-      PatoMalo_20: 532514824
-      PatoMalo_31: 57941347
-      PatoMalo_44: -1705145615
-      PatoMalo_40: 1160180419
-      PatoMalo_37: -426998597
-      PatoMalo_26: -689072121
-      PatoMalo_2: -1974680127
-      PatoMalo_10: 1351792296
-      PatoMalo_18: 554549442
-      PatoMalo_34: 199126
-      PatoMalo_47: 542841813
-      PatoMalo_8: 1462942048
-      PatoMalo_23: 1950568029
-      PatoMalo_21: -103011340
-      PatoMalo_28: -1489335380
-      PatoMalo_6: -875641595
-      PatoMalo_27: -772917521
-      PatoMalo_30: 964736974
-      PatoMalo_11: -1692664493
-      PatoMalo_24: 878685224
-      PatoMalo_32: 1047838593
-      PatoMalo_15: 983202532
-      PatoMalo_51: -2096099060
-      PatoMalo_7: -1837961842
-      PatoMalo_43: -1082234774
-      PatoMalo_22: -525742052
-      PatoMalo_14: -811107051
-      PatoMalo_36: 1245988678
-      PatoMalo_9: 1788031829
-      PatoMalo_35: 97232048
-      PatoMalo_0: -1946064880
-      PatoMalo_38: -2139200624
-      PatoMalo_5: 1233032289
-      PatoMalo_42: -1980028917
+      SubChef_14: -1550269418
+      SubChef_3: -2063971788
+      SubChef_17: -390737264
+      SubChef_47: 2098877821
+      SubChef_29: 1385707018
+      SubChef_2: -1297598397
+      SubChef_10: 620507796
+      SubChef_31: -42862960
+      SubChef_16: 1576215893
+      SubChef_9: -1035056536
+      SubChef_0: -1892060836
+      SubChef_11: 681292968
+      SubChef_21: 1784936764
+      SubChef_43: 1443933378
+      SubChef_18: -1398159899
+      SubChef_28: 247853055
+      SubChef_42: -233488801
+      SubChef_27: -445342901
+      SubChef_20: -534960850
+      SubChef_44: -491267938
+      SubChef_22: 1601553798
+      SubChef_26: 938639563
+      SubChef_33: 1682614013
+      SubChef_39: -1205495430
+      SubChef_51: -1350065851
+      SubChef_50: -1027784070
+      SubChef_6: -2072580117
+      SubChef_8: 1735580619
+      SubChef_35: 1152243033
+      SubChef_7: -1018338014
+      SubChef_36: 415477232
+      SubChef_38: 1221914013
+      SubChef_19: -64172853
+      SubChef_41: 867237974
+      SubChef_1: 978781606
+      SubChef_46: -1870917012
+      SubChef_15: -1139838871
+      SubChef_49: -1161758011
+      SubChef_30: -1437760587
+      SubChef_45: -580262044
+      SubChef_13: 1130531873
+      SubChef_5: 252817611
+      SubChef_12: -1091675459
+      SubChef_48: 1625985501
+      SubChef_4: 786015017
+      SubChef_32: 984045435
+      SubChef_40: 1567706817
+      SubChef_24: 465683806
+      SubChef_25: -1420117398
+      SubChef_37: 1815066336
+      SubChef_23: 472051312
+      SubChef_34: -106712643
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
