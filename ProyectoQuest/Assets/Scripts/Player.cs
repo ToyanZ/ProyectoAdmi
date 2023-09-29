@@ -1,15 +1,27 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Security;
 using UnityEngine;
 
 public class Player : MonoBehaviour
 {
     public Target target;
     public Joystick joystick;
+    public SpriteRenderer[] characters;
+    public Animator[] anim;
 
     private float horizontal;
     private float vertical;
     private bool canMove = true;
+
+    private void Start()
+    {
+        for (int i = 0; i < characters.Length; i++)
+        {
+            characters[i].enabled = false;
+        }
+        characters[GameManager.instance.characterIndex].enabled = true;
+    }
 
     private void Update()
     {
@@ -35,6 +47,19 @@ public class Player : MonoBehaviour
                 target.rigidBody.velocity = joystick.GetDirection() * target.walkSpeed * Time.fixedDeltaTime;
                 break;
         }
+
+        if (target.rigidBody.velocity.x != 0 || target.rigidBody.velocity.y != 0)
+        {
+            Debug.Log("Vertical: " + target.rigidBody.velocity.y);
+            Debug.Log("Horizontal: " + target.rigidBody.velocity.x);
+            if (target.rigidBody.velocity.y > 0) anim[GameManager.instance.characterIndex].SetTrigger("Up");
+            if (target.rigidBody.velocity.x < 0) anim[GameManager.instance.characterIndex].SetTrigger("Left");
+            if (target.rigidBody.velocity.x > 0) anim[GameManager.instance.characterIndex].SetTrigger("Right");
+            if (target.rigidBody.velocity.y < 0) anim[GameManager.instance.characterIndex].SetTrigger("Down");
+        }
+        //bool idle = (horizontal == 0 && vertical == 0) ? true : false;
+        anim[GameManager.instance.characterIndex].SetBool("Idle", (target.rigidBody.velocity.x == 0 && target.rigidBody.velocity.y == 0) ? true : false);
+        //if (horizontal == 0 && vertical == 0) anim[GameManager.instance.characterIndex].SetBool("Idle", true);
     }
 
     public void SetMove(bool can)
