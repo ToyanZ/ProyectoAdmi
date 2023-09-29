@@ -50,7 +50,8 @@ public class GameManager : MonoBehaviour
     public UnityEvent OnAnswerCompleted;
     public Bar progressBar;
 
-    public int characterIndex = 0;
+    [HideInInspector] public QuestionHandler currentQuestionHandler;
+    [HideInInspector] public int characterIndex = 0;
     private bool miniGameCompleted = false;
 
     private void Awake()
@@ -139,7 +140,7 @@ public class GameManager : MonoBehaviour
                 Answering();
                 break;
             case MatchState.MiniGame:
-
+                MiniGame();
                 break;
             case MatchState.End:
                 End();
@@ -176,9 +177,12 @@ public class GameManager : MonoBehaviour
             {
                 foreach(Question question in questionHandler.questions)
                 {
-                    
                     if (question.answered) answeredQuestions += 1.0f;
-                    if (allAnswered) if (!question.answered) allAnswered = false;
+                    
+                    if (questionHandler == currentQuestionHandler)
+                    {
+                        if (!question.answered) allAnswered = false;
+                    }
                 }
                 questionHandler.ProgressUpdate();
             }
@@ -195,19 +199,6 @@ public class GameManager : MonoBehaviour
             }
         }
     }
-    private void MiniGame()
-    {
-        if (miniGameCompleted)
-        {
-            miniGameCompleted = false;
-            character.gameObject.SetActive(false);
-            matchState = MatchState.Answering;
-        }
-        else
-        {
-            character.gameObject.SetActive(false);
-        }
-    }
     IEnumerator MatchProgressUpdate(float current, float max)
     {
         float time = matchProgressBarUpdateTime;
@@ -219,6 +210,19 @@ public class GameManager : MonoBehaviour
             
             progressBar.SimpleRefresh(progress, max, Bar.NumericType.Ratio, Bar.NumericFormat.Integer);
             yield return new WaitForSeconds(Time.deltaTime);
+        }
+    }
+    private void MiniGame()
+    {
+        if (miniGameCompleted)
+        {
+            miniGameCompleted = false;
+            character.gameObject.SetActive(true);
+            matchState = MatchState.Answering;
+        }
+        else
+        {
+            character.gameObject.SetActive(false);
         }
     }
     private void End()

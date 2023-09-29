@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
@@ -36,5 +37,12 @@ public class QuestionHandler : MonoBehaviour
         if(count == questions.Count) OnGroupCompleted?.Invoke();
     }
 
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if(collision.GetComponent<Character>() != null)
+        {
+            GameManager.instance.currentQuestionHandler = this;
+        }
+    }
 
 }
