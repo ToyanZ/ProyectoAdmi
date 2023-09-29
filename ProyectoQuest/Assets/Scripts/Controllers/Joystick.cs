@@ -98,6 +98,12 @@ public class Joystick : MonoBehaviour, IPointerDownHandler, IPointerClickHandler
         return dragging ? direction : Vector2.zero;
     }
 
+    public Vector2 GetDirectionInt()
+    {
+        Vector2 direction = (handler.position - holder.position);
+        return direction.normalized * (direction.magnitude / movementRadius);
+    }
+
 
 
 
