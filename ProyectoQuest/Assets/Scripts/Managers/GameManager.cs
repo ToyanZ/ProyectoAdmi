@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
@@ -49,6 +50,8 @@ public class GameManager : MonoBehaviour
     public UnityEvent OnAnswerCompleted;
     public Bar progressBar;
 
+    public int characterIndex = 0;
+    private bool miniGameCompleted = false;
 
     private void Awake()
     {
@@ -62,6 +65,7 @@ public class GameManager : MonoBehaviour
             Destroy(gameObject);
         }
     }
+
 
     private void Update()
     {
@@ -79,6 +83,8 @@ public class GameManager : MonoBehaviour
                 break;
         }
     }
+    
+    
     private void Menu()
     {
         switch(menuState)
@@ -90,11 +96,7 @@ public class GameManager : MonoBehaviour
                 menuState = SignIn();
                 break;
             case MenuState.MainMenu:
-                if (!MainMenu())
-                {
-                    //InterfaceManager.instance.OnAnswerSelected?.Invoke();
-                    gameState = GameState.Match;
-                } 
+                MainMenu();
                 break;
         }
     }
@@ -106,10 +108,11 @@ public class GameManager : MonoBehaviour
     {
         return MenuState.MainMenu;
     }
-    private bool MainMenu()
+    private void MainMenu()
     {
-        return false;
+        gameState = GameState.Match;
     }
+
 
 
     private void Match()
@@ -130,35 +133,30 @@ public class GameManager : MonoBehaviour
         switch (matchState)
         {
             case MatchState.Walking:
-                matchState = Walking();
+                Walking();
                 break;
             case MatchState.Answering:
-                matchState = Answering();
+                Answering();
                 break;
             case MatchState.MiniGame:
 
                 break;
             case MatchState.End:
-                if(!End())
-                {
-                    matchState = MatchState.Walking;
-                    gameState = GameState.Menu;
-                }
+                End();
                 break;
         }
     }
-    private MatchState Walking()
-    {
-        character.player.SetMove(!InterfaceManager.instance.popUp.activeSelf);
-        return InterfaceManager.instance.popUp.activeSelf ? MatchState.Answering : MatchState.Walking;
-    }
-    private MatchState Answering()
+    private void Walking()
     {
         if (InterfaceManager.instance.popUp.activeSelf)
         {
-            return MatchState.Answering;
+            character.player.SetMove(false);
+            matchState = MatchState.Answering;
         }
-        else
+    }
+    private void Answering()
+    {
+        if (!InterfaceManager.instance.popUp.activeSelf)
         {
             //if (questionHandlers.Count == 0) { questionHandlers = FindObjectsOfType<QuestionHandler>().ToList(); }
 
@@ -186,13 +184,30 @@ public class GameManager : MonoBehaviour
             }
             StartCoroutine(MatchProgressUpdate(answeredQuestions, totalQuestions));
             character.player.SetMove(true);
-            
-            //solucionar el preogreso del juego repartido por escenas
-            //bool gameDone =
-            return allAnswered ? MatchState.MiniGame : MatchState.Walking;
+
+            if(answeredQuestions == totalQuestions)
+            {
+                matchState = MatchState.End;
+            }
+            else
+            {
+                matchState = allAnswered ? MatchState.MiniGame : MatchState.Walking;
+            }
         }
     }
-
+    private void MiniGame()
+    {
+        if (miniGameCompleted)
+        {
+            miniGameCompleted = false;
+            character.gameObject.SetActive(false);
+            matchState = MatchState.Answering;
+        }
+        else
+        {
+            character.gameObject.SetActive(false);
+        }
+    }
     IEnumerator MatchProgressUpdate(float current, float max)
     {
         float time = matchProgressBarUpdateTime;
@@ -206,14 +221,13 @@ public class GameManager : MonoBehaviour
             yield return new WaitForSeconds(Time.deltaTime);
         }
     }
-
-    private bool End()
+    private void End()
     {
+        matchState = MatchState.Walking;
+        gameState = GameState.Menu;
         Invoke("ShowEndHUD", 2f);
-        return true;
     }
-
-    void ShowEndHUD()
+    private void ShowEndHUD()
     {
         InterfaceManager.instance.missionCompletedPopUp.SetActive(true);
     }
@@ -227,5 +241,9 @@ public class GameManager : MonoBehaviour
         {
             if(area.affinity > affinityPointMax) affinityPointMax = area.affinity;
         }
+    }
+    public void MiniGameCompleted()
+    {
+        miniGameCompleted = true;
     }
 }
