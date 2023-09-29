@@ -1147,6 +1147,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 809994534}
   m_CullTransparentMesh: 1
+--- !u!212 &812233490 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 4330462795940365896, guid: 4fd87459cea32e04f983a96d4799ef54, type: 3}
+  m_PrefabInstance: {fileID: 4330462795532346199}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &831736385
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2229,6 +2234,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rb: {fileID: 1580468268}
   speed: 5
+  characters:
+  - {fileID: 812233490}
+  - {fileID: 1850935894}
 --- !u!61 &1580468267
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3024,6 +3032,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1846491456}
   m_CullTransparentMesh: 1
+--- !u!212 &1850935894 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 918079431162961005, guid: 4fd87459cea32e04f983a96d4799ef54, type: 3}
+  m_PrefabInstance: {fileID: 4330462795532346199}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1853134748
 GameObject:
   m_ObjectHideFlags: 0
@@ -3905,7 +3918,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4330462795940365899, guid: 4fd87459cea32e04f983a96d4799ef54, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4330462797371592644, guid: 4fd87459cea32e04f983a96d4799ef54, type: 3}
       propertyPath: m_RootOrder

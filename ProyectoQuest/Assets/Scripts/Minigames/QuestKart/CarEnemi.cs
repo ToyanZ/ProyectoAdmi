@@ -9,11 +9,15 @@ public class CarEnemi : MonoBehaviour
     public GameObject panelLose;
     public float carVelocity;
     public GameObject streetTarget;
+
+    public SpriteRenderer vehicle;
+    public Sprite[] vehicles;
     // Start is called before the first frame update
     void Start()
     {
         panelLose = GameObject.FindGameObjectWithTag("Lose");
         streetTarget = GameObject.FindGameObjectWithTag("Target");
+        vehicle.sprite = vehicles[Random.Range(0, vehicles.Length)];
         
     }
 

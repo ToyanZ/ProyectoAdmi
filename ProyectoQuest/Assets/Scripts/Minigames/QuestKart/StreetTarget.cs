@@ -9,9 +9,8 @@ using Random = UnityEngine.Random;
 
 public class StreetTarget : MonoBehaviour
 {
-    public GameObject street1;
-    public GameObject street2;
-    public GameObject street3;
+
+    public GameObject[] streets;
     public GameObject carEnemi;
     public GameObject carPlayer;
     public float playerVelocity;
@@ -19,12 +18,20 @@ public class StreetTarget : MonoBehaviour
     private float time;
     public TMP_Text timeText;
     public GameObject panelVictory;
-    [HideInInspector] public int currentStreet;
+     public int currentStreet;
+
+    public GameObject[] characters;
+    private int currentCharacter;
     // Start is called before the first frame update
     void Start()
     {
         currentStreet = 2;
         time = 15f;
+        if (GameManager.instance != null) currentCharacter = GameManager.instance.characterIndex;
+        else currentCharacter = 0;
+            
+        characters[currentCharacter].SetActive(true);
+
     }
 
     // Update is called once per frame
@@ -42,24 +49,15 @@ public class StreetTarget : MonoBehaviour
             count = 0;
         }
         ChangeStreet();
-
-        
     }
 
     public void CreateKart()
     {
-        int numberStreet = Random.Range(1,4);
-        if(numberStreet == 1)
-        {
-            Instantiate(carEnemi, new Vector2(15, street1.transform.position.y), Quaternion.identity);
-        }else if(numberStreet == 2)
-        {
-            Instantiate(carEnemi, new Vector2(15, street2.transform.position.y), Quaternion.identity);
-        }
-        else if(numberStreet == 3)
-        {
-            Instantiate(carEnemi, new Vector2(15, street3.transform.position.y), Quaternion.identity);
-        }
+        int numberStreet = Random.Range(0, streets.Length);
+        GameObject vehicle = Instantiate(carEnemi, new Vector2(15, streets[numberStreet].transform.position.y), quaternion.identity);
+        if (numberStreet == 0) vehicle.GetComponent<CarEnemi>().vehicle.sortingOrder = 1;
+        if (numberStreet == 1) vehicle.GetComponent<CarEnemi>().vehicle.sortingOrder = 100;
+        if (numberStreet == 2) vehicle.GetComponent<CarEnemi>().vehicle.sortingOrder = 150;
     }
 
     public void AddStreet()
@@ -75,22 +73,14 @@ public class StreetTarget : MonoBehaviour
         {
             currentStreet--;
         }
-
     }
 
     public void ChangeStreet()
     {
-        if(currentStreet == 1)
-        {
-            carPlayer.transform.position = Vector2.MoveTowards(carPlayer.transform.position, new Vector2(carPlayer.transform.position.x,street1.transform.position.y),playerVelocity*Time.deltaTime);
-        }else if(currentStreet == 2)
-        {
-            carPlayer.transform.position = Vector2.MoveTowards(carPlayer.transform.position, new Vector2(carPlayer.transform.position.x, street2.transform.position.y), playerVelocity * Time.deltaTime);
-        }
-        else if(currentStreet == 3)
-        {
-            carPlayer.transform.position = Vector2.MoveTowards(carPlayer.transform.position, new Vector2(carPlayer.transform.position.x, street3.transform.position.y), playerVelocity * Time.deltaTime);
-        }
+        carPlayer.transform.position = Vector2.MoveTowards(carPlayer.transform.position, new Vector2(carPlayer.transform.position.x, streets[currentStreet - 1].transform.position.y),playerVelocity*Time.deltaTime);
+        if(currentStreet == 1) characters[currentCharacter].GetComponent<SpriteRenderer>().sortingOrder = 1;
+        else if(currentStreet == 2) characters[currentCharacter].GetComponent<SpriteRenderer>().sortingOrder = 100;
+        else if(currentStreet == 3) characters[currentCharacter].GetComponent<SpriteRenderer>().sortingOrder = 150;
     }
     private string FormatearTiempo()
     {

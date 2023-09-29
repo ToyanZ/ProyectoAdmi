@@ -10,6 +10,18 @@ public class Jumping_MG_Jump : MonoBehaviour
 
     float horizontal;
 
+    public SpriteRenderer[] characters;
+
+    private void Start()
+    {
+        for(int i = 0; i < characters.Length; i++) 
+        {
+            characters[i].enabled = false;
+        }
+        if(GameManager.instance != null) characters[GameManager.instance.characterIndex].enabled = true;
+        else characters[0].enabled = true;
+    }
+
     private void Update()
     {
 
