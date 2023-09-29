@@ -9,7 +9,10 @@ public class QuestionHandler : MonoBehaviour
 {
     public List<Question> questions;
     public Image barImage;
+    public GameObject focusPoint;
     public UnityEvent OnGroupCompleted;
+    public bool gamePlayed = false;
+    public BoxCollider2D boxCollider2D;
     public void ProgressUpdate()
     {
         StartCoroutine(Progress());
@@ -41,7 +44,7 @@ public class QuestionHandler : MonoBehaviour
     {
         if(collision.GetComponent<Character>() != null)
         {
-            GameManager.instance.currentQuestionHandler = this;
+            GameManager.instance.SetCurrentArea(this);
         }
     }
 

@@ -26,8 +26,14 @@ public class LevelManager : MonoBehaviour
         this.nextScene = nextScene;
         SceneManager.LoadScene(gameName);
     }
-    public void LoadRandomGame(string linkedLevel)
+    public void LoadRandomGame(string linkedLevel, float time)
     {
+        StartCoroutine(LoadSceneIE(linkedLevel, time));
+    }
+    IEnumerator LoadSceneIE(string linkedLevel, float time)
+    {
+        yield return new WaitForSeconds(time);
+
         nextScene = linkedLevel;
 
         int index = Random.Range(0, miniGamesInfo.Count);
@@ -40,6 +46,8 @@ public class LevelManager : MonoBehaviour
         miniGameInfo.played = true;
         SceneManager.LoadScene(miniGameInfo.name);
     }
+
+
     public void LoadLinkedLevel()
     {
         SceneManager.LoadScene(nextScene);

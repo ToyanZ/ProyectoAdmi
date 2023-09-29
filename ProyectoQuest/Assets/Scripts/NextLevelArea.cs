@@ -16,10 +16,10 @@ public class NextLevelArea : MonoBehaviour
         switch (gameLoadMode)
         {
             case LoadMode.Random:
-                LevelManager.instance.LoadRandomGame(linkedSceneName);
+                //LevelManager.instance.LoadRandomGame(linkedSceneName);
                 break; 
             case LoadMode.ByName:
-                LevelManager.instance.LoadGame(linkedGameName, linkedSceneName);
+                //LevelManager.instance.LoadGame(linkedGameName, linkedSceneName);
                 break;
         }
         

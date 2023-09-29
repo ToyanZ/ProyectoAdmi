@@ -10,10 +10,10 @@ using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
-    public enum BuildType { Pc, Phone}
-    public enum GameState { Menu, Match}
-    public enum MenuState { Check, SignIn, MainMenu}
-    public enum MatchState { Walking, Answering, MiniGame, End}
+    public enum BuildType { Pc, Phone }
+    public enum GameState { Menu, Match }
+    public enum MenuState { Check, SignIn, MainMenu }
+    public enum MatchState { Walking, Answering, MiniGame, End }
     public static GameManager instance;
 
     public GameState gameState = GameState.Menu;
@@ -25,13 +25,13 @@ public class GameManager : MonoBehaviour
     //public Action 
 
     [Space(20)]
-    public Character character;
+    [HideInInspector] public Character character;
     public float triggerLoadTime = 1.5f;
     public int affinityPointMax = 0;
     public float answerTimeMin = 3;
     public float answerTimeAvg = 8;
     public float answerTimeMax = 11;
-    
+
     //User info
     [Space(20)]
     [HideInInspector] public string nameUser;
@@ -47,13 +47,14 @@ public class GameManager : MonoBehaviour
     public List<QuestionHandler> questionHandlers;
 
     [Space(20)]
-    public UnityEvent OnAnswerCompleted;
     public Bar progressBar;
+    public CameraTracking cameraTracking;
+    public GameObject inGameUI;
+    public GameObject joystick;
 
-    [HideInInspector] public QuestionHandler currentQuestionHandler;
+    public QuestionHandler currentQuestionHandler;
     [HideInInspector] public int characterIndex = 0;
-    private bool miniGameCompleted = false;
-
+    [HideInInspector] public bool miniGameCompleted = false;
     private void Awake()
     {
         if (instance == null)
@@ -84,11 +85,11 @@ public class GameManager : MonoBehaviour
                 break;
         }
     }
-    
-    
+
+
     private void Menu()
     {
-        switch(menuState)
+        switch (menuState)
         {
             case MenuState.Check:
                 menuState = Check();
@@ -159,8 +160,7 @@ public class GameManager : MonoBehaviour
     {
         if (!InterfaceManager.instance.popUp.activeSelf)
         {
-            //if (questionHandlers.Count == 0) { questionHandlers = FindObjectsOfType<QuestionHandler>().ToList(); }
-
+            //Cuenta el total de preguntas
             float totalQuestions = 0.0f;
             foreach (QuestionHandler questionHandler in questionHandlers)
             {
@@ -170,15 +170,16 @@ public class GameManager : MonoBehaviour
                 }
             }
 
-
+            //Cuenta el total de preguntas respondidas y
+            //revisa si todas las preguntas de la zona actual estan respondidas
             float answeredQuestions = 0.0f;
             bool allAnswered = true;
             foreach (QuestionHandler questionHandler in questionHandlers)
             {
-                foreach(Question question in questionHandler.questions)
+                foreach (Question question in questionHandler.questions)
                 {
                     if (question.answered) answeredQuestions += 1.0f;
-                    
+
                     if (questionHandler == currentQuestionHandler)
                     {
                         if (!question.answered) allAnswered = false;
@@ -189,15 +190,48 @@ public class GameManager : MonoBehaviour
             StartCoroutine(MatchProgressUpdate(answeredQuestions, totalQuestions));
             character.player.SetMove(true);
 
-            if(answeredQuestions == totalQuestions)
+
+
+            if (answeredQuestions == totalQuestions)//Si se responden todas las preguntas del juego
             {
                 matchState = MatchState.End;
             }
-            else
+            else if (allAnswered)//Si se responden todas las preguntas del area / zona
             {
-                matchState = allAnswered ? MatchState.MiniGame : MatchState.Walking;
+                if (currentQuestionHandler == null)
+                {
+                    float distance = -1;
+                    foreach (QuestionHandler questionHandler in questionHandlers)
+                    {
+                        float currentDist = (questionHandler.boxCollider2D.transform.position - character.transform.position).magnitude;
+                        if (distance == -1 || currentDist < distance)
+                        {
+                            distance = currentDist;
+                            currentQuestionHandler = questionHandler;
+                        }
+                    }
+                    return;
+                }
+
+                if (currentQuestionHandler.gamePlayed == false)
+                {
+                    currentQuestionHandler.gamePlayed = true;
+                    Invoke("DeactiateMainUI", matchProgressBarUpdateTime);
+                }
+            }
+            else //Si aún le quedan preguntas por responder
+            {
+                matchState = MatchState.Walking;
             }
         }
+    }
+    void DeactiateMainUI()
+    {
+        character.gameObject.SetActive(false);
+        inGameUI.SetActive(false);
+        joystick.SetActive(false);
+        matchState = MatchState.MiniGame;
+        LevelManager.instance.LoadRandomGame("Level1", 0);
     }
     IEnumerator MatchProgressUpdate(float current, float max)
     {
@@ -207,7 +241,7 @@ public class GameManager : MonoBehaviour
         {
             time -= Time.deltaTime;
             float progress = Mathf.Lerp(start, current, 1 - (time / matchProgressBarUpdateTime));
-            
+
             progressBar.SimpleRefresh(progress, max, Bar.NumericType.Ratio, Bar.NumericFormat.Integer);
             yield return new WaitForSeconds(Time.deltaTime);
         }
@@ -216,13 +250,10 @@ public class GameManager : MonoBehaviour
     {
         if (miniGameCompleted)
         {
-            miniGameCompleted = false;
             character.gameObject.SetActive(true);
-            matchState = MatchState.Answering;
-        }
-        else
-        {
-            character.gameObject.SetActive(false);
+            inGameUI.SetActive(true);
+            joystick.SetActive(true);
+            matchState = MatchState.Walking;
         }
     }
     private void End()
@@ -235,6 +266,11 @@ public class GameManager : MonoBehaviour
     {
         InterfaceManager.instance.missionCompletedPopUp.SetActive(true);
     }
+    public void MiniGameCompleted()
+    {
+        miniGameCompleted = true;
+    }
+
 
 
 
@@ -246,8 +282,10 @@ public class GameManager : MonoBehaviour
             if(area.affinity > affinityPointMax) affinityPointMax = area.affinity;
         }
     }
-    public void MiniGameCompleted()
+    
+    public void SetCurrentArea(QuestionHandler questionHandler)
     {
-        miniGameCompleted = true;
+        currentQuestionHandler = questionHandler;
+        cameraTracking.GoTo(questionHandler.focusPoint);
     }
 }

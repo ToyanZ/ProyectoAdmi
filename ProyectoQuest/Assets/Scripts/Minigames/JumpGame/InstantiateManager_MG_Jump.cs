@@ -65,7 +65,8 @@ public class InstantiateManager_MG_Jump : MonoBehaviour
 
     public void LoadScene(string sceneName)
     {
-        SceneManager.LoadScene(sceneName);
+        GameManager.instance.MiniGameCompleted();
+        SceneManager.LoadScene("Level1");
     }
 
     public void InstantiateNewEnemy(Transform newSpawnPosition)

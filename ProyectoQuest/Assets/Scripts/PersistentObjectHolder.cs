@@ -8,9 +8,16 @@ public class PersistentObjectHolder : MonoBehaviour
 
     private void Awake()
     {
-        if(instance != null) Destroy(gameObject);
+        if(instance == null)
+        {
+            instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
 
-        instance = this;
-        DontDestroyOnLoad(gameObject);
+        
     }
 }

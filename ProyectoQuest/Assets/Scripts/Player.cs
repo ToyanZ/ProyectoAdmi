@@ -50,8 +50,8 @@ public class Player : MonoBehaviour
 
         if (target.rigidBody.velocity.x != 0 || target.rigidBody.velocity.y != 0)
         {
-            Debug.Log("Vertical: " + target.rigidBody.velocity.y);
-            Debug.Log("Horizontal: " + target.rigidBody.velocity.x);
+            //Debug.Log("Vertical: " + target.rigidBody.velocity.y);
+            //Debug.Log("Horizontal: " + target.rigidBody.velocity.x);
             if (target.rigidBody.velocity.y > 0) anim[GameManager.instance.characterIndex].SetTrigger("Up");
             if (target.rigidBody.velocity.x < 0) anim[GameManager.instance.characterIndex].SetTrigger("Left");
             if (target.rigidBody.velocity.x > 0) anim[GameManager.instance.characterIndex].SetTrigger("Right");
