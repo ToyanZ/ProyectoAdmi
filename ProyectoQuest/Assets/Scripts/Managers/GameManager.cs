@@ -216,7 +216,7 @@ public class GameManager : MonoBehaviour
                 if (currentQuestionHandler.gamePlayed == false)
                 {
                     currentQuestionHandler.gamePlayed = true;
-                    Invoke("DeactiateMainUI", matchProgressBarUpdateTime);
+                    StartCoroutine(DeactivateMainUI());
                 }
             }
             else //Si aún le quedan preguntas por responder
@@ -225,8 +225,10 @@ public class GameManager : MonoBehaviour
             }
         }
     }
-    void DeactiateMainUI()
+    IEnumerator DeactivateMainUI()
     {
+        while(currentQuestionHandler.barImage.fillAmount < 1) yield return null;
+
         character.gameObject.SetActive(false);
         inGameUI.SetActive(false);
         joystick.SetActive(false);

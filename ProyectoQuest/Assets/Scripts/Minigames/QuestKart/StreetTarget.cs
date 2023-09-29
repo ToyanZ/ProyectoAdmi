@@ -93,7 +93,13 @@ public class StreetTarget : MonoBehaviour
     public void Victory()
     {
         panelVictory.SetActive(true);
-        Time.timeScale = 0f;
+        GameManager.instance.MiniGameCompleted();
+        SceneManager.LoadScene("Level1");
+    }
+
+    void GoToLevel1()
+    {
+
     }
 
     public void Reset()

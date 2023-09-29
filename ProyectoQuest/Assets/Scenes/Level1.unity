@@ -2986,7 +2986,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.16866088, g: 1, b: 0, a: 0.31764707}
+  m_Color: {r: 0.16866088, g: 1, b: 0, a: 0}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -83824,7 +83824,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.16866088, g: 1, b: 0, a: 0.31764707}
+  m_Color: {r: 0.16866088, g: 1, b: 0, a: 0}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -93425,6 +93425,14 @@ PrefabInstance:
       propertyPath: cameraTracking
       value: 
       objectReference: {fileID: 1095866436}
+    - target: {fileID: 4917790209099313279, guid: 57ecdb67ebdcffb4ca6a67f0f4a6e718, type: 3}
+      propertyPath: matchProgressBarUpdateTime
+      value: 1.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4917790209099313279, guid: 57ecdb67ebdcffb4ca6a67f0f4a6e718, type: 3}
+      propertyPath: questionHandlerBarUpdateTime
+      value: 1.2
+      objectReference: {fileID: 0}
     - target: {fileID: 4917790209335747116, guid: 57ecdb67ebdcffb4ca6a67f0f4a6e718, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -93611,7 +93619,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7225116175260358530, guid: 57ecdb67ebdcffb4ca6a67f0f4a6e718, type: 3}
       propertyPath: miniGamesInfo.Array.data[1].name
-      value: MiniGames
+      value: MiniGame2
       objectReference: {fileID: 0}
     - target: {fileID: 7376085629450356637, guid: 57ecdb67ebdcffb4ca6a67f0f4a6e718, type: 3}
       propertyPath: m_LocalScale.x

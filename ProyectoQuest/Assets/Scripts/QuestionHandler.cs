@@ -27,13 +27,13 @@ public class QuestionHandler : MonoBehaviour
         float startPct = barImage.fillAmount;
         float endPct = count / questions.Count * 1.0f;
 
-        float maxTime = GameManager.instance.answerCompletedBarUpdateTime;
-        float time = maxTime;
-        while (time > 0)
+        float maxTime = GameManager.instance.questionHandlerBarUpdateTime;
+        float time = 0;
+        while (time < maxTime)
         {
-            time -= Time.deltaTime;
+            time += Time.deltaTime;
             
-            barImage.fillAmount = Mathf.Lerp(startPct, endPct, 1 - (time / maxTime));
+            barImage.fillAmount = Mathf.Lerp(startPct, endPct,  (time / maxTime));
             yield return new WaitForSeconds(Time.deltaTime);
         }
 
