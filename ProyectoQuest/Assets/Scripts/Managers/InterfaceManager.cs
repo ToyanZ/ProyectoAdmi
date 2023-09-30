@@ -98,6 +98,11 @@ public class InterfaceManager : MonoBehaviour
         //gameObject.GetComponent<Emailer>().CallSendEmail();
     }
 
+    public void SendForm2()
+    {
+        gameObject.GetComponent<Emailer>().CallSendEmail();
+    }
+
     public void UserNameControl(TMP_InputField inputField)
     {
         bool charInput = false;
