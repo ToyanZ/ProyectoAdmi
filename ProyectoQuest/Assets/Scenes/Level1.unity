@@ -93621,6 +93621,10 @@ PrefabInstance:
       propertyPath: miniGamesInfo.Array.data[1].name
       value: MiniGame2
       objectReference: {fileID: 0}
+    - target: {fileID: 7225116175260358530, guid: 57ecdb67ebdcffb4ca6a67f0f4a6e718, type: 3}
+      propertyPath: miniGamesInfo.Array.data[0].played
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7376085629450356637, guid: 57ecdb67ebdcffb4ca6a67f0f4a6e718, type: 3}
       propertyPath: m_LocalScale.x
       value: 5.7324

@@ -18,14 +18,20 @@ public class StreetTarget : MonoBehaviour
     private float time;
     public TMP_Text timeText;
     public GameObject panelVictory;
-     public int currentStreet;
+    public int currentStreet;
+    private int currentStreetEnemi;
+    private float vertical;
+    public GameObject panelTutorial;
+    public GameObject panelUI;
 
     public GameObject[] characters;
     private int currentCharacter;
+
     // Start is called before the first frame update
     void Start()
     {
         currentStreet = 2;
+        Time.timeScale = 0f;
         time = 15f;
         if (GameManager.instance != null) currentCharacter = GameManager.instance.characterIndex;
         else currentCharacter = 0;
@@ -43,21 +49,51 @@ public class StreetTarget : MonoBehaviour
             Victory();
         }
         count += Time.deltaTime;
-        if(count > 2)
+        if(count > 1)
         {
             Invoke("CreateKart", Random.Range(1,3));
             count = 0;
         }
         ChangeStreet();
+        if (Input.GetButtonDown("Vertical"))
+        {
+            vertical = Input.GetAxisRaw("Vertical");
+        }
+        
+    }
+    private void FixedUpdate()
+    {
+        if (vertical == 1){
+            SubstractStreet(); 
+            vertical = 0;
+        }
+        else if (vertical == -1){
+            AddStreet();
+            vertical = 0;
+        }
     }
 
+    public void TutorialScreen()
+    {
+        panelTutorial.SetActive(false);
+        panelUI.SetActive(true);
+        Time.timeScale = 1f;
+    }
     public void CreateKart()
     {
         int numberStreet = Random.Range(0, streets.Length);
+        while(numberStreet == currentStreetEnemi)
+        {
+            numberStreet = Random.Range(0, streets.Length);
+        }
+        currentStreetEnemi = numberStreet;
         GameObject vehicle = Instantiate(carEnemi, new Vector2(15, streets[numberStreet].transform.position.y), quaternion.identity);
-        if (numberStreet == 0) vehicle.GetComponent<CarEnemi>().vehicle.sortingOrder = 1;
-        if (numberStreet == 1) vehicle.GetComponent<CarEnemi>().vehicle.sortingOrder = 100;
-        if (numberStreet == 2) vehicle.GetComponent<CarEnemi>().vehicle.sortingOrder = 150;
+        if (numberStreet == 0)vehicle.GetComponent<CarEnemi>().vehicle.sortingOrder = 1;
+
+        if (numberStreet == 1)vehicle.GetComponent<CarEnemi>().vehicle.sortingOrder = 100;
+
+        if (numberStreet == 2)vehicle.GetComponent<CarEnemi>().vehicle.sortingOrder = 150;
+       
     }
 
     public void AddStreet()
@@ -92,8 +128,10 @@ public class StreetTarget : MonoBehaviour
     }
     public void Victory()
     {
+        Time.timeScale = 0f;
         panelVictory.SetActive(true);
         GameManager.instance.MiniGameCompleted();
+        Time.timeScale = 1f;
         SceneManager.LoadScene("Level1");
     }
 
