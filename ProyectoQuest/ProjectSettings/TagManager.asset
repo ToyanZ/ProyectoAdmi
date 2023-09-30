@@ -15,7 +15,7 @@ TagManager:
   - Water
   - UI
   - Joystick
-  - 
+  - QuestionInfo
   - 
   - 
   - 
@@ -55,4 +55,7 @@ TagManager:
     locked: 0
   - name: UI
     uniqueID: 3470466075
+    locked: 0
+  - name: QuestionInfoBack
+    uniqueID: 3229444757
     locked: 0

@@ -14,9 +14,9 @@ public class KeyPressed : MonoBehaviour
 
     private void Update()
     {
-        //eventSystem.SetSelectedGameObject(Input.GetKey(KeyCode.W) ? w.gameObject : null);
-        //eventSystem.SetSelectedGameObject(Input.GetKey(KeyCode.A) ? a.gameObject : null);
-        //eventSystem.SetSelectedGameObject(Input.GetKey(KeyCode.S) ? s.gameObject : null);
-        //eventSystem.SetSelectedGameObject(Input.GetKey(KeyCode.D) ? d.gameObject : null);
+        eventSystem.SetSelectedGameObject(Input.GetKey(KeyCode.W) ? w.gameObject : null);
+        eventSystem.SetSelectedGameObject(Input.GetKey(KeyCode.A) ? a.gameObject : null);
+        eventSystem.SetSelectedGameObject(Input.GetKey(KeyCode.S) ? s.gameObject : null);
+        eventSystem.SetSelectedGameObject(Input.GetKey(KeyCode.D) ? d.gameObject : null);
     }
 }

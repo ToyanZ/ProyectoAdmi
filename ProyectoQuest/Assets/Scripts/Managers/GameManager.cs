@@ -51,6 +51,9 @@ public class GameManager : MonoBehaviour
     public CameraTracking cameraTracking;
     public GameObject inGameUI;
     public GameObject joystick;
+    public RectTransform statsUI;
+    public RectTransform statsUIStart;
+    public RectTransform statsUIEnd;
 
     public QuestionHandler currentQuestionHandler;
     [HideInInspector] public int characterIndex = 0;
@@ -72,6 +75,7 @@ public class GameManager : MonoBehaviour
     private void Update()
     {
         StateMachine();
+        if(buildType == BuildType.Pc) { joystick.SetActive(false); }
     }
     private void StateMachine()
     {
@@ -262,7 +266,18 @@ public class GameManager : MonoBehaviour
     {
         matchState = MatchState.Walking;
         gameState = GameState.Menu;
-        Invoke("ShowEndHUD", 2f);
+        //Invoke("ShowEndHUD", 2f);
+        StartCoroutine(ShowStats());
+    }
+    IEnumerator ShowStats()
+    {
+        float time = 0;
+        while (time < 1)
+        {
+            time += Time.deltaTime;
+            statsUI.position = Vector3.Lerp(statsUIStart.position, statsUIEnd.position, time / 1);
+            yield return new WaitForSeconds(Time.deltaTime);
+        }
     }
     private void ShowEndHUD()
     {
