@@ -73,4 +73,10 @@ public class OverlayingTrigger : Trigger
     public override float GetCurrentValue() { return load; }
     public override bool GetBoolValue() { return false; }
     public override string GetStringValue() { return ""; }
+
+
+    public void Algo()
+    {
+        print(load);
+    }
 }

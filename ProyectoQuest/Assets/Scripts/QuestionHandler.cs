@@ -13,12 +13,15 @@ public class QuestionHandler : MonoBehaviour
     public UnityEvent OnGroupCompleted;
     public bool gamePlayed = false;
     public BoxCollider2D boxCollider2D;
+    bool updating=false;
     public void ProgressUpdate()
     {
-        StartCoroutine(Progress());
+        if(!updating)StartCoroutine(Progress());
     }
     IEnumerator Progress()
     {
+        print("g");
+        updating = true;
         float count = 0;
         foreach (Question question in questions)
         {
@@ -38,6 +41,7 @@ public class QuestionHandler : MonoBehaviour
         }
 
         if(count == questions.Count) OnGroupCompleted?.Invoke();
+        updating = false;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

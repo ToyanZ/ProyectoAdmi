@@ -11846,7 +11846,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 23.900024, y: -22.299988}
+  m_AnchoredPosition: {x: 23.899902, y: -22.300049}
   m_SizeDelta: {x: 238.71997, y: 60}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &754241442
@@ -13056,6 +13056,42 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &837536119
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 837536120}
+  m_Layer: 5
+  m_Name: Wall
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &837536120
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 837536119}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1965639652}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &853000112
 GameObject:
   m_ObjectHideFlags: 0
@@ -17861,7 +17897,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   answered: 0
-  statement: "\xBFTe gusta la biologia?"
+  statement: "\xBFTe gusta ayudar a los animales?"
   answers:
   - statement: Si
     stats: 00000000
@@ -19172,7 +19208,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   answered: 0
-  statement: "\xBFTe gusta la biologia?"
+  statement: "\xBFCrees que te fue bien en la prueba M1?"
   answers:
   - statement: Si
     stats: 00000000
@@ -19434,7 +19470,7 @@ MonoBehaviour:
   matchState: 0
   buildType: 0
   character: {fileID: 0}
-  triggerLoadTime: 1.25
+  triggerLoadTime: 0.7
   affinityPointMax: 0
   answerTimeMin: 3
   answerTimeAvg: 8
@@ -73956,7 +73992,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   answered: 0
-  statement: "\xBFTe gusta la biologia?"
+  statement: "\xBFTe gusta presentarte en publico?"
   answers:
   - statement: Si
     stats: 00000000
@@ -76170,7 +76206,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1532004839}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.897, y: 0.51, z: -2}
+  m_LocalPosition: {x: 0.897, y: 0.332, z: -2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -83814,7 +83850,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   answered: 0
-  statement: "\xBFTe gusta la biologia?"
+  statement: "\xBFTe fue bien en la PAES?"
   answers:
   - statement: Si
     stats: 00000000
@@ -94200,7 +94236,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   answered: 0
-  statement: "\xBFTe gusta la biologia?"
+  statement: "\xBFTe gustan los c\xE1lculos?"
   answers:
   - statement: Si
     stats: 00000000
@@ -94387,6 +94423,7 @@ RectTransform:
   - {fileID: 1208073371}
   - {fileID: 171648461}
   - {fileID: 1010446494}
+  - {fileID: 837536120}
   m_Father: {fileID: 1743343314}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
