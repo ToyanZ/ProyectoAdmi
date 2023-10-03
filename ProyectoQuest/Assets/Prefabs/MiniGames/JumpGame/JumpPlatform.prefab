@@ -125,5 +125,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   upForce: 10
-  isDestroyed: 0
+  isDestroyed: 1
   disableSpawnPlatform: 1

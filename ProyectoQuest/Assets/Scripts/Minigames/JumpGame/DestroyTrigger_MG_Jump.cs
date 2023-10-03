@@ -13,22 +13,25 @@ public class DestroyTrigger_MG_Jump : MonoBehaviour
     {
         if(collision.CompareTag("Floor"))
         {
+            
             collision.GetComponent<JumpTrigger_MG_Jump>().SendSpawnNewObject(collision.transform);
             //InstantiateManager_MG_Jump.instance.InstantiateNewFloorDestroyZone(collision.transform);
-            Debug.Log("Choca con una plataforma");
+            
             Destroy(collision.gameObject);
+            
         }
         if (collision.CompareTag("Player"))
         {
             if(imagen != null) imagen.enabled = true;
 
-            Destroy(collision.gameObject);
+            collision.GetComponent<Jumping_MG_Jump>().LostPlayer();
+            //Destroy(collision.gameObject);
             InstantiateManager_MG_Jump.instance.LostGame();
             if(video != null) video.Play();
-
         }
         if (collision.CompareTag("Enemy"))
         {
+            Destroy(collision.gameObject);
             InstantiateManager_MG_Jump.instance.InstantiateNewEnemy(collision.transform);
         }
     }

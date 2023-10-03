@@ -110,6 +110,7 @@ MonoBehaviour:
   - {fileID: 1448824440, guid: db6d0cf00e2a6194b9eaa27a74de5d1b, type: 3}
   - {fileID: -405241938, guid: db6d0cf00e2a6194b9eaa27a74de5d1b, type: 3}
   - {fileID: 899775072, guid: db6d0cf00e2a6194b9eaa27a74de5d1b, type: 3}
+  particles: {fileID: 8498795946704270176, guid: d2c86787fb9092e44b97b65d03fbd052, type: 3}
 --- !u!61 &7023161409209974317
 BoxCollider2D:
   m_ObjectHideFlags: 0

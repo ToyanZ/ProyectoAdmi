@@ -12,6 +12,7 @@ public class Jumping_MG_Jump : MonoBehaviour
 
     public SpriteRenderer[] characters;
 
+    [SerializeField] GameObject particles;
     private void Start()
     {
         for(int i = 0; i < characters.Length; i++) 
@@ -47,6 +48,12 @@ public class Jumping_MG_Jump : MonoBehaviour
     public void StopMove() 
     {
         horizontal = 0;
+    }
+
+    public void LostPlayer()
+    {
+        Instantiate(particles, this.transform.position, Quaternion.identity);
+        Destroy(this.gameObject);
     }
 
     

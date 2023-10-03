@@ -12,6 +12,8 @@ public class CarEnemi : MonoBehaviour
 
     public SpriteRenderer vehicle;
     public Sprite[] vehicles;
+
+    public GameObject particles;
     // Start is called before the first frame update
     void Start()
     {
@@ -35,8 +37,9 @@ public class CarEnemi : MonoBehaviour
     }
     public void OnCollisionEnter2D(Collision2D collision)
     {
+        Instantiate(particles, collision.transform.position, Quaternion.identity);
         collision.gameObject.SetActive(false);
         panelLose.transform.GetChild(0).gameObject.SetActive(true);
-        Time.timeScale = 0f;
+        Time.timeScale = 0.1f;
     }
 }

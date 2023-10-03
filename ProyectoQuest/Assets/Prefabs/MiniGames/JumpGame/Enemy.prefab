@@ -101,6 +101,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rb: {fileID: 677666621}
   speed: 5
+  isLeft: 0
+  particles: {fileID: 8498795946704270176, guid: d2c86787fb9092e44b97b65d03fbd052, type: 3}
 --- !u!58 &4096414512824680597
 CircleCollider2D:
   m_ObjectHideFlags: 0

@@ -11,12 +11,15 @@ public class JumpTrigger_MG_Jump : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
-            JumpUp(collision);
-            if (disableSpawnPlatform)
+            if (collision.GetComponent<Rigidbody2D>().velocity.y <= 0)
             {
-                SendSpawnNewObject(collision.transform);
-                disableSpawnPlatform = false;
-                if(isDestroyed) Destroy(this.gameObject);
+                JumpUp(collision);
+                if (disableSpawnPlatform)
+                {
+                    SendSpawnNewObject(collision.transform);
+                    disableSpawnPlatform = false;
+                    if (isDestroyed) Destroy(this.gameObject);
+                }
             }
         }
     }
