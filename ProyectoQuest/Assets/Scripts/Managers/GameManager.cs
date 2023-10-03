@@ -108,6 +108,8 @@ public class GameManager : MonoBehaviour
     }
     private MenuState Check()
     {
+        InterfaceManager.instance.form.gameObject.SetActive(true);
+        InterfaceManager.instance.tutorial.gameObject.SetActive(false);
         return MenuState.SignIn;
     }
     private MenuState SignIn()

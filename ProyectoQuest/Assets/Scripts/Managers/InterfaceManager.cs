@@ -9,6 +9,8 @@ using UnityEngine.UI;
 public class InterfaceManager : MonoBehaviour
 {
     public static InterfaceManager instance;
+
+    public GameObject form;
     public TMP_InputField inputName;
     public TMP_InputField inputRut;
     public TMP_InputField inputEmail;
@@ -19,6 +21,10 @@ public class InterfaceManager : MonoBehaviour
     public string userEmail;
     public string userPhone;
     public string userGrade;
+
+    [Space(20)]
+    public GameObject tutorial;
+
 
     //Question PopUp
     [Space(20)]
