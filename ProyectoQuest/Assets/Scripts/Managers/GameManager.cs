@@ -58,6 +58,8 @@ public class GameManager : MonoBehaviour
     public QuestionHandler currentQuestionHandler;
     [HideInInspector] public int characterIndex = 0;
     [HideInInspector] public bool miniGameCompleted = false;
+
+    public int minigamesTry = 3;
     private void Awake()
     {
         if (instance == null)
