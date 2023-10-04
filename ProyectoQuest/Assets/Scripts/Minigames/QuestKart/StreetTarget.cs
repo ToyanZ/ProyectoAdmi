@@ -17,12 +17,16 @@ public class StreetTarget : MonoBehaviour
     private float count;
     private float time;
     public TMP_Text timeText;
-    public GameObject panelVictory;
-    public int currentStreet;
-    private int currentStreetEnemi;
-    private float vertical;
+    [HideInInspector] int currentStreet;
+    [HideInInspector] private int currentStreetEnemi;
+    [HideInInspector] private float vertical;
     public GameObject panelTutorial;
     public GameObject panelUI;
+    [HideInInspector] public bool spawnEnemi;
+    public GameObject panelLoseTry;
+    public GameObject panelMinigameComplete;
+    public TMP_Text coinsCount;
+    public TMP_Text triesCount;
 
     public GameObject[] characters;
     private int currentCharacter;
@@ -31,7 +35,7 @@ public class StreetTarget : MonoBehaviour
     void Start()
     {
         currentStreet = 2;
-        Time.timeScale = 0f;
+        spawnEnemi = false;
         time = 15f;
         if (GameManager.instance != null) currentCharacter = GameManager.instance.characterIndex;
         else currentCharacter = 0;
@@ -43,22 +47,31 @@ public class StreetTarget : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        timeText.text = FormatearTiempo();
-        if(time <= 0)
+        if (spawnEnemi)
         {
-            Victory();
+            //carPlayer.SetActive(true);
+            timeText.text = FormatearTiempo();
+            if (time <= 0)
+            {
+                Victory(2);
+            }
+            count += Time.deltaTime;
+            if (count > 1)
+            {
+                Invoke("CreateKart", Random.Range(1, 3));
+                count = 0;
+            }
+            ChangeStreet();
+            if (Input.GetButtonDown("Vertical"))
+            {
+                vertical = Input.GetAxisRaw("Vertical");
+            }
         }
-        count += Time.deltaTime;
-        if(count > 1)
+        else
         {
-            Invoke("CreateKart", Random.Range(1,3));
-            count = 0;
+            //carPlayer.SetActive(false);
         }
-        ChangeStreet();
-        if (Input.GetButtonDown("Vertical"))
-        {
-            vertical = Input.GetAxisRaw("Vertical");
-        }
+        
         
     }
     private void FixedUpdate()
@@ -77,22 +90,26 @@ public class StreetTarget : MonoBehaviour
     {
         panelTutorial.SetActive(false);
         panelUI.SetActive(true);
-        Time.timeScale = 1f;
+        spawnEnemi = true;
     }
     public void CreateKart()
     {
-        int numberStreet = Random.Range(0, streets.Length);
-        while(numberStreet == currentStreetEnemi)
+        if (spawnEnemi)
         {
-            numberStreet = Random.Range(0, streets.Length);
+            int numberStreet = Random.Range(0, streets.Length);
+            while (numberStreet == currentStreetEnemi)
+            {
+                numberStreet = Random.Range(0, streets.Length);
+            }
+            currentStreetEnemi = numberStreet;
+            GameObject vehicle = Instantiate(carEnemi, new Vector2(15, streets[numberStreet].transform.position.y), quaternion.identity);
+            if (numberStreet == 0) vehicle.GetComponent<CarEnemi>().vehicle.sortingOrder = 1;
+
+            if (numberStreet == 1) vehicle.GetComponent<CarEnemi>().vehicle.sortingOrder = 100;
+
+            if (numberStreet == 2) vehicle.GetComponent<CarEnemi>().vehicle.sortingOrder = 150;
         }
-        currentStreetEnemi = numberStreet;
-        GameObject vehicle = Instantiate(carEnemi, new Vector2(15, streets[numberStreet].transform.position.y), quaternion.identity);
-        if (numberStreet == 0)vehicle.GetComponent<CarEnemi>().vehicle.sortingOrder = 1;
-
-        if (numberStreet == 1)vehicle.GetComponent<CarEnemi>().vehicle.sortingOrder = 100;
-
-        if (numberStreet == 2)vehicle.GetComponent<CarEnemi>().vehicle.sortingOrder = 150;
+        
        
     }
 
@@ -126,23 +143,36 @@ public class StreetTarget : MonoBehaviour
         int miliSeg = (int)((time - (int)time) * 100f);
         return segundos.ToString("00") + ":" + miliSeg.ToString("00");
     }
-    public void Victory()
+    public void Victory(int numberCoint)
     {
-        Time.timeScale = 0f;
-        panelVictory.SetActive(true);
+        panelUI.SetActive(false);
+        spawnEnemi = false;
+        ResetToWorld(numberCoint);
         GameManager.instance.MiniGameCompleted();
-        Time.timeScale = 1f;
+    }
+    public void ResetToWorld(int numberCoint)
+    {
+        panelMinigameComplete.SetActive(true);
+        coinsCount.text = "X " + numberCoint.ToString();
+        GameManager.instance.minigamesTry = 3;
+
+    }
+    public void LoadWorldScene()
+    {
         SceneManager.LoadScene("Level1");
     }
 
-    void GoToLevel1()
+    public void LoseTry()
     {
-
+        spawnEnemi = false;
+        GameManager.instance.minigamesTry--;
+        triesCount.text ="X " + GameManager.instance.minigamesTry.ToString();
+        panelUI.SetActive(false);
+        panelLoseTry.SetActive(true);
     }
 
-    public void Reset()
-    {
-        Time.timeScale = 1f;
+    public void ResetLevel()
+    {           
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }
