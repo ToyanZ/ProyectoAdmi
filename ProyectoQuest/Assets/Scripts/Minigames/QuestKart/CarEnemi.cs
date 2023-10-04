@@ -9,6 +9,7 @@ public class CarEnemi : MonoBehaviour
     public GameObject panelLose;
     public float carVelocity;
     public GameObject streetTarget;
+    public GameObject panelMinigameComplete;
 
     public SpriteRenderer vehicle;
     public Sprite[] vehicles;
@@ -39,7 +40,23 @@ public class CarEnemi : MonoBehaviour
     {
         Instantiate(particles, collision.transform.position, Quaternion.identity);
         collision.gameObject.SetActive(false);
-        panelLose.transform.GetChild(0).gameObject.SetActive(true);
-        Time.timeScale = 0.1f;
+        if(GameManager.instance.minigamesTry == 0)
+        {
+            GameManager.instance.minigamesTry = 3;
+        }
+        else
+        {
+            GameManager.instance.minigamesTry--;
+            panelLose.transform.GetChild(0).gameObject.SetActive(true);
+            Time.timeScale = 0.1f;
+        }
+        
+
+    }
+
+    public void ResetToWorld(int numberCoint)
+    {
+        GameManager.instance.minigamesTry = 3;
+
     }
 }
