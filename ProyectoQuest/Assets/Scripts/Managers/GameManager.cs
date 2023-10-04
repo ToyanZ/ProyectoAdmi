@@ -16,9 +16,11 @@ public class GameManager : MonoBehaviour
     public enum MatchState { Walking, Answering, MiniGame, End }
     public static GameManager instance;
 
+    public bool testing = true;
     public GameState gameState = GameState.Menu;
     public MenuState menuState = MenuState.Check;
     public MatchState matchState = MatchState.Walking;
+
 
     [Space(20)]
     public BuildType buildType = BuildType.Pc;
@@ -49,11 +51,7 @@ public class GameManager : MonoBehaviour
     [Space(20)]
     public Bar progressBar;
     public CameraTracking cameraTracking;
-    public GameObject inGameUI;
-    public GameObject joystick;
-    public RectTransform statsUI;
-    public RectTransform statsUIStart;
-    public RectTransform statsUIEnd;
+    
 
     public QuestionHandler currentQuestionHandler;
     [HideInInspector] public int characterIndex = 0;
@@ -75,7 +73,7 @@ public class GameManager : MonoBehaviour
     private void Update()
     {
         StateMachine();
-        if(buildType == BuildType.Pc) { joystick.SetActive(false); }
+        if(buildType == BuildType.Pc) { InterfaceManager.instance.joystick.SetActive(false); }
     }
     private void StateMachine()
     {
@@ -108,8 +106,12 @@ public class GameManager : MonoBehaviour
     }
     private MenuState Check()
     {
-        InterfaceManager.instance.form.gameObject.SetActive(true);
-        InterfaceManager.instance.tutorial.gameObject.SetActive(false);
+        if (!testing)
+        {
+            InterfaceManager.instance.form.gameObject.SetActive(true);
+            InterfaceManager.instance.tutorial.gameObject.SetActive(false);
+        }
+        
         return MenuState.SignIn;
     }
     private MenuState SignIn()
@@ -197,8 +199,8 @@ public class GameManager : MonoBehaviour
             character.player.SetMove(true);
 
 
-
-            if (answeredQuestions == totalQuestions)//Si se responden todas las preguntas del juego
+            //Si se responden todas las preguntas del juego
+            if (answeredQuestions == totalQuestions)
             {
                 matchState = MatchState.End;
             }
@@ -222,7 +224,7 @@ public class GameManager : MonoBehaviour
                 if (currentQuestionHandler.gamePlayed == false)
                 {
                     currentQuestionHandler.gamePlayed = true;
-                    StartCoroutine(DeactivateMainUI());
+                    StartCoroutine(StartMiniGameSetUp());
                 }
             }
             else //Si aún le quedan preguntas por responder
@@ -231,14 +233,14 @@ public class GameManager : MonoBehaviour
             }
         }
     }
-    IEnumerator DeactivateMainUI()
+    IEnumerator StartMiniGameSetUp()
     {
         while(currentQuestionHandler.barImage.fillAmount < 0.98) yield return null;
 
+        InterfaceManager.instance.HideMainGameUI();
         character.gameObject.SetActive(false);
-        inGameUI.SetActive(false);
-        joystick.SetActive(false);
         matchState = MatchState.MiniGame;
+        
         LevelManager.instance.LoadRandomGame("Level1", 0);
     }
     IEnumerator MatchProgressUpdate(float current, float max)
@@ -259,8 +261,7 @@ public class GameManager : MonoBehaviour
         if (miniGameCompleted)
         {
             character.gameObject.SetActive(true);
-            inGameUI.SetActive(true);
-            joystick.SetActive(true);
+            InterfaceManager.instance.ShowMainGameUI();
             matchState = MatchState.Walking;
         }
     }
@@ -269,18 +270,9 @@ public class GameManager : MonoBehaviour
         matchState = MatchState.Walking;
         gameState = GameState.Menu;
         //Invoke("ShowEndHUD", 2f);
-        StartCoroutine(ShowStats());
+        InterfaceManager.instance.ShowPlayerStats();
     }
-    IEnumerator ShowStats()
-    {
-        float time = 0;
-        while (time < 1)
-        {
-            time += Time.deltaTime;
-            statsUI.position = Vector3.Lerp(statsUIStart.position, statsUIEnd.position, time / 1);
-            yield return new WaitForSeconds(Time.deltaTime);
-        }
-    }
+    
     private void ShowEndHUD()
     {
         InterfaceManager.instance.missionCompletedPopUp.SetActive(true);
@@ -289,9 +281,6 @@ public class GameManager : MonoBehaviour
     {
         miniGameCompleted = true;
     }
-
-
-
 
     public void UpdateAffinityPointCount()
     {

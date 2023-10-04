@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Security.Cryptography;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
@@ -38,6 +39,16 @@ public class InterfaceManager : MonoBehaviour
     [Space(20)]
     public UnityEvent OnAnswerSelected;
     public GameObject missionCompletedPopUp;
+
+
+    [Space(20)]
+    public GameObject onScreenUI;
+    public GameObject inGameUI;
+    public GameObject joystick;
+    public RectTransform statsUI;
+    public RectTransform statsUIStartPoint;
+    public RectTransform statsUIEndPoint;
+
 
     private void Awake()
     {
@@ -309,5 +320,35 @@ public class InterfaceManager : MonoBehaviour
             }
         }
     }
-    
+
+
+    public void HideMainGameUI()
+    {
+        onScreenUI.SetActive(false);
+        inGameUI.SetActive(false);
+        joystick.SetActive(false);
+    }
+    public void ShowMainGameUI()
+    {
+        onScreenUI.SetActive(true);
+        inGameUI.SetActive(true);
+        joystick.SetActive(true);
+    }
+
+    public void ShowPlayerStats()
+    {
+        StartCoroutine(ShowStats());
+    }
+    private IEnumerator ShowStats()
+    {
+        float time = 0;
+        while (time < 1)
+        {
+            time += Time.deltaTime;
+            statsUI.position = Vector3.Lerp(statsUIStartPoint.position, statsUIEndPoint.position, time / 1);
+            yield return new WaitForSeconds(Time.deltaTime);
+        }
+    }
+
+
 }
