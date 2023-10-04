@@ -6,7 +6,6 @@ using UnityEngine.SceneManagement;
 
 public class CarEnemi : MonoBehaviour
 {
-    public GameObject panelLose;
     public float carVelocity;
     public GameObject streetTarget;
     public GameObject panelMinigameComplete;
@@ -18,7 +17,6 @@ public class CarEnemi : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        panelLose = GameObject.FindGameObjectWithTag("Lose");
         streetTarget = GameObject.FindGameObjectWithTag("Target");
         vehicle.sprite = vehicles[Random.Range(0, vehicles.Length)];
         
@@ -40,18 +38,15 @@ public class CarEnemi : MonoBehaviour
     {
         Instantiate(particles, collision.transform.position, Quaternion.identity);
         collision.gameObject.SetActive(false);
-        if(GameManager.instance.minigamesTry == 0)
+        /*if (GameManager.instance.minigamesTry == 0)
         {
-            GameManager.instance.minigamesTry = 3;
+            streetTarget.GetComponent<StreetTarget>().ResetToWorld(1);
         }
         else
         {
-            GameManager.instance.minigamesTry--;
-            panelLose.transform.GetChild(0).gameObject.SetActive(true);
-            Time.timeScale = 0.1f;
-        }
-        
-
+            streetTarget.GetComponent<StreetTarget>().LoseTry();
+        }*/
+        streetTarget.GetComponent<StreetTarget>().LoseTry();
     }
 
     public void ResetToWorld(int numberCoint)

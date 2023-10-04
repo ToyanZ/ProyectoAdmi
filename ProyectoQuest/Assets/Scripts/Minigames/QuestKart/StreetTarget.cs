@@ -23,6 +23,8 @@ public class StreetTarget : MonoBehaviour
     private float vertical;
     public GameObject panelTutorial;
     public GameObject panelUI;
+    public bool spawnEnemi;
+    public GameObject panelLoseTry;
 
     public GameObject[] characters;
     private int currentCharacter;
@@ -31,7 +33,7 @@ public class StreetTarget : MonoBehaviour
     void Start()
     {
         currentStreet = 2;
-        Time.timeScale = 0f;
+        spawnEnemi = false;
         time = 15f;
         if (GameManager.instance != null) currentCharacter = GameManager.instance.characterIndex;
         else currentCharacter = 0;
@@ -43,22 +45,31 @@ public class StreetTarget : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        timeText.text = FormatearTiempo();
-        if(time <= 0)
+        if (spawnEnemi)
         {
-            Victory();
+            //carPlayer.SetActive(true);
+            timeText.text = FormatearTiempo();
+            if (time <= 0)
+            {
+                Victory();
+            }
+            count += Time.deltaTime;
+            if (count > 1)
+            {
+                Invoke("CreateKart", Random.Range(1, 3));
+                count = 0;
+            }
+            ChangeStreet();
+            if (Input.GetButtonDown("Vertical"))
+            {
+                vertical = Input.GetAxisRaw("Vertical");
+            }
         }
-        count += Time.deltaTime;
-        if(count > 1)
+        else
         {
-            Invoke("CreateKart", Random.Range(1,3));
-            count = 0;
+            //carPlayer.SetActive(false);
         }
-        ChangeStreet();
-        if (Input.GetButtonDown("Vertical"))
-        {
-            vertical = Input.GetAxisRaw("Vertical");
-        }
+        
         
     }
     private void FixedUpdate()
@@ -77,22 +88,26 @@ public class StreetTarget : MonoBehaviour
     {
         panelTutorial.SetActive(false);
         panelUI.SetActive(true);
-        Time.timeScale = 1f;
+        spawnEnemi = true;
     }
     public void CreateKart()
     {
-        int numberStreet = Random.Range(0, streets.Length);
-        while(numberStreet == currentStreetEnemi)
+        if (spawnEnemi)
         {
-            numberStreet = Random.Range(0, streets.Length);
+            int numberStreet = Random.Range(0, streets.Length);
+            while (numberStreet == currentStreetEnemi)
+            {
+                numberStreet = Random.Range(0, streets.Length);
+            }
+            currentStreetEnemi = numberStreet;
+            GameObject vehicle = Instantiate(carEnemi, new Vector2(15, streets[numberStreet].transform.position.y), quaternion.identity);
+            if (numberStreet == 0) vehicle.GetComponent<CarEnemi>().vehicle.sortingOrder = 1;
+
+            if (numberStreet == 1) vehicle.GetComponent<CarEnemi>().vehicle.sortingOrder = 100;
+
+            if (numberStreet == 2) vehicle.GetComponent<CarEnemi>().vehicle.sortingOrder = 150;
         }
-        currentStreetEnemi = numberStreet;
-        GameObject vehicle = Instantiate(carEnemi, new Vector2(15, streets[numberStreet].transform.position.y), quaternion.identity);
-        if (numberStreet == 0)vehicle.GetComponent<CarEnemi>().vehicle.sortingOrder = 1;
-
-        if (numberStreet == 1)vehicle.GetComponent<CarEnemi>().vehicle.sortingOrder = 100;
-
-        if (numberStreet == 2)vehicle.GetComponent<CarEnemi>().vehicle.sortingOrder = 150;
+        
        
     }
 
@@ -128,21 +143,26 @@ public class StreetTarget : MonoBehaviour
     }
     public void Victory()
     {
-        Time.timeScale = 0f;
+        spawnEnemi = false;
         panelVictory.SetActive(true);
         GameManager.instance.MiniGameCompleted();
-        Time.timeScale = 1f;
         SceneManager.LoadScene("Level1");
     }
-
-    void GoToLevel1()
+    public void ResetToWorld(int numberCoint)
     {
+        GameManager.instance.minigamesTry = 3;
 
+    }
+
+    public void LoseTry()
+    {
+        spawnEnemi = false;
+        //GameManager.instance.minigamesTry--;
+        panelLoseTry.SetActive(true);
     }
 
     public void Reset()
-    {
-        Time.timeScale = 1f;
+    {           
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }

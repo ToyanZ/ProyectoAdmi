@@ -11947,7 +11947,7 @@ GameObject:
   - component: {fileID: 1925735081}
   m_Layer: 0
   m_Name: StreetTarget
-  m_TagString: Untagged
+  m_TagString: Target
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -11991,6 +11991,8 @@ MonoBehaviour:
   currentStreet: 0
   panelTutorial: {fileID: 2121475236}
   panelUI: {fileID: 1696987001}
+  spawnEnemi: 0
+  panelLoseTry: {fileID: 1635700690}
   characters:
   - {fileID: 712693024}
   - {fileID: 1373840303}
@@ -12575,6 +12577,14 @@ PrefabInstance:
     - target: {fileID: 6716786230437159418, guid: 949f4ab9b49f3e843b99b33d63a72c8d, type: 3}
       propertyPath: m_Name
       value: CarEnemi
+      objectReference: {fileID: 0}
+    - target: {fileID: 6716786230437159418, guid: 949f4ab9b49f3e843b99b33d63a72c8d, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8330551798770832706, guid: 949f4ab9b49f3e843b99b33d63a72c8d, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 949f4ab9b49f3e843b99b33d63a72c8d, type: 3}
