@@ -17,14 +17,16 @@ public class StreetTarget : MonoBehaviour
     private float count;
     private float time;
     public TMP_Text timeText;
-    public GameObject panelVictory;
-    public int currentStreet;
-    private int currentStreetEnemi;
-    private float vertical;
+    [HideInInspector] int currentStreet;
+    [HideInInspector] private int currentStreetEnemi;
+    [HideInInspector] private float vertical;
     public GameObject panelTutorial;
     public GameObject panelUI;
-    public bool spawnEnemi;
+    [HideInInspector] public bool spawnEnemi;
     public GameObject panelLoseTry;
+    public GameObject panelMinigameComplete;
+    public TMP_Text coinsCount;
+    public TMP_Text triesCount;
 
     public GameObject[] characters;
     private int currentCharacter;
@@ -51,7 +53,7 @@ public class StreetTarget : MonoBehaviour
             timeText.text = FormatearTiempo();
             if (time <= 0)
             {
-                Victory();
+                Victory(2);
             }
             count += Time.deltaTime;
             if (count > 1)
@@ -141,27 +143,35 @@ public class StreetTarget : MonoBehaviour
         int miliSeg = (int)((time - (int)time) * 100f);
         return segundos.ToString("00") + ":" + miliSeg.ToString("00");
     }
-    public void Victory()
+    public void Victory(int numberCoint)
     {
+        panelUI.SetActive(false);
         spawnEnemi = false;
-        panelVictory.SetActive(true);
+        ResetToWorld(numberCoint);
         GameManager.instance.MiniGameCompleted();
-        SceneManager.LoadScene("Level1");
     }
     public void ResetToWorld(int numberCoint)
     {
+        panelMinigameComplete.SetActive(true);
+        coinsCount.text = "X " + numberCoint.ToString();
         GameManager.instance.minigamesTry = 3;
 
+    }
+    public void LoadWorldScene()
+    {
+        SceneManager.LoadScene("Level1");
     }
 
     public void LoseTry()
     {
         spawnEnemi = false;
-        //GameManager.instance.minigamesTry--;
+        GameManager.instance.minigamesTry--;
+        triesCount.text ="X " + GameManager.instance.minigamesTry.ToString();
+        panelUI.SetActive(false);
         panelLoseTry.SetActive(true);
     }
 
-    public void Reset()
+    public void ResetLevel()
     {           
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }

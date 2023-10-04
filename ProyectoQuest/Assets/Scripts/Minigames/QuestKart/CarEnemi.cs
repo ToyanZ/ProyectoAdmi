@@ -38,20 +38,13 @@ public class CarEnemi : MonoBehaviour
     {
         Instantiate(particles, collision.transform.position, Quaternion.identity);
         collision.gameObject.SetActive(false);
-        /*if (GameManager.instance.minigamesTry == 0)
+        if (GameManager.instance.minigamesTry == 1)
         {
-            streetTarget.GetComponent<StreetTarget>().ResetToWorld(1);
+            streetTarget.GetComponent<StreetTarget>().Victory(1);
         }
         else
         {
             streetTarget.GetComponent<StreetTarget>().LoseTry();
-        }*/
-        streetTarget.GetComponent<StreetTarget>().LoseTry();
-    }
-
-    public void ResetToWorld(int numberCoint)
-    {
-        GameManager.instance.minigamesTry = 3;
-
+        }
     }
 }
