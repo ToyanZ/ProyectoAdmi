@@ -11,6 +11,7 @@ public class InterfaceManager : MonoBehaviour
 {
     public static InterfaceManager instance;
 
+    [Header("Form UI")]
     public GameObject form;
     public TMP_InputField inputName;
     public TMP_InputField inputRut;
@@ -23,33 +24,31 @@ public class InterfaceManager : MonoBehaviour
     public string userPhone;
     public string userGrade;
 
-    [Space(20)]
+    [Header("Tutorial UI")]
     public GameObject tutorial;
 
 
-    //Question PopUp
-    [Space(20)]
+    [Header("Question Pop Up")]
     public GameObject popUp;
     public TMP_Text statement;
-    public List<AnswerButton> buttons;
-    public Bar answerTimerBar;
-    public List<Image> attackPoints;
-
-    
-    [Space(20)]
-    public UnityEvent OnAnswerSelected;
-    public GameObject missionCompletedPopUp;
+    public List<AnswerButton> answerButtons;
+    public List<Area> afinityAreas;
 
 
-    [Space(20)]
+    [Header("Game UI")]
     public GameObject onScreenUI;
     public GameObject inGameUI;
     public GameObject joystick;
     public RectTransform statsUI;
     public RectTransform statsUIStartPoint;
     public RectTransform statsUIEndPoint;
+    public GameObject missionCompletedPopUp;
 
 
+
+    //Eliminar
+    [HideInInspector] public List<Image> attackPoints;
+    [HideInInspector] public Bar answerTimerBar;
     private void Awake()
     {
         if (instance == null)
@@ -73,51 +72,38 @@ public class InterfaceManager : MonoBehaviour
 
     public void LoadQuestion(Question question)
     {
-        statement.text = question.statement;
+        statement.text = question.statement;//Actualiza el texto de la nueva pregunta
 
+        //Por cada respueta
         for (int i = 0; i < question.answers.Count; i++)
         {
             string answerText = question.answers[i].statement;
 
-            buttons[i].button.onClick.AddListener(() => {
-                question.SelectAnswer(answerText);
-                CloseQuestion();
+            //Cuando haga click en el boton asociado
+            answerButtons[i].button.onClick.AddListener(() => 
+            {
+                question.SelectThisAnswer(answerText); //Se ejecutará el metedodo "Select this answer"
+                CloseQuestion(); //Y se cierra el dialogo de pregunta
             });
 
-            buttons[i].text.text = answerText;
-            buttons[i].gameObject.SetActive(true);
+            answerButtons[i].text.text = answerText; //Actualiza el texto de las respuestas.
+            answerButtons[i].gameObject.SetActive(true); //Activa el botón
         }
 
-        popUp.gameObject.SetActive(true);
+        popUp.gameObject.SetActive(true);//Activa la ventana de pregunta
     }
     private void CloseQuestion()
     {
         popUp.gameObject.SetActive(false);
 
-        int count = buttons.Count;
+        int count = answerButtons.Count;
         for(int i=0; i<count; i++)
         {
-            buttons[i].button.onClick.RemoveAllListeners();
-            buttons[i].gameObject.SetActive(false);
+            answerButtons[i].button.onClick.RemoveAllListeners();
+            answerButtons[i].gameObject.SetActive(false);
         }
 
         statement.text = "";
-    }
-
-    public void SendForm()
-    {
-        UserNameControl(inputName);
-        UserRutControl(inputRut);
-        UserEmailControl(inputEmail);
-        userPhone = inputPhone.text;
-        userGrade = inputGrade.captionText.text;
-        print("****" + userRut + "****");
-        //gameObject.GetComponent<Emailer>().CallSendEmail();
-    }
-
-    public void SendForm2()
-    {
-        gameObject.GetComponent<Emailer>().CallSendEmail();
     }
 
     public void UserNameControl(TMP_InputField inputField)
@@ -148,7 +134,6 @@ public class InterfaceManager : MonoBehaviour
             }
         }
     }
-
     public void UserRutControl(TMP_InputField inputField)
     {
         int index = 0;
@@ -321,7 +306,6 @@ public class InterfaceManager : MonoBehaviour
         }
     }
 
-
     public void HideMainGameUI()
     {
         onScreenUI.SetActive(false);
@@ -351,4 +335,47 @@ public class InterfaceManager : MonoBehaviour
     }
 
 
+
+
+    //Se llama desde trigger (editor)
+    public void SendForm()
+    {
+        UserNameControl(inputName);
+        UserRutControl(inputRut);
+        UserEmailControl(inputEmail);
+        userPhone = inputPhone.text;
+        userGrade = inputGrade.captionText.text;
+        print("****" + userRut + "****");
+        //gameObject.GetComponent<Emailer>().CallSendEmail();
+    }
+    public void SendForm2()
+    {
+        gameObject.GetComponent<Emailer>().CallSendEmail();
+    }
+
+    public void ShowRelatedCareers(RectTransform rectTransform)
+    {
+        rectTransform.gameObject.SetActive(true);
+        //Cerrar todos los otros cuadros
+        foreach (Area area in afinityAreas)
+        {
+            area.relatedCareers.localScale = new Vector3(1, 0, 1);
+        }
+
+        //Abre el cuadro actual
+        StartCoroutine(ShowRelatedCareersIE(rectTransform));
+    }
+    IEnumerator ShowRelatedCareersIE(RectTransform rectTransform)
+    {
+        rectTransform.gameObject.SetActive(true);
+        float time = 0;
+        float maxTime = 0.5f;
+        while (time < maxTime)
+        {
+            time += Time.deltaTime;
+            Vector3 scale = rectTransform.localScale;
+            rectTransform.localScale = new Vector3(scale.x, time / maxTime, scale.z);
+            yield return new WaitForSeconds(Time.deltaTime);
+        }
+    }
 }
