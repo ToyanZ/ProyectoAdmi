@@ -8,16 +8,16 @@ public class Question : MonoBehaviour
 {
     public bool answered = false;
     public string statement = "";
-    public List<Answer> answers;
-    public float answerTimeMod = 0;
-
-    [Space(20)]
-    public Enemy enemy;
-    public int attackPoints = 0;
     public Bar completed;
 
     [Space(20)]
-    [SerializeField]float time = 0;
+    public List<Answer> answers;
+
+    //Eliminar
+    float time = 0;
+    [HideInInspector] public float answerTimeMod = 0;
+    [HideInInspector] public Enemy enemy;
+    [HideInInspector] public int attackPoints = 0;
 
     //Se llama desde trigger (editor)
     public void LoadPopUp()
@@ -40,9 +40,10 @@ public class Question : MonoBehaviour
         GameManager.instance.affinityPointMax += 1;
         //InterfaceManager.instance.OnAnswerSelected?.Invoke(); //Update HUD
 
-        StartCoroutine(UpdateProgressBar());
+        StartCoroutine(UpdateQuestionProgressBar());
+        InterfaceManager.instance.UpdateAfinityBars();
     }
-    IEnumerator UpdateProgressBar()
+    IEnumerator UpdateQuestionProgressBar()
     {
         yield return new WaitForSeconds(0.2f);
         float time2 = 0;
@@ -54,22 +55,13 @@ public class Question : MonoBehaviour
         }
     }
 
-
-    //Modificar ya que cada respuesta tiene directamente las áres asociadas.
     void AddPointIfAnswerMatch(Answer answer, Area area)
     {
-        for (int i = 0; i < answer.stats.Count; i++)
+        for (int i = 0; i < answer.relatedAreas.Count; i++)
         {
-            if (area.stats.Contains(answer.stats[i]))
+            if (area.aName.ToString() == answer.relatedAreas[i].ToString())
             {
-                if (answer.affinityPoints.Count == 1)
-                {
-                    area.affinity += answer.affinityPoints[0];
-                }
-                else
-                {
-                    area.affinity += answer.affinityPoints[i];
-                }
+                area.affinity += 1;
             }
         }
     }

@@ -20,7 +20,6 @@ public class QuestionHandler : MonoBehaviour
     }
     IEnumerator Progress()
     {
-        print("g");
         updating = true;
         float count = 0;
         foreach (Question question in questions)

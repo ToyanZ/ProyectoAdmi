@@ -21,16 +21,12 @@ public class Area : StatElement
         Ingenieria,
         Deporte
     }
-    public enum Stat { Logic, TeamWork, SocialSkill}
 
     public Name aName = Name.Administracion;
     public int affinity = 0;
     public RectTransform relatedCareers;
-
-
-
-    [Space(10)]
-    public List<Stat> stats;
+    public Button creerButton;
+    public Bar affinityBar;
 
     public override float GetMaxValue() { return GameManager.instance.affinityPointMax; }
     public override float GetCurrentValue() { return affinity; }
