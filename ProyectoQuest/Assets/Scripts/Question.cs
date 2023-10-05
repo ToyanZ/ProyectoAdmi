@@ -18,17 +18,19 @@ public class Question : MonoBehaviour
 
     [Space(20)]
     [SerializeField]float time = 0;
+
+    //Se llama desde trigger (editor)
     public void LoadPopUp()
     {
         InterfaceManager.instance.LoadQuestion(this);
     }
-    public void SelectAnswer(string statement)
+    public void SelectThisAnswer(string statement)
     {
         answered = true;
         
         Answer answer = answers.Find(answer => answer.statement == statement);
 
-        foreach(Area area in GameManager.instance.character.player.target.areas)
+        foreach(Area area in InterfaceManager.instance.afinityAreas)
         {
             AddPointIfAnswerMatch(answer, area);
         }
@@ -36,12 +38,24 @@ public class Question : MonoBehaviour
 
         //GameManager.instance.UpdateAffinityPointCount();
         GameManager.instance.affinityPointMax += 1;
-        InterfaceManager.instance.OnAnswerSelected?.Invoke(); //Update HUD
+        //InterfaceManager.instance.OnAnswerSelected?.Invoke(); //Update HUD
 
-        StartCoroutine(Complete());
-        StartCoroutine(Attack());
+        StartCoroutine(UpdateProgressBar());
+    }
+    IEnumerator UpdateProgressBar()
+    {
+        yield return new WaitForSeconds(0.2f);
+        float time2 = 0;
+        while (time2 < GameManager.instance.answerCompletedBarUpdateTime)
+        {
+            time2 += Time.deltaTime;
+            completed.SimpleRefresh(Mathf.Clamp01(time2), 0.5f);
+            yield return new WaitForSeconds(Time.deltaTime);
+        }
     }
 
+
+    //Modificar ya que cada respuesta tiene directamente las áres asociadas.
     void AddPointIfAnswerMatch(Answer answer, Area area)
     {
         for (int i = 0; i < answer.stats.Count; i++)
@@ -60,6 +74,7 @@ public class Question : MonoBehaviour
         }
     }
 
+    //Se llama desde trigger, eliminar.
     public void AnswerTimeCounter()
     {
         if (answered) return;
@@ -78,41 +93,6 @@ public class Question : MonoBehaviour
         }
     }
 
-    public void StartCompletedAnim()
-    {
-        //print("completed");
-        //StartCoroutine(Complete());
-    }
-    public void StartAttack()
-    {
-        //print("attack");
-        //StartCoroutine(Attack());
-    }
+    
 
-    IEnumerator Complete()
-    {
-        yield return new WaitForSeconds(0.2f);
-        float time2 = 0;
-        while (time2 < GameManager.instance.answerCompletedBarUpdateTime)
-        {
-            time2 += Time.deltaTime;
-            completed.SimpleRefresh(Mathf.Clamp01(time2), 0.5f);
-            yield return new WaitForSeconds(Time.deltaTime);
-        }    
-    }
-
-
-    IEnumerator Attack()
-    {
-        yield return new WaitForSeconds(2);
-        if (attackPoints > 0)
-        {
-            for (int i = 0; i < attackPoints; i++)
-            {
-                enemy.TakeDamage();
-                yield return new WaitForSeconds(1.2f);
-            }
-            attackPoints = 0;
-        }
-    }
 }

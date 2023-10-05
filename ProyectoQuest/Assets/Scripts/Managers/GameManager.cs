@@ -16,50 +16,53 @@ public class GameManager : MonoBehaviour
     public enum MatchState { Walking, Answering, MiniGame, End }
     public static GameManager instance;
 
+    
     public bool testing = true;
+    public BuildType buildType = BuildType.Pc;
+    
+    [Header("Sates")]
     public GameState gameState = GameState.Menu;
     public MenuState menuState = MenuState.Check;
     public MatchState matchState = MatchState.Walking;
 
 
-    [Space(20)]
-    public BuildType buildType = BuildType.Pc;
-    //public Action 
-
-    [Space(20)]
-    [HideInInspector] public Character character;
-    public float triggerLoadTime = 1.5f;
+    [Header("Time And Counting")]
     public int affinityPointMax = 0;
-    public float answerTimeMin = 3;
-    public float answerTimeAvg = 8;
-    public float answerTimeMax = 11;
+    public int minigamesTry = 3;
 
+    [Space(10)]
+    public float triggerLoadTime = 1.5f;
+    public float matchProgressBarUpdateTime = 2f;
+    public float questionHandlerBarUpdateTime = 1f;
+    public float answerCompletedBarUpdateTime = 0.7f;
+
+    [Header("References")]
+    public Bar progressBar;
+    public CameraTracking cameraTracking;
+    public List<QuestionHandler> questionHandlers;
+
+    
+    
+    [HideInInspector] public Character character;
+    [HideInInspector] public QuestionHandler currentQuestionHandler;
+    
     //User info
-    [Space(20)]
     [HideInInspector] public string nameUser;
     [HideInInspector] public string rutUser;
     [HideInInspector] public string emailUser;
     [HideInInspector] public string phoneNumberUser;
     [HideInInspector] public string gradeUser;
-
-    [Space(20)]
-    public float matchProgressBarUpdateTime = 2f;
-    public float questionHandlerBarUpdateTime = 1f;
-    public float answerCompletedBarUpdateTime = 0.7f;
-    public List<QuestionHandler> questionHandlers;
-
-    [Space(20)]
-    public Bar progressBar;
-    public CameraTracking cameraTracking;
     
-
-    public QuestionHandler currentQuestionHandler;
     [HideInInspector] public int characterIndex = 0;
     [HideInInspector] public bool miniGameCompleted = false;
     [HideInInspector] public bool miniGameTutorial = true;
     [HideInInspector] public int playerCoins = 0;
 
-    public int minigamesTry = 3;
+
+    //Eliminar
+    [HideInInspector] public float answerTimeMin = 3;
+    [HideInInspector] public float answerTimeAvg = 8;
+    [HideInInspector] public float answerTimeMax = 11;
     private void Awake()
     {
         if (instance == null)
@@ -289,7 +292,7 @@ public class GameManager : MonoBehaviour
     public void UpdateAffinityPointCount()
     {
         affinityPointMax = 0;
-        foreach (Area area in character.player.target.areas)
+        foreach (Area area in InterfaceManager.instance.afinityAreas)
         {
             if(area.affinity > affinityPointMax) affinityPointMax = area.affinity;
         }

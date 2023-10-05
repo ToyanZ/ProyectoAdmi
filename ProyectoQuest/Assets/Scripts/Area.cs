@@ -1,19 +1,33 @@
 
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Area : StatElement
 {
     public enum Name 
     { 
-        Diseño,
-        Biologia, 
-        Enfermeria
+        Administracion,
+        CienciasSociales, 
+        Comunicacion,
+        Educacion,
+        Derecho,
+        TurismoYGastronomia,
+        Diseno,
+        MedicinaVeterinaria,
+        Odontologia,
+        Salud,
+        Informatica,
+        Ingenieria,
+        Deporte
     }
     public enum Stat { Logic, TeamWork, SocialSkill}
 
-    public Name aName = Name.Diseño;
+    public Name aName = Name.Administracion;
     public int affinity = 0;
+    public RectTransform relatedCareers;
+
+
 
     [Space(10)]
     public List<Stat> stats;
