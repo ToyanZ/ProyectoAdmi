@@ -36,15 +36,19 @@ public class GameManager : MonoBehaviour
     public float questionHandlerBarUpdateTime = 1f;
     public float answerCompletedBarUpdateTime = 0.7f;
 
+    [Space(10)]
+    public float doorsOpenTime = 2f;
+
     [Header("References")]
     public Bar progressBar;
     public CameraTracking cameraTracking;
-    public List<QuestionHandler> questionHandlers;
+    public GameObject dustParticleEffect;
+    public List<Zone> zones;
 
     
     
     [HideInInspector] public Character character;
-    [HideInInspector] public QuestionHandler currentQuestionHandler;
+    [HideInInspector] public Zone currentZone;
     
     //User info
     [HideInInspector] public string nameUser;
@@ -139,12 +143,12 @@ public class GameManager : MonoBehaviour
             character = FindObjectOfType<Character>();
             return;
         }
-        if (questionHandlers == null)
+        if (zones == null)
         {
-            questionHandlers = new List<QuestionHandler>();
+            zones = new List<Zone>();
             return;
         }
-        if (questionHandlers.Count == 0) questionHandlers = FindObjectsOfType<QuestionHandler>().ToList();
+        if (zones.Count == 0) zones = FindObjectsOfType<Zone>().ToList();
 
 
         switch (matchState)
@@ -177,7 +181,7 @@ public class GameManager : MonoBehaviour
         {
             //Cuenta el total de preguntas
             float totalQuestions = 0.0f;
-            foreach (QuestionHandler questionHandler in questionHandlers)
+            foreach (Zone questionHandler in zones)
             {
                 foreach (Question question in questionHandler.questions)
                 {
@@ -189,13 +193,13 @@ public class GameManager : MonoBehaviour
             //revisa si todas las preguntas de la zona actual estan respondidas
             float answeredQuestions = 0.0f;
             bool allAnswered = true;
-            foreach (QuestionHandler questionHandler in questionHandlers)
+            foreach (Zone questionHandler in zones)
             {
                 foreach (Question question in questionHandler.questions)
                 {
                     if (question.answered) answeredQuestions += 1.0f;
 
-                    if (questionHandler == currentQuestionHandler)
+                    if (questionHandler == currentZone)
                     {
                         if (!question.answered) allAnswered = false;
                     }
@@ -213,24 +217,24 @@ public class GameManager : MonoBehaviour
             }
             else if (allAnswered)//Si se responden todas las preguntas del area / zona
             {
-                if (currentQuestionHandler == null)
+                if (currentZone == null)
                 {
                     float distance = -1;
-                    foreach (QuestionHandler questionHandler in questionHandlers)
+                    foreach (Zone questionHandler in zones)
                     {
                         float currentDist = (questionHandler.boxCollider2D.transform.position - character.transform.position).magnitude;
                         if (distance == -1 || currentDist < distance)
                         {
                             distance = currentDist;
-                            currentQuestionHandler = questionHandler;
+                            currentZone = questionHandler;
                         }
                     }
                     return;
                 }
 
-                if (currentQuestionHandler.gamePlayed == false)
+                if (currentZone.gamePlayed == false)
                 {
-                    currentQuestionHandler.gamePlayed = true;
+                    currentZone.gamePlayed = true;
                     StartCoroutine(StartMiniGameSetUp());
                 }
             }
@@ -242,7 +246,7 @@ public class GameManager : MonoBehaviour
     }
     IEnumerator StartMiniGameSetUp()
     {
-        while(currentQuestionHandler.barImage.fillAmount < 0.98) yield return null;
+        while(currentZone.barImage.fillAmount < 0.98) yield return null;
 
         InterfaceManager.instance.HideMainGameUI();
         character.gameObject.SetActive(false);
@@ -267,9 +271,10 @@ public class GameManager : MonoBehaviour
     {
         if (miniGameCompleted)
         {
-            character.gameObject.SetActive(true);
             InterfaceManager.instance.ShowMainGameUI();
             matchState = MatchState.Walking;
+            currentZone.Open();
+            character.gameObject.SetActive(true);
         }
     }
     private void End()
@@ -298,9 +303,9 @@ public class GameManager : MonoBehaviour
         }
     }
     
-    public void SetCurrentArea(QuestionHandler questionHandler)
+    public void SetCurrentArea(Zone questionHandler)
     {
-        currentQuestionHandler = questionHandler;
-        cameraTracking.GoTo(questionHandler.focusPoint);
+        currentZone = questionHandler;
+        cameraTracking.GoTo(questionHandler.cameraPosition);
     }
 }
