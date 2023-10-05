@@ -5,7 +5,5 @@ using System.Collections.Generic;
 public class Answer
 {
     public string statement;
-    public List<Area.Stat> stats;
-    //public List<Area.Name> relatedAreas;
-    public List<int> affinityPoints;
+    public List<Area.Name> relatedAreas;
 }

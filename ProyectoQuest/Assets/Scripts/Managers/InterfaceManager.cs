@@ -61,7 +61,10 @@ public class InterfaceManager : MonoBehaviour
             Destroy(gameObject);
         }
     }
-    
+    private void Start()
+    {
+        LoadCareerButton();
+    }
     private void Update()
     {
         //string aadasss = inputGrade.options[0].text;
@@ -69,6 +72,36 @@ public class InterfaceManager : MonoBehaviour
     }
 
     
+    private void LoadCareerButton()
+    {
+        foreach(Area area in afinityAreas)
+        {
+            area.creerButton.onClick.AddListener(() =>
+            {
+                //Minimiza todos los otros cuadros
+                foreach (Area area in afinityAreas)
+                {
+                    area.relatedCareers.gameObject.SetActive(false);
+                    area.relatedCareers.localScale = new Vector3(1, 0, 1);
+                }
+                //Expande el cuadro actual
+                StartCoroutine(ShowRelatedCareersIE(area.relatedCareers));
+            });
+        }
+    }
+    IEnumerator ShowRelatedCareersIE(RectTransform rectTransform)
+    {
+        rectTransform.gameObject.SetActive(true);
+        float time = 0;
+        float maxTime = 0.2f;
+        while (time < maxTime)
+        {
+            time += Time.deltaTime;
+            Vector3 scale = rectTransform.localScale;
+            rectTransform.localScale = new Vector3(scale.x, time / maxTime, scale.z);
+            yield return new WaitForSeconds(Time.deltaTime);
+        }
+    }
 
     public void LoadQuestion(Question question)
     {
@@ -334,8 +367,13 @@ public class InterfaceManager : MonoBehaviour
         }
     }
 
-
-
+    public void UpdateAfinityBars()
+    {
+        foreach(Area area in afinityAreas)
+        {
+            area.affinityBar.SimpleRefresh(area.affinity, 4);
+        }
+    }
 
     //Se llama desde trigger (editor)
     public void SendForm()
@@ -353,29 +391,4 @@ public class InterfaceManager : MonoBehaviour
         gameObject.GetComponent<Emailer>().CallSendEmail();
     }
 
-    public void ShowRelatedCareers(RectTransform rectTransform)
-    {
-        rectTransform.gameObject.SetActive(true);
-        //Cerrar todos los otros cuadros
-        foreach (Area area in afinityAreas)
-        {
-            area.relatedCareers.localScale = new Vector3(1, 0, 1);
-        }
-
-        //Abre el cuadro actual
-        StartCoroutine(ShowRelatedCareersIE(rectTransform));
-    }
-    IEnumerator ShowRelatedCareersIE(RectTransform rectTransform)
-    {
-        rectTransform.gameObject.SetActive(true);
-        float time = 0;
-        float maxTime = 0.5f;
-        while (time < maxTime)
-        {
-            time += Time.deltaTime;
-            Vector3 scale = rectTransform.localScale;
-            rectTransform.localScale = new Vector3(scale.x, time / maxTime, scale.z);
-            yield return new WaitForSeconds(Time.deltaTime);
-        }
-    }
 }
