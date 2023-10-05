@@ -56,6 +56,8 @@ public class GameManager : MonoBehaviour
     public QuestionHandler currentQuestionHandler;
     [HideInInspector] public int characterIndex = 0;
     [HideInInspector] public bool miniGameCompleted = false;
+    [HideInInspector] public bool miniGameTutorial = true;
+    [HideInInspector] public int playerCoins = 0;
 
     public int minigamesTry = 3;
     private void Awake()

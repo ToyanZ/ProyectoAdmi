@@ -22,7 +22,7 @@ public class StreetTarget : MonoBehaviour
     [HideInInspector] private float vertical;
     public GameObject panelTutorial;
     public GameObject panelUI;
-    [HideInInspector] public bool spawnEnemi;
+    [HideInInspector] public bool spawnEnemi = false;
     public GameObject panelLoseTry;
     public GameObject panelMinigameComplete;
     public TMP_Text coinsCount;
@@ -34,8 +34,18 @@ public class StreetTarget : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        if (GameManager.instance.miniGameTutorial == true)
+        {
+            spawnEnemi = false;
+            panelTutorial.SetActive(true);
+        }
+        else
+        {
+            spawnEnemi=true;
+            panelTutorial.SetActive(false);
+            panelUI.SetActive(true);
+        }
         currentStreet = 2;
-        spawnEnemi = false;
         time = 15f;
         if (GameManager.instance != null) currentCharacter = GameManager.instance.characterIndex;
         else currentCharacter = 0;
@@ -154,16 +164,19 @@ public class StreetTarget : MonoBehaviour
     {
         panelMinigameComplete.SetActive(true);
         coinsCount.text = "X " + numberCoint.ToString();
+        GameManager.instance.playerCoins += numberCoint;
         GameManager.instance.minigamesTry = 3;
 
     }
     public void LoadWorldScene()
     {
+        GameManager.instance.miniGameTutorial = true;
         SceneManager.LoadScene("Level1");
     }
 
     public void LoseTry()
     {
+        GameManager.instance.miniGameTutorial = false;
         spawnEnemi = false;
         GameManager.instance.minigamesTry--;
         triesCount.text ="X " + GameManager.instance.minigamesTry.ToString();
@@ -172,7 +185,7 @@ public class StreetTarget : MonoBehaviour
     }
 
     public void ResetLevel()
-    {           
+    {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }
