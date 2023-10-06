@@ -30,6 +30,7 @@ public class InterfaceManager : MonoBehaviour
 
     [Header("Question Pop Up")]
     public GameObject popUp;
+    public RectTransform portrait;
     public TMP_Text statement;
     public List<AnswerButton> answerButtons;
     public List<Area> afinityAreas;
@@ -46,9 +47,6 @@ public class InterfaceManager : MonoBehaviour
 
 
 
-    //Eliminar
-    [HideInInspector] public List<Image> attackPoints;
-    [HideInInspector] public Bar answerTimerBar;
     private void Awake()
     {
         if (instance == null)
@@ -106,6 +104,9 @@ public class InterfaceManager : MonoBehaviour
     public void LoadQuestion(Question question)
     {
         statement.text = question.statement;//Actualiza el texto de la nueva pregunta
+        question.portaitInstance = Instantiate(question.npcPortait);
+        question.portaitInstance.SetParent(portrait);
+        question.portaitInstance.localScale = Vector3.one;
 
         //Por cada respueta
         for (int i = 0; i < question.answers.Count; i++)
@@ -134,6 +135,7 @@ public class InterfaceManager : MonoBehaviour
         {
             answerButtons[i].button.onClick.RemoveAllListeners();
             answerButtons[i].gameObject.SetActive(false);
+            Destroy(portrait.GetChild(0).gameObject);
         }
 
         statement.text = "";

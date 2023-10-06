@@ -62,11 +62,6 @@ public class GameManager : MonoBehaviour
     [HideInInspector] public bool miniGameTutorial = true;
     [HideInInspector] public int playerCoins = 0;
 
-
-    //Eliminar
-    [HideInInspector] public float answerTimeMin = 3;
-    [HideInInspector] public float answerTimeAvg = 8;
-    [HideInInspector] public float answerTimeMax = 11;
     private void Awake()
     {
         if (instance == null)
@@ -246,7 +241,7 @@ public class GameManager : MonoBehaviour
     }
     IEnumerator StartMiniGameSetUp()
     {
-        while(currentZone.barImage.fillAmount < 0.98) yield return null;
+        yield return new WaitForSeconds(matchProgressBarUpdateTime);
 
         InterfaceManager.instance.HideMainGameUI();
         character.gameObject.SetActive(false);

@@ -6,18 +6,15 @@ using static Unity.Burst.Intrinsics.X86;
 
 public class Question : MonoBehaviour
 {
+    public Bar completed;
+    public RectTransform npcPortait;
+    [HideInInspector] public RectTransform portaitInstance;
     public bool answered = false;
     public string statement = "";
-    public Bar completed;
 
     [Space(20)]
     public List<Answer> answers;
 
-    //Eliminar
-    float time = 0;
-    [HideInInspector] public float answerTimeMod = 0;
-    [HideInInspector] public Enemy enemy;
-    [HideInInspector] public int attackPoints = 0;
 
     //Se llama desde trigger (editor)
     public void LoadPopUp()
@@ -66,25 +63,5 @@ public class Question : MonoBehaviour
         }
     }
 
-    //Se llama desde trigger, eliminar.
-    public void AnswerTimeCounter()
-    {
-        if (answered) return;
-        time += Time.deltaTime;
-
-        float max = GameManager.instance.answerTimeMax + answerTimeMod;
-        InterfaceManager.instance.answerTimerBar.SimpleRefresh(time, max);
-
-        float min = GameManager.instance.answerTimeMin + answerTimeMod;
-        float avg = GameManager.instance.answerTimeAvg + answerTimeMod;
-        attackPoints = time < min ? 1 : (time < avg ? 3 : 2);
-
-        for (int i = 0; i < InterfaceManager.instance.attackPoints.Count; i++)
-        {
-            InterfaceManager.instance.attackPoints[i].enabled = i < attackPoints;
-        }
-    }
-
-    
 
 }

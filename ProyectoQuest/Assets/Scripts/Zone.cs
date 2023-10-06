@@ -46,11 +46,7 @@ public class Zone : MonoBehaviour
             yield return new WaitForSeconds(Time.deltaTime);
         }
 
-        if(count == questions.Count)
-        {
-            
-            OnGroupCompleted?.Invoke();
-        }
+        if(count == questions.Count) OnGroupCompleted?.Invoke();
         updating = false;
     }
 
@@ -61,8 +57,8 @@ public class Zone : MonoBehaviour
     IEnumerator OpenDoor()
     {
         open = true;
-        Door current = null;
         
+        Door current = null;
         while(current == null)
         {
             List<Door> doors = FindObjectsOfType<Door>().ToList();
@@ -70,10 +66,8 @@ public class Zone : MonoBehaviour
             {
                 if (door.id == id) current = door;
             }
-            print("Searching zone");
             yield return null;
         }
-
 
         float time = 0;
         float maxTime = GameManager.instance.doorsOpenTime;
@@ -86,6 +80,7 @@ public class Zone : MonoBehaviour
             yield return new WaitForSeconds(Time.deltaTime);
         }
         current.gameObject.SetActive(false);
+        
         open = false;
     }
 
