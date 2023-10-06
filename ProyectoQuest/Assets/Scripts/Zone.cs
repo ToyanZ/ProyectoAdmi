@@ -87,7 +87,8 @@ public class Zone : MonoBehaviour
             yield return new WaitForSeconds(Time.deltaTime);
         }
         current.gameObject.SetActive(false);
-        
+
+        InterfaceManager.instance.ShowMainGameUI();
 
 
         open = false;

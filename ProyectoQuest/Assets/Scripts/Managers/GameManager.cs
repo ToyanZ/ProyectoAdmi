@@ -126,6 +126,7 @@ public class GameManager : MonoBehaviour
     }
     private void MainMenu()
     {
+        cameraTracking.GoTo(currentZone.cameraPosition);
         gameState = GameState.Match;
     }
 
@@ -266,7 +267,7 @@ public class GameManager : MonoBehaviour
     {
         if (miniGameCompleted)
         {
-            InterfaceManager.instance.ShowMainGameUI();
+            InterfaceManager.instance.inGameUI.SetActive(true);
             matchState = MatchState.Walking;
             currentZone.Open();
         }

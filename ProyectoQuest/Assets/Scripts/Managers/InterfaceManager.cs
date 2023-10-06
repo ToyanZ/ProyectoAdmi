@@ -350,7 +350,7 @@ public class InterfaceManager : MonoBehaviour
     public void ShowMainGameUI()
     {
         onScreenUI.SetActive(true);
-        inGameUI.SetActive(true);
+        
         joystick.SetActive(true);
     }
 
