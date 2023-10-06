@@ -26,8 +26,8 @@ public class JumpTrigger_MG_Jump : MonoBehaviour
 
     void JumpUp(Collider2D collision)
     {
+        collision.GetComponent<Jumping_MG_Jump>().AnimJump();
         Vector2 impulso = transform.up.normalized * upForce;
-
         collision.gameObject.GetComponent<Rigidbody2D>().velocity = impulso;
         
     }

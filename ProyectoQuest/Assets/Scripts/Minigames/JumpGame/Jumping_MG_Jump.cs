@@ -13,6 +13,8 @@ public class Jumping_MG_Jump : MonoBehaviour
     public SpriteRenderer[] characters;
 
     [SerializeField] GameObject particles;
+
+    public Animator anim;
     private void Start()
     {
         for(int i = 0; i < characters.Length; i++) 
@@ -25,7 +27,6 @@ public class Jumping_MG_Jump : MonoBehaviour
 
     private void Update()
     {
-
         Movement();
     }
 
@@ -56,5 +57,9 @@ public class Jumping_MG_Jump : MonoBehaviour
         Destroy(this.gameObject);
     }
 
+    public void AnimJump()
+    {
+        anim.SetTrigger("Jump");
+    }
     
 }
