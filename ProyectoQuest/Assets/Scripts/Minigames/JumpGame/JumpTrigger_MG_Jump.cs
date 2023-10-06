@@ -22,6 +22,12 @@ public class JumpTrigger_MG_Jump : MonoBehaviour
                 }
             }
         }
+        if(collision.CompareTag("Floor"))
+        {
+            Debug.Log("Se redirigio el suelo");
+            SendSpawnNewObject(this.transform);
+            Destroy(this.gameObject);
+        }
     }
 
     void JumpUp(Collider2D collision)

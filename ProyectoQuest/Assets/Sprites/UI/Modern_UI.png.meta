@@ -507,12 +507,12 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 460
-        y: 672
+        y: 673
         width: 24
-        height: 16
+        height: 15
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
-      border: {x: 4, y: 0, z: 4, w: 0}
+      border: {x: 4, y: 3, z: 4, w: 5}
       outline: []
       physicsShape: []
       tessellationDetail: 0
@@ -9596,48 +9596,6 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Modern_UI_554
-      rect:
-        serializedVersion: 2
-        x: 48
-        y: 336
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 92e272b6d6f39344594ac6c1890dd9d4
-      internalID: -1539427663
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Modern_UI_555
-      rect:
-        serializedVersion: 2
-        x: 64
-        y: 336
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 55737644a39bac34fb3492dec7ce698b
-      internalID: 1459915500
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: Modern_UI_556
       rect:
         serializedVersion: 2
@@ -10088,55 +10046,13 @@ TextureImporter:
         height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
+      border: {x: 3, y: 4, z: 3, w: 4}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
       spriteID: d3cfe4de8b594ca4489d421f9d923b95
       internalID: -854781748
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Modern_UI_578
-      rect:
-        serializedVersion: 2
-        x: 48
-        y: 320
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: e3d9413516157e14983e2f7c3c9195af
-      internalID: 1609534121
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Modern_UI_579
-      rect:
-        serializedVersion: 2
-        x: 64
-        y: 320
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: b4c62f16cb33b514abe4e69d85f98656
-      internalID: -58975919
       vertices: []
       indices: 
       edges: []
@@ -17550,6 +17466,27 @@ TextureImporter:
       bones: []
       spriteID: 37603c8ec5a3a3d4c881221df6fa96e1
       internalID: 265291080
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Modern_UI_0
+      rect:
+        serializedVersion: 2
+        x: 54
+        y: 324
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 3, y: 4, z: 3, w: 3}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ef7fc1228c96eab4488ae7dd7b29d9cc
+      internalID: 1600741992
       vertices: []
       indices: 
       edges: []
