@@ -4,6 +4,7 @@ using System.Linq;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.TextCore.Text;
 using UnityEngine.UI;
 
 public class Zone : MonoBehaviour
@@ -13,6 +14,7 @@ public class Zone : MonoBehaviour
     [Space(20)]
     public Image barImage;
     public GameObject cameraPosition;
+    public GameObject cameraIndicativePosition;
     public BoxCollider2D boxCollider2D;
     public List<Question> questions;
 
@@ -69,6 +71,11 @@ public class Zone : MonoBehaviour
             yield return null;
         }
 
+        GameManager.instance.character.gameObject.SetActive(true);
+        GameManager.instance.cameraTracking.StopAllCoroutines();
+        GameManager.instance.cameraTracking.GoTo(cameraIndicativePosition);
+
+
         float time = 0;
         float maxTime = GameManager.instance.doorsOpenTime;
         Instantiate(GameManager.instance.dustParticleEffect, current.worldPosition.position, Quaternion.identity);
@@ -81,8 +88,11 @@ public class Zone : MonoBehaviour
         }
         current.gameObject.SetActive(false);
         
+
+
         open = false;
     }
+
 
 
     private void OnTriggerEnter2D(Collider2D collision)

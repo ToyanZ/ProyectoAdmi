@@ -38,6 +38,7 @@ public class CameraTracking : MonoBehaviour
     private float z;
     
     private Vector2 refVelocity = Vector2.zero;
+    private bool goingTo = false;
 
     private void Start()
     {
@@ -106,10 +107,11 @@ public class CameraTracking : MonoBehaviour
 
     public void GoTo(GameObject go)
     {
-        StartCoroutine(GoToIE(go));
+        if (!goingTo) StartCoroutine(GoToIE(go));
     }
     IEnumerator GoToIE(GameObject go)
     {
+        goingTo = true;
         Vector3 start = camController.tCamera.transform.position;
         Vector3 end = go.transform.position;
         float time = 0;
@@ -120,7 +122,7 @@ public class CameraTracking : MonoBehaviour
             camController.tCamera.transform.position = new Vector3(dir.x, dir.y, start.z);
             yield return new WaitForSeconds(Time.deltaTime);
         }
-
+        goingTo = false;
     }
 
     private void OnDrawGizmos()

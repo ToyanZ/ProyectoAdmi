@@ -269,7 +269,6 @@ public class GameManager : MonoBehaviour
             InterfaceManager.instance.ShowMainGameUI();
             matchState = MatchState.Walking;
             currentZone.Open();
-            character.gameObject.SetActive(true);
         }
     }
     private void End()
@@ -298,9 +297,9 @@ public class GameManager : MonoBehaviour
         }
     }
     
-    public void SetCurrentArea(Zone questionHandler)
+    public void SetCurrentArea(Zone zone)
     {
-        currentZone = questionHandler;
-        cameraTracking.GoTo(questionHandler.cameraPosition);
+        if (currentZone != null && currentZone != zone) cameraTracking.GoTo(zone.cameraPosition);
+        currentZone = zone;
     }
 }
