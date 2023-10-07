@@ -7,8 +7,19 @@ using UnityEngine.SceneManagement;
 
 public class Gachapon : MonoBehaviour
 {
-    public bool[] areCharacterUnlock;
-    public List<Sprite> gachaponList = new List<Sprite>();
+
+    [System.Serializable]
+    public class CharactersToUnlock
+    {
+        public string name;
+        public Sprite characterSprite;
+        public int idCharacter;
+        public int areUnlock;
+    }
+
+    public CharactersToUnlock[] allCharacter;
+
+    public List<CharactersToUnlock> lockCharacters = new List<CharactersToUnlock>();
 
     public Sprite[] charactersSprites;
 
@@ -27,6 +38,23 @@ public class Gachapon : MonoBehaviour
 
     private void Start()
     {
+
+        for (int i = 0; i < allCharacter.Length; i++)
+        {
+            string character = "character_"+i;
+            Debug.Log(character);
+            allCharacter[i].areUnlock = PlayerPrefs.GetInt(character, 0);
+            if (allCharacter[i].areUnlock != 1)
+            {
+                lockCharacters.Add(allCharacter[i]);
+            }
+        }
+
+        if(lockCharacters.Count == 0)
+        {
+            canvas[0].gameObject.SetActive(false);
+        }
+
         if(GameManager.instance != null)
         {
             coinsTXT.text = ""+GameManager.instance.playerCoins;
@@ -42,17 +70,31 @@ public class Gachapon : MonoBehaviour
     {
         if (currentCoins > 3)
         {
-            coinAnim.SetTrigger("Money");
-            particles.SetActive(false);
-            anim.SetTrigger("NewCharacter");
-            int character = Random.Range(0, charactersSprites.Length);
-            characterAnimation.sprite = charactersSprites[character];
-            canvas[0].SetActive(false);
-            canvas[2].SetActive(false);
-            canvas[1].SetActive(true);
-            StartCoroutine("lessMoney");
-            StartCoroutine("WaitForUnlock");
+            if (lockCharacters.Count == 0)
+            {
+                Debug.Log("No quedan mas personajes");
+            }
+            else
+            {
+                coinAnim.SetTrigger("Money");
+                particles.SetActive(false);
+                anim.SetTrigger("NewCharacter");
+
+                int characterRandom = Random.Range(0, lockCharacters.Count);
+                characterAnimation.sprite = lockCharacters[characterRandom].characterSprite;
+                string characterID = "character_" + lockCharacters[characterRandom].idCharacter;
+                Debug.Log(characterID);
+                PlayerPrefs.SetInt(characterID, 1);
+
+                lockCharacters.RemoveAt(characterRandom);
+                canvas[0].SetActive(false);
+                canvas[2].SetActive(false);
+                canvas[1].SetActive(true);
+                StartCoroutine("lessMoney");
+                StartCoroutine("WaitForUnlock");
+            }
         }
+        
         else
         {
             StartCoroutine("NeedMoney");

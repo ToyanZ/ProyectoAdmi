@@ -104,7 +104,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: AllCharacters_0
+      name: AllCharacters_0_Chef
       rect:
         serializedVersion: 2
         x: 0
@@ -112,7 +112,7 @@ TextureImporter:
         width: 16
         height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -125,7 +125,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: AllCharacters_1
+      name: AllCharacters_1_Abogado
       rect:
         serializedVersion: 2
         x: 16
@@ -133,7 +133,7 @@ TextureImporter:
         width: 16
         height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -146,7 +146,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: AllCharacters_2
+      name: AllCharacters_2_Intercambio
       rect:
         serializedVersion: 2
         x: 32
@@ -154,7 +154,7 @@ TextureImporter:
         width: 16
         height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -167,7 +167,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: AllCharacters_3
+      name: AllCharacters_3_Kirby
       rect:
         serializedVersion: 2
         x: 48
@@ -175,7 +175,7 @@ TextureImporter:
         width: 16
         height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -188,7 +188,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: AllCharacters_4
+      name: AllCharacters_4_Gymsis
       rect:
         serializedVersion: 2
         x: 64
@@ -196,7 +196,7 @@ TextureImporter:
         width: 16
         height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -209,7 +209,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: AllCharacters_5
+      name: AllCharacters_5_Sushi
       rect:
         serializedVersion: 2
         x: 80
@@ -217,7 +217,7 @@ TextureImporter:
         width: 16
         height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -230,7 +230,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: AllCharacters_6
+      name: AllCharacters_6_Ninja
       rect:
         serializedVersion: 2
         x: 96
@@ -238,7 +238,7 @@ TextureImporter:
         width: 16
         height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -251,7 +251,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: AllCharacters_7
+      name: AllCharacters_7_Otaku
       rect:
         serializedVersion: 2
         x: 112
@@ -259,7 +259,7 @@ TextureImporter:
         width: 16
         height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -272,7 +272,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: AllCharacters_8
+      name: AllCharacters_8_Adulto
       rect:
         serializedVersion: 2
         x: 128
@@ -280,7 +280,7 @@ TextureImporter:
         width: 16
         height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -293,7 +293,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: AllCharacters_9
+      name: AllCharacters_9_Joven
       rect:
         serializedVersion: 2
         x: 144
@@ -301,7 +301,7 @@ TextureImporter:
         width: 16
         height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -314,7 +314,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: AllCharacters_10
+      name: AllCharacters_10_Otaku
       rect:
         serializedVersion: 2
         x: 160
@@ -322,7 +322,7 @@ TextureImporter:
         width: 16
         height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -335,7 +335,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: AllCharacters_11
+      name: AllCharacters_11_Goku
       rect:
         serializedVersion: 2
         x: 176
@@ -343,7 +343,7 @@ TextureImporter:
         width: 16
         height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -356,7 +356,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: AllCharacters_12
+      name: AllCharacters_12_Marti
       rect:
         serializedVersion: 2
         x: 192
@@ -364,7 +364,7 @@ TextureImporter:
         width: 16
         height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -387,19 +387,19 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      AllCharacters_11: 1734023739
-      AllCharacters_4: 1673261778
-      AllCharacters_3: 773604687
-      AllCharacters_7: -1489121530
-      AllCharacters_1: -450928746
-      AllCharacters_5: -1449464801
-      AllCharacters_8: 1365999885
-      AllCharacters_0: 1788829045
-      AllCharacters_10: 225728891
-      AllCharacters_6: 322843739
-      AllCharacters_12: 2091037783
-      AllCharacters_2: -1339821151
-      AllCharacters_9: -1055792157
+      AllCharacters_10_Otaku: 225728891
+      AllCharacters_1_Abogado: -450928746
+      AllCharacters_8_Adulto: 1365999885
+      AllCharacters_4_Gymsis: 1673261778
+      AllCharacters_6_Ninja: 322843739
+      AllCharacters_0_Chef: 1788829045
+      AllCharacters_12_Marti: 2091037783
+      AllCharacters_2_Intercambio: -1339821151
+      AllCharacters_3_Kirby: 773604687
+      AllCharacters_9_Joven: -1055792157
+      AllCharacters_5_Sushi: -1449464801
+      AllCharacters_7_Otaku: -1489121530
+      AllCharacters_11_Goku: 1734023739
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
