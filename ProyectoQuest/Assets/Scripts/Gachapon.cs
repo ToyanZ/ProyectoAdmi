@@ -36,13 +36,13 @@ public class Gachapon : MonoBehaviour
     
     public Animator coinAnim;
 
+    public GameObject[] principalCanvas;
+
     private void Start()
     {
-
         for (int i = 0; i < allCharacter.Length; i++)
         {
             string character = "character_"+i;
-            Debug.Log(character);
             allCharacter[i].areUnlock = PlayerPrefs.GetInt(character, 0);
             if (allCharacter[i].areUnlock != 1)
             {
@@ -53,6 +53,7 @@ public class Gachapon : MonoBehaviour
         if(lockCharacters.Count == 0)
         {
             canvas[0].gameObject.SetActive(false);
+            canvas[4].gameObject.SetActive(true);
         }
 
         if(GameManager.instance != null)
@@ -72,7 +73,8 @@ public class Gachapon : MonoBehaviour
         {
             if (lockCharacters.Count == 0)
             {
-                Debug.Log("No quedan mas personajes");
+                canvas[0].gameObject.SetActive(false);
+                canvas[4].gameObject.SetActive(true);
             }
             else
             {
@@ -149,5 +151,11 @@ public class Gachapon : MonoBehaviour
     public void LoadScene(string nameScene)
     {
         SceneManager.LoadScene(nameScene);
+    }
+
+    public void ChangecharacterSelector()
+    {
+        principalCanvas[0].SetActive(false);
+        principalCanvas[1].SetActive(true);
     }
 }

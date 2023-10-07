@@ -5480,27 +5480,6 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Modern_UI_315
-      rect:
-        serializedVersion: 2
-        x: 192
-        y: 496
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 0c55850c8ef22434da16ccb1cda9b4ae
-      internalID: -852127939
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: Modern_UI_316
       rect:
         serializedVersion: 2
@@ -5757,9 +5736,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 192
-        y: 480
+        y: 485
         width: 16
-        height: 16
+        height: 21
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -17511,7 +17490,7 @@ TextureImporter:
       Modern_UI_14: -1884005809
       Modern_UI_134: 1398118567
       Modern_UI_331: -677084253
-      Modern_UI_844: 180746914
+      Modern_UI_977: 723995232
       Modern_UI_320: -273061186
       Modern_UI_616: 1623454997
       Modern_UI_756: -1635801117
@@ -17648,9 +17627,9 @@ TextureImporter:
       Modern_UI_158: 1388511745
       Modern_UI_648: 947113413
       Modern_UI_30: 1170394579
-      Modern_UI_969: 289409723
-      Modern_UI_414: -1732825679
       Modern_UI_493: -2022767666
+      Modern_UI_414: -1732825679
+      Modern_UI_969: 289409723
       Modern_UI_350: -296593290
       Modern_UI_779: -1620280304
       Modern_UI_135: 764360239
@@ -18489,7 +18468,7 @@ TextureImporter:
       Modern_UI_893: -55111043
       Modern_UI_488: 1056106299
       Modern_UI_830: 369777139
-      Modern_UI_977: 723995232
+      Modern_UI_844: 180746914
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
