@@ -79,10 +79,6 @@ public class Joystick : MonoBehaviour, IPointerDownHandler, IPointerClickHandler
         dragging = false;
     }
 
-
-
-
-    //------------
     public void OnPointerUp(PointerEventData eventData)
     {
         state = State.Up;
@@ -91,31 +87,23 @@ public class Joystick : MonoBehaviour, IPointerDownHandler, IPointerClickHandler
 
 
 
-    public Vector2 GetDirection()
+    public Vector2 GetDirectionRaw()
     {
         Vector2 direction = (handler.position - holder.position);
         direction = smoothing ? direction.normalized * (direction.magnitude / movementRadius) : direction.normalized;
         return dragging ? direction : Vector2.zero;
     }
-
-    public Vector2 GetDirectionInt()
+    public Vector2 GetDirection()
     {
         Vector2 direction = (handler.position - holder.position);
-        return direction.normalized * (direction.magnitude / movementRadius);
+        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+        if (angle < 0) angle += 360;
+
+        float y = angle > 45 && angle < 135 ? 1 : angle > 225 && angle < 315 ? -1 : 0;
+        float x = angle <= 45 || angle >= 315 ? 1 : angle >= 135 && angle <= 225 ? -1 : 0;
+
+        return dragging ? new Vector2(x, y) : Vector2.zero;
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
 
     public void OnPointerClick(PointerEventData eventData)
     {
@@ -134,13 +122,4 @@ public class Joystick : MonoBehaviour, IPointerDownHandler, IPointerClickHandler
         state = State.Exit;
     }
 
-
-
-
-    //private void OnDrawGizmos()
-    //{
-    //    Gizmos.color = Color.cyan;
-    //    Gizmos.DrawLine(touchPos, holder.position);
-    //    Gizmos.DrawWireSphere(touchPos, 10);
-    //}
 }

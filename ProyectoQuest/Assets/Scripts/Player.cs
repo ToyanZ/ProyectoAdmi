@@ -30,6 +30,9 @@ public class Player : MonoBehaviour
         target.rigidBody.gravityScale = target.gravityScale;
         horizontal = Input.GetAxisRaw("Horizontal");
         vertical = Input.GetAxisRaw("Vertical");
+
+
+        print(joystick.GetDirection());
     }
     private void FixedUpdate()
     {
@@ -45,7 +48,7 @@ public class Player : MonoBehaviour
                 target.rigidBody.velocity = new Vector2(horizontal, vertical) * target.walkSpeed * Time.fixedDeltaTime;
                 break;
             case GameManager.BuildType.Phone:
-                target.rigidBody.velocity = joystick.GetDirection() * target.walkSpeed * Time.fixedDeltaTime;
+                target.rigidBody.velocity = joystick.GetDirectionRaw() * target.walkSpeed * Time.fixedDeltaTime;
                 break;
         }
 
@@ -77,7 +80,7 @@ public class Player : MonoBehaviour
         {
             if(direction != 1)
             {
-                Debug.Log("1");
+                //Debug.Log("1");
                 direction = 1;
                 anim[GameManager.instance.characterIndex].SetTrigger("Up");
                 return;
@@ -87,7 +90,7 @@ public class Player : MonoBehaviour
         {
             if (direction != 4)
             {
-                Debug.Log("4");
+                //Debug.Log("4");
                 direction = 4;
                 anim[GameManager.instance.characterIndex].SetTrigger("Down");
                 return;
@@ -98,7 +101,7 @@ public class Player : MonoBehaviour
         {
             if (direction != 2)
             {
-                Debug.Log("2");
+                //Debug.Log("2");
                 direction = 2;
                 anim[GameManager.instance.characterIndex].SetTrigger("Left");
                 return;
@@ -108,7 +111,7 @@ public class Player : MonoBehaviour
         {
             if (direction != 3)
             {
-                Debug.Log("3");
+                //Debug.Log("3");
                 direction = 3;
                 anim[GameManager.instance.characterIndex].SetTrigger("Right");
                 return;
