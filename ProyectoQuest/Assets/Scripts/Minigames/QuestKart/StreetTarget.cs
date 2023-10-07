@@ -9,7 +9,6 @@ using Random = UnityEngine.Random;
 
 public class StreetTarget : MonoBehaviour
 {
-
     public GameObject[] streets;
     public GameObject carEnemi;
     public GameObject carPlayer;
@@ -59,7 +58,7 @@ public class StreetTarget : MonoBehaviour
     {
         if (spawnEnemi)
         {
-            //carPlayer.SetActive(true);
+            carPlayer.SetActive(true);
             timeText.text = FormatearTiempo();
             if (time <= 0)
             {
@@ -79,7 +78,7 @@ public class StreetTarget : MonoBehaviour
         }
         else
         {
-            //carPlayer.SetActive(false);
+            carPlayer.SetActive(false);
         }
         
         

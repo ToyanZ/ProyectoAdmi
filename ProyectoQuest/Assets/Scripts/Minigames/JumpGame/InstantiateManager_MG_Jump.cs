@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -9,6 +10,11 @@ public class InstantiateManager_MG_Jump : MonoBehaviour
     public GameObject[] platforms;
     public GameObject[] enemies;
     public GameObject[] canvas;
+    public TMP_Text coinsCount;
+    public TMP_Text triesCount;
+    public TMP_Text timeText;
+    private float time;
+    public GameObject player;
     public static InstantiateManager_MG_Jump instance;
     //public Vector3 addPosition = new Vector3(0, 10f, 0);
 
@@ -24,26 +30,61 @@ public class InstantiateManager_MG_Jump : MonoBehaviour
             canvas[i].SetActive(false);
         }
         canvas[0].SetActive(true);
-        Time.timeScale = 0;
+        player.SetActive(false);
         int randomDistance = 10;
         for (int i = 0;i < 5; i++) 
         {
             randomDistance = Random.Range(randomDistance, randomDistance + 20);
             FirstInstantiates(randomDistance);
         }
+        time = 15f;
+    }
+
+    private void Update()
+    {
+        timeText.text = FormatearTiempo();
+        if(time <= 0)
+        {
+            ResetToWorld(2);
+        }
     }
 
     public void StartGame()
     {
-        Time.timeScale = 1;
+        player.SetActive(true);
         canvas[0].SetActive(false);
         canvas[1].SetActive(true);
     }
 
     public void LostGame()
     {
+        if(GameManager.instance.minigamesTry == 0)
+        {
+            ResetToWorld(1);
+        }
+        else
+        {
+            time = 15;
+            triesCount.text = GameManager.instance.minigamesTry.ToString()  ;
+            canvas[1].SetActive(false);
+            canvas[2].SetActive(true);
+        }
+    }
+    private string FormatearTiempo()
+    {
+        time -= Time.deltaTime;
+        int minutos = (int)(time / 60f);
+        int segundos = (int)(time - minutos * 60);
+        int miliSeg = (int)((time - (int)time) * 100f);
+        return segundos.ToString("00") + ":" + miliSeg.ToString("00");
+    }
+    public void ResetToWorld(int numberCoint)
+    {
         canvas[1].SetActive(false);
-        canvas[2].SetActive(true);
+        canvas[3].SetActive(true);
+        coinsCount.text = "X " + numberCoint.ToString();
+        GameManager.instance.playerCoins += numberCoint;
+        GameManager.instance.minigamesTry = 3;
     }
 
     public void InstantiateNewFloor(Transform newSpawnPosition)
@@ -65,15 +106,16 @@ public class InstantiateManager_MG_Jump : MonoBehaviour
         Instantiate(enemies[Random.Range(0, platforms.Length)], distance , Quaternion.identity);    
     }
 
-    public void LoadScene(string sceneName)
+    public void LoadScene()
     {
         GameManager.instance.MiniGameCompleted();
         SceneManager.LoadScene("Level1");
     }
 
-    public void ReloadScene(string sceneName)
+    public void ReloadScene()
     {
-        SceneManager.LoadScene(sceneName);
+        GameManager.instance.minigamesTry--;
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
     public void InstantiateNewEnemy(Transform newSpawnPosition)

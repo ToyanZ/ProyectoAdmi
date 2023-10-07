@@ -1206,6 +1206,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
+      Alcalde_25: 1349380283
       Alcalde_24: 601291576
       Alcalde_39: 302093491
       Alcalde_7: 693551630
@@ -1220,7 +1221,6 @@ TextureImporter:
       Alcalde_20: -1690082768
       Alcalde_22: -1426659975
       Alcalde_47: -87902592
-      Alcalde_50: -1543373984
       Alcalde_2: 1672746465
       Alcalde_12: -2040504492
       Alcalde_29: -1416111873
@@ -1254,10 +1254,10 @@ TextureImporter:
       Alcalde_16: -1301369778
       Alcalde_3: -1354897841
       Alcalde_31: 1123979568
-      Alcalde_34: 198230782
-      Alcalde_32: -1422281910
+      Alcalde_50: -1543373984
       Alcalde_15: 2026178505
-      Alcalde_25: 1349380283
+      Alcalde_32: -1422281910
+      Alcalde_34: 198230782
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
