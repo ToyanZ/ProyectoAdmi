@@ -58,7 +58,8 @@ public class Gachapon : MonoBehaviour
 
         if(GameManager.instance != null)
         {
-            coinsTXT.text = ""+GameManager.instance.playerCoins;
+            coinsTXT.text = "" + GameManager.instance.playerCoins;
+            currentCoins = GameManager.instance.playerCoins;
         }
         else
         {

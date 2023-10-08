@@ -71,7 +71,7 @@ public class InterfaceManager : MonoBehaviour
         //string aadasss = inputGrade.options[0].text;
         //Debug.Log(aadasss);
         
-        gachapon.interactable = GameManager.instance.playerCoins > 0 ? true : false;
+        //gachapon.interactable = GameManager.instance.playerCoins > 0 ? true : false;
         coinText.text = coinName + " x " + GameManager.instance.playerCoins.ToString();
     }
 

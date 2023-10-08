@@ -6,6 +6,7 @@ using System.Security.Cryptography;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
@@ -13,7 +14,7 @@ public class GameManager : MonoBehaviour
     public enum BuildType { Pc, Phone }
     public enum GameState { Menu, Match }
     public enum MenuState { Check, SignIn, MainMenu }
-    public enum MatchState { Walking, Answering, MiniGame, End }
+    public enum MatchState { Walking, Answering, MiniGame, End, Gachapon }
     public static GameManager instance;
 
     
@@ -66,6 +67,8 @@ public class GameManager : MonoBehaviour
 
 
     bool mainProgressBarUpdating = false;
+    MatchState prevState = MatchState.Walking;
+    bool gachaponEntered = false;
     private void Awake()
     {
         if (instance == null)
@@ -164,6 +167,9 @@ public class GameManager : MonoBehaviour
                 break;
             case MatchState.End:
                 End();
+                break;
+            case MatchState.Gachapon:
+                Gachapon(); 
                 break;
         }
     }
@@ -288,6 +294,28 @@ public class GameManager : MonoBehaviour
         InterfaceManager.instance.ShowPlayerStats();
     }
     
+    private void Gachapon()
+    {
+        if (SceneManager.GetActiveScene().name == "Gachapon") gachaponEntered = true;
+        if (gachaponEntered && SceneManager.GetActiveScene().name == "Level1")
+        {
+            print("Level1");
+            matchState = prevState;
+            InterfaceManager.instance.inGameUI.SetActive(true);
+            InterfaceManager.instance.ShowMainGameUI();
+            character.gameObject.SetActive(true);
+        }
+    }
+    //Se llama desde button (editor)
+    public void SetGachaponState()
+    {
+        InterfaceManager.instance.HideMainGameUI();
+        character.gameObject.SetActive(false);
+        prevState = matchState;
+        matchState = MatchState.Gachapon;
+        print("Gacha");
+    }
+
     private void ShowEndHUD()
     {
         InterfaceManager.instance.missionCompletedPopUp.SetActive(true);
@@ -311,4 +339,5 @@ public class GameManager : MonoBehaviour
         if (currentZone != null && currentZone != zone) cameraTracking.GoTo(zone.cameraPosition);
         currentZone = zone;
     }
+
 }
