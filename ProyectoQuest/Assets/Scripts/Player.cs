@@ -31,8 +31,6 @@ public class Player : MonoBehaviour
         horizontal = Input.GetAxisRaw("Horizontal");
         vertical = Input.GetAxisRaw("Vertical");
 
-
-        print(joystick.GetDirection());
     }
     private void FixedUpdate()
     {
