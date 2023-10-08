@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using System.Security.Cryptography;
 using TMPro;
 using UnityEngine;
@@ -78,6 +79,8 @@ public class InterfaceManager : MonoBehaviour
     
     private void LoadCareerButton()
     {
+        afinityAreas = FindObjectsOfType<Area>().ToList();
+
         foreach(Area area in afinityAreas)
         {
             area.creerButton.onClick.AddListener(() =>
