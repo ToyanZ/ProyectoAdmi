@@ -48,7 +48,8 @@ public class GameManager : MonoBehaviour
     
     
     [HideInInspector] public Character character;
-    [HideInInspector] public Zone currentZone;
+    //[HideInInspector] 
+    public Zone currentZone;
     
     //User info
     [HideInInspector] public string nameUser;
@@ -60,8 +61,11 @@ public class GameManager : MonoBehaviour
     [HideInInspector] public int characterIndex = 0;
     [HideInInspector] public bool miniGameCompleted = false;
     [HideInInspector] public bool miniGameTutorial = true;
-    [HideInInspector] public int playerCoins = 0;
+    //[HideInInspector] 
+    public int playerCoins = 0;
 
+
+    bool mainProgressBarUpdating = false;
     private void Awake()
     {
         if (instance == null)
@@ -189,18 +193,18 @@ public class GameManager : MonoBehaviour
             //revisa si todas las preguntas de la zona actual estan respondidas
             float answeredQuestions = 0.0f;
             bool allAnswered = true;
-            foreach (Zone questionHandler in zones)
+            foreach (Zone zone in zones)
             {
-                foreach (Question question in questionHandler.questions)
+                foreach (Question question in zone.questions)
                 {
                     if (question.answered) answeredQuestions += 1.0f;
 
-                    if (questionHandler == currentZone)
+                    if (zone == currentZone)
                     {
                         if (!question.answered) allAnswered = false;
                     }
                 }
-                questionHandler.ProgressUpdate();
+                zone.ProgressUpdate();
             }
             StartCoroutine(MatchProgressUpdate(answeredQuestions, totalQuestions));
             character.player.SetMove(true);
@@ -231,6 +235,7 @@ public class GameManager : MonoBehaviour
                 if (currentZone.gamePlayed == false)
                 {
                     currentZone.gamePlayed = true;
+                    matchState = MatchState.MiniGame;
                     StartCoroutine(StartMiniGameSetUp());
                 }
             }
@@ -240,18 +245,10 @@ public class GameManager : MonoBehaviour
             }
         }
     }
-    IEnumerator StartMiniGameSetUp()
-    {
-        yield return new WaitForSeconds(matchProgressBarUpdateTime);
-
-        InterfaceManager.instance.HideMainGameUI();
-        character.gameObject.SetActive(false);
-        matchState = MatchState.MiniGame;
-        
-        LevelManager.instance.LoadRandomGame("Level1", 0);
-    }
+    
     IEnumerator MatchProgressUpdate(float current, float max)
     {
+        mainProgressBarUpdating = true;
         float time = matchProgressBarUpdateTime;
         float start = progressBar.filler.fillAmount * max;
         while (time > 0.0f)
@@ -262,6 +259,16 @@ public class GameManager : MonoBehaviour
             progressBar.SimpleRefresh(progress, max, Bar.NumericType.Ratio, Bar.NumericFormat.Integer);
             yield return new WaitForSeconds(Time.deltaTime);
         }
+        mainProgressBarUpdating = false;
+        yield return null;
+    }
+    IEnumerator StartMiniGameSetUp()
+    {
+        while (mainProgressBarUpdating) yield return null;
+        InterfaceManager.instance.HideMainGameUI();
+        character.gameObject.SetActive(false);
+        LevelManager.instance.LoadRandomGame("Level1", 0);
+        yield return null;
     }
     private void MiniGame()
     {
@@ -270,6 +277,7 @@ public class GameManager : MonoBehaviour
             InterfaceManager.instance.inGameUI.SetActive(true);
             matchState = MatchState.Walking;
             currentZone.Open();
+            miniGameCompleted = false;
         }
     }
     private void End()

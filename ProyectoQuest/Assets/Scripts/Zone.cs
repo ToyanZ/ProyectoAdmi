@@ -6,36 +6,36 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.TextCore.Text;
 using UnityEngine.UI;
+using UnityEngine.XR;
 
 public class Zone : MonoBehaviour
 {
     public bool gamePlayed = false;
     public int id = 1;
     [Space(20)]
-    public Image barImage;
+    public Bar progressBar;
     public GameObject cameraPosition;
     public GameObject cameraIndicativePosition;
     public BoxCollider2D boxCollider2D;
     public List<Question> questions;
 
     
-    //[HideInInspector] public Transform zoneDoor;
-    [HideInInspector] public UnityEvent OnGroupCompleted;
-    bool updating=false;
-    bool open = false;
+    [SerializeField] bool updating = false;
+    [SerializeField] bool open = false;
     public void ProgressUpdate()
     {
-        if(!updating)StartCoroutine(Progress());
+        if (!updating) StartCoroutine(Progress());
     }
     IEnumerator Progress()
     {
         updating = true;
+        
         float count = 0;
         foreach (Question question in questions)
         {
             if(question.answered) count++;
         }
-        float startPct = barImage.fillAmount;
+        float startPct = progressBar.filler.fillAmount;
         float endPct = count / questions.Count * 1.0f;
 
         float maxTime = GameManager.instance.questionHandlerBarUpdateTime;
@@ -43,12 +43,10 @@ public class Zone : MonoBehaviour
         while (time < maxTime)
         {
             time += Time.deltaTime;
-            
-            barImage.fillAmount = Mathf.Lerp(startPct, endPct,  (time / maxTime));
+            progressBar.filler.fillAmount = Mathf.Lerp(startPct, endPct,  (time / maxTime));
             yield return new WaitForSeconds(Time.deltaTime);
         }
 
-        if(count == questions.Count) OnGroupCompleted?.Invoke();
         updating = false;
     }
 
@@ -72,6 +70,7 @@ public class Zone : MonoBehaviour
         }
 
         GameManager.instance.character.gameObject.SetActive(true);
+        
         GameManager.instance.cameraTracking.StopAllCoroutines();
         GameManager.instance.cameraTracking.GoTo(cameraIndicativePosition);
 
@@ -92,6 +91,7 @@ public class Zone : MonoBehaviour
 
 
         open = false;
+        yield return null;
     }
 
 
