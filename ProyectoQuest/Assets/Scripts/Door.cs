@@ -8,4 +8,5 @@ public class Door : MonoBehaviour
     public int id = 0;
     public Tilemap tilemap;
     public Transform worldPosition;
+    public bool unlocked = false;
 }

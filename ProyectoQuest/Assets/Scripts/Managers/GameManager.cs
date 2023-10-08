@@ -45,6 +45,7 @@ public class GameManager : MonoBehaviour
     public CameraTracking cameraTracking;
     public GameObject dustParticleEffect;
     public List<Zone> zones;
+    public List<Door> doors;
 
     
     
@@ -82,11 +83,17 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    private void Start()
+    {
+        doors = FindObjectsOfType<Door>().ToList();
+    }
 
     private void Update()
     {
         StateMachine();
         if(buildType == BuildType.Pc) { InterfaceManager.instance.joystick.SetActive(false); }
+
+
     }
     private void StateMachine()
     {
@@ -100,7 +107,10 @@ public class GameManager : MonoBehaviour
                 break;
         }
     }
+    private void DoorUpdate()
+    {
 
+    }
 
     private void Menu()
     {

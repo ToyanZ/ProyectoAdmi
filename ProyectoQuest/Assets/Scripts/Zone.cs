@@ -85,6 +85,7 @@ public class Zone : MonoBehaviour
             current.tilemap.color = new Color(color.r, color.g, color.b, 1 - (time / maxTime));
             yield return new WaitForSeconds(Time.deltaTime);
         }
+        current.unlocked = true;
         current.gameObject.SetActive(false);
 
         InterfaceManager.instance.ShowMainGameUI();
