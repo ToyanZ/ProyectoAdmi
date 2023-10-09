@@ -406,6 +406,7 @@ public class InterfaceManager : MonoBehaviour
     public void HidePlayerStats()
     {
         StartCoroutine(HideStats());
+        //Email
     }
     private IEnumerator HideStats()
     {
@@ -417,6 +418,7 @@ public class InterfaceManager : MonoBehaviour
             statsUI.position = Vector3.Lerp(statsUIEndPoint.position, statsUIStartPoint.position, time / max);
             yield return new WaitForSeconds(Time.deltaTime);
         }
+        
     }
 
 
@@ -438,8 +440,6 @@ public class InterfaceManager : MonoBehaviour
         UserEmailControl(inputEmail);
         userPhone = inputPhone.text;
         userGrade = inputGrade.captionText.text;
-        print("****" + userRut + "****");
-        //gameObject.GetComponent<Emailer>().CallSendEmail();
     }
     public void SendForm2()
     {
