@@ -8,9 +8,22 @@ public class SoundsManager : MonoBehaviour
 
     private void Awake()
     {
+        gameObject.GetComponent<AudioSource>().volume = 0.3f;
+        SelectASong();
+    }
+
+    private void Update()
+    {
+        if (!gameObject.GetComponent<AudioSource>().isPlaying)
+        {
+            SelectASong();
+        }
+    }
+
+    private void SelectASong()
+    {
         int numberRandom = Random.Range(0, temes.Length);
         gameObject.GetComponent<AudioSource>().clip = temes[numberRandom];
         gameObject.GetComponent<AudioSource>().Play();
     }
-
 }
