@@ -46,8 +46,7 @@ public class GameManager : MonoBehaviour
     public CameraTracking cameraTracking;
     public GameObject dustParticleEffect;
     public List<Zone> zones;
-    public List<Door> doors;
-    
+    public List<DoorInfo> doorInfo;
     
     [HideInInspector] public Character character;
     //[HideInInspector] 
@@ -85,7 +84,15 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
-        doors = FindObjectsOfType<Door>().ToList();
+        List<Door> doors = FindObjectsOfType<Door>().ToList();
+        doorInfo = new List<DoorInfo>();
+
+        foreach (Door door in doors)
+        {
+            DoorInfo door1 = new DoorInfo(door.id, door);
+            door1.unlocked = false;
+            doorInfo.Add(door1);
+        }
     }
 
     private void Update()
@@ -93,13 +100,7 @@ public class GameManager : MonoBehaviour
         StateMachine();
         if(buildType == BuildType.Pc) { InterfaceManager.instance.joystick.SetActive(false); }
 
-        foreach(Door door in doors)
-        {
-            if(door.unlocked)
-            {
-                door.gameObject.SetActive(false);
-            }
-        }
+        
     }
     private void StateMachine()
     {
@@ -113,11 +114,6 @@ public class GameManager : MonoBehaviour
                 break;
         }
     }
-    private void DoorUpdate()
-    {
-
-    }
-
     private void Menu()
     {
         switch (menuState)
@@ -196,6 +192,17 @@ public class GameManager : MonoBehaviour
             character.player.SetMove(false);
             matchState = MatchState.Answering;
         }
+
+        List<Door> doors = new List<Door>(FindObjectsOfType<Door>());
+        foreach (DoorInfo doorInfo in doorInfo)
+        {
+            if(doorInfo.door == null)
+            {
+                doorInfo.door = doors.Find(door => door.id == doorInfo.id);
+            }
+            doorInfo.door.gameObject.SetActive(!doorInfo.unlocked);
+        }
+
     }
     private void Answering()
     {
@@ -366,12 +373,21 @@ public class GameManager : MonoBehaviour
     {
         GameManager.instance.cameraTracking.StopAllCoroutines();
         GameManager.instance.cameraTracking.GoTo(currentZone.cameraIndicativePosition);
-        foreach (Door door in doors)
+
+        List<Door> doors = new List<Door>(FindObjectsOfType<Door>());
+        foreach (DoorInfo doorInfo in doorInfo)
         {
-            if (!door.unlocked)
+            if(doorInfo.door == null)
             {
-                door.Open();
+                doorInfo.door = doors.Find(d => d.id == doorInfo.id);
             }
+            if (!doorInfo.unlocked)
+            {
+                doorInfo.door.unlocked = true;
+                doorInfo.unlocked = true;
+                doorInfo.door.Open();
+            }
+            
         }
     }
 }

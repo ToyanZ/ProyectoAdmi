@@ -10,7 +10,15 @@ public class Door : MonoBehaviour
     public Transform worldPosition;
     public bool unlocked = false;
 
+    private void Start()
+    {
+        if (unlocked) gameObject.SetActive(false);
+    }
 
+    private void Update()
+    {
+        if(unlocked) gameObject.SetActive(false);
+    }
     public void Open()
     {
         StartCoroutine(OpenIE());
@@ -29,5 +37,18 @@ public class Door : MonoBehaviour
         }
         unlocked = true;
         gameObject.SetActive(false);
+    }
+}
+
+[System.Serializable]
+public class DoorInfo
+{
+    public Door door;
+    public int id = 0;
+    public bool unlocked = false;
+    public DoorInfo(int id, Door door)
+    {
+        this.id = id;
+        this.door = door;
     }
 }
