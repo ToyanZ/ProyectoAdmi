@@ -61,7 +61,12 @@ public class Emailer : MonoBehaviour
                              "Rut: " + interfaceScript.userRut + "\n" +
                              "Email: " + interfaceScript.userEmail + "\n" +
                              "Celular: " + interfaceScript.userPhone + "\n" +
-                             "Curso actual: " + interfaceScript.userGrade;
+                             "Curso actual: " + interfaceScript.userGrade + "\n" +
+                             "**** Áreas Santo Tomas Concepción ****" + "\n";
+        foreach (Area area in interfaceScript.afinityAreas)
+        {
+            formMessage += area.aName + ": " + area.affinity + "%\n";
+         }
 
         return formMessage;
     }
