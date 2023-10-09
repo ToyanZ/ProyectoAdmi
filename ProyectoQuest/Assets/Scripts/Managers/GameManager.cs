@@ -93,7 +93,13 @@ public class GameManager : MonoBehaviour
         StateMachine();
         if(buildType == BuildType.Pc) { InterfaceManager.instance.joystick.SetActive(false); }
 
-
+        foreach(Door door in doors)
+        {
+            if(door.unlocked)
+            {
+                door.gameObject.SetActive(false);
+            }
+        }
     }
     private void StateMachine()
     {
