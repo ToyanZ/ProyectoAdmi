@@ -235,6 +235,7 @@ GameObject:
   - component: {fileID: 408226700}
   - component: {fileID: 408226698}
   - component: {fileID: 408226702}
+  - component: {fileID: 408226703}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -357,6 +358,26 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 0
+--- !u!95 &408226703
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 408226696}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 5c70a8cfb584bab48b37e39fed1651c3, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &529721461
 GameObject:
   m_ObjectHideFlags: 0
@@ -10859,7 +10880,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4330462795940365896, guid: 4fd87459cea32e04f983a96d4799ef54, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4330462795940365896, guid: 4fd87459cea32e04f983a96d4799ef54, type: 3}
       propertyPath: m_SortingOrder
@@ -11828,6 +11849,7 @@ MonoBehaviour:
   - {fileID: 1408844331}
   - {fileID: 295325494}
   - {fileID: 1290509356}
+  anim: {fileID: 408226703}
 --- !u!212 &1961415340 stripped
 SpriteRenderer:
   m_CorrespondingSourceObject: {fileID: 899414073348014830, guid: 4fd87459cea32e04f983a96d4799ef54, type: 3}

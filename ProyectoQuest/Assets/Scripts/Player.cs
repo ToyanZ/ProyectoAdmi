@@ -83,15 +83,17 @@ public class Player : MonoBehaviour
         float xVel = target.rigidBody.velocity.x;
         if ( yVel > 0)
         {
-            if (xVel > 0 && yVel > xVel) UpAnim();
+            if ((xVel > 0 && yVel > xVel) || (xVel < 0 && yVel > (xVel * -1))) UpAnim();
             else if (xVel > 0 && yVel < xVel) RightAnim();
             else if (xVel < 0 && yVel < (xVel * -1)) LeftAnim();
+            else UpAnim();
         }
         else if(yVel < 0)
         {
-            if (xVel > 0 && (yVel * -1) > xVel) DownAnim();
+            if (xVel > 0 && (yVel * -1) > xVel || (xVel < 0 && yVel > xVel)) DownAnim();
             else if (xVel > 0 && (yVel * -1) < xVel) RightAnim();
             else if (xVel < 0 && (yVel * -1) < (xVel * -1)) LeftAnim();
+            else DownAnim();
         }
 
     }
@@ -105,14 +107,6 @@ public class Player : MonoBehaviour
         }
     }
 
-    public void DownAnim()
-    {
-        if (direction != 1)
-        {
-            direction = 1;
-            anim[GameManager.instance.characterIndex].SetTrigger("Down");
-        }
-    }
 
     public void RightAnim()
     {
@@ -129,6 +123,14 @@ public class Player : MonoBehaviour
         {
             direction = 3;
             anim[GameManager.instance.characterIndex].SetTrigger("Left");
+        }
+    }
+    public void DownAnim()
+    {
+        if (direction != 4)
+        {
+            direction = 4;
+            anim[GameManager.instance.characterIndex].SetTrigger("Down");
         }
     }
 
