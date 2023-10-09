@@ -19,11 +19,12 @@ public class Area : StatElement
         Salud,
         Informatica,
         Ingenieria,
-        Deporte
+        Deporte, 
+        Otro
     }
 
     public Name aName = Name.Administracion;
-    public int affinity = 0;
+    public float affinity = 0;
     public RectTransform relatedCareers;
     public Button creerButton;
     public Bar affinityBar;

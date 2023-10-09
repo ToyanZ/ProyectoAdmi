@@ -28,7 +28,7 @@ public class GameManager : MonoBehaviour
 
 
     [Header("Time And Counting")]
-    public int affinityPointMax = 0;
+    public float affinityPointMax = 0;
     public int minigamesTry = 3;
 
     [Space(10)]
@@ -36,6 +36,7 @@ public class GameManager : MonoBehaviour
     public float matchProgressBarUpdateTime = 2f;
     public float questionHandlerBarUpdateTime = 1f;
     public float answerCompletedBarUpdateTime = 0.7f;
+    public float showAffinityScreenTime = 0.5f;
 
     [Space(10)]
     public float doorsOpenTime = 2f;
@@ -312,13 +313,15 @@ public class GameManager : MonoBehaviour
     private void Gachapon()
     {
         if (SceneManager.GetActiveScene().name == "Gachapon") gachaponEntered = true;
+        
+        //Cuando esta en la escena principal y viene desde el gachapon
         if (gachaponEntered && SceneManager.GetActiveScene().name == "Level1")
         {
-            print("Level1");
             matchState = prevState;
             InterfaceManager.instance.inGameUI.SetActive(true);
             InterfaceManager.instance.ShowMainGameUI();
             character.gameObject.SetActive(true);
+            gachaponEntered = false;
         }
     }
     //Se llama desde button (editor)
@@ -328,7 +331,6 @@ public class GameManager : MonoBehaviour
         character.gameObject.SetActive(false);
         prevState = matchState;
         matchState = MatchState.Gachapon;
-        print("Gacha");
     }
 
     private void ShowEndHUD()
@@ -358,5 +360,18 @@ public class GameManager : MonoBehaviour
     public void ChangeCharacter()
     {
         character.player.ChangeNewCharacter();
+    }
+
+    public void UnlockedAllDoors()
+    {
+        GameManager.instance.cameraTracking.StopAllCoroutines();
+        GameManager.instance.cameraTracking.GoTo(currentZone.cameraIndicativePosition);
+        foreach (Door door in doors)
+        {
+            if (!door.unlocked)
+            {
+                door.Open();
+            }
+        }
     }
 }

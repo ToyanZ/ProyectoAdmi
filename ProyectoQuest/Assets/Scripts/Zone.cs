@@ -95,7 +95,7 @@ public class Zone : MonoBehaviour
         yield return null;
     }
 
-
+    
 
     private void OnTriggerEnter2D(Collider2D collision)
     {

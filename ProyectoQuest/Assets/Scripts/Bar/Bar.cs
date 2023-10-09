@@ -197,6 +197,7 @@ public class Bar : MonoBehaviour
     public void SimpleRefresh(float current, float max)
     {
         filler.fillAmount = current/max;
+        if (this.current != null) this.current.text = (current / max * 100).ToString("0") + "%";
     }
 
     public void SimpleRefresh(float current, float max, NumericType numericType,NumericFormat numericFormat, string title = "")

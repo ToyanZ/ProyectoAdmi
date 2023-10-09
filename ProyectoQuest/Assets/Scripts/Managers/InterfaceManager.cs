@@ -94,6 +94,7 @@ public class InterfaceManager : MonoBehaviour
                 //Expande el cuadro actual
                 StartCoroutine(ShowRelatedCareersIE(area.relatedCareers));
             });
+            area.affinityBar.title.text = area.affinityBar.name;
         }
     }
     IEnumerator ShowRelatedCareersIE(RectTransform rectTransform)
@@ -369,14 +370,57 @@ public class InterfaceManager : MonoBehaviour
     }
     private IEnumerator ShowStats()
     {
+        List<Area> sorted = new List<Area>();
+        
+        foreach(Area area in afinityAreas)
+        {
+            float max = -1;
+            Area currentArea = null;
+            foreach (Area area2 in afinityAreas)
+            {
+                if (area2.affinity > max && !sorted.Contains(area2))
+                {
+                    max = area2.affinity;
+                    currentArea = area2;
+                }
+            }
+            sorted.Add(currentArea);
+        }
+
+        for(int i=0; i<sorted.Count; i++)
+        {
+            sorted[i].transform.SetSiblingIndex(i+1);
+        }
+
+
         float time = 0;
-        while (time < 1)
+        float maxTime = GameManager.instance.showAffinityScreenTime;
+        while (time < maxTime)
         {
             time += Time.deltaTime;
-            statsUI.position = Vector3.Lerp(statsUIStartPoint.position, statsUIEndPoint.position, time / 1);
+            statsUI.position = Vector3.Lerp(statsUIStartPoint.position, statsUIEndPoint.position, time / maxTime);
             yield return new WaitForSeconds(Time.deltaTime);
         }
     }
+
+    public void HidePlayerStats()
+    {
+        StartCoroutine(HideStats());
+    }
+    private IEnumerator HideStats()
+    {
+        float time = 0;
+        float max = GameManager.instance.showAffinityScreenTime;
+        while (time < max)
+        {
+            time += Time.deltaTime;
+            statsUI.position = Vector3.Lerp(statsUIEndPoint.position, statsUIStartPoint.position, time / max);
+            yield return new WaitForSeconds(Time.deltaTime);
+        }
+    }
+
+
+
 
     public void UpdateAfinityBars()
     {
