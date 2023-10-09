@@ -382,7 +382,7 @@ public class InterfaceManager : MonoBehaviour
     {
         foreach(Area area in afinityAreas)
         {
-            area.affinityBar.SimpleRefresh(area.affinity, 4);
+            if (area.affinityBar != null) area.affinityBar.SimpleRefresh(area.affinity, 4);
         }
     }
 

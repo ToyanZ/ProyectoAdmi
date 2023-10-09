@@ -20,4 +20,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Gachapon.unity
     guid: 4b90cae8d2ba7224ab2cdc9d5a9bb604
+  - enabled: 1
+    path: Assets/Scenes/MiniGame3.unity
+    guid: 6a5ec74d35bbc494facbbf2c689781c5
   m_configObjects: {}
