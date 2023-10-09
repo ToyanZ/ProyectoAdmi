@@ -27,7 +27,7 @@ public class StreetTarget : MonoBehaviour
     public TMP_Text coinsCount;
     public TMP_Text triesCount;
 
-    public GameObject[] characters;
+    public SpriteRenderer[] characters;
     private int currentCharacter;
 
     // Start is called before the first frame update
@@ -49,8 +49,8 @@ public class StreetTarget : MonoBehaviour
         if (GameManager.instance != null) currentCharacter = GameManager.instance.characterIndex;
         else currentCharacter = 0;
             
-        characters[currentCharacter].SetActive(true);
-
+        Debug.Log("El personaje es " + GameManager.instance.characterIndex);
+        characters[currentCharacter].enabled = true;
     }
 
     // Update is called once per frame

@@ -46,7 +46,6 @@ public class GameManager : MonoBehaviour
     public GameObject dustParticleEffect;
     public List<Zone> zones;
     public List<Door> doors;
-
     
     
     [HideInInspector] public Character character;
@@ -60,7 +59,7 @@ public class GameManager : MonoBehaviour
     [HideInInspector] public string phoneNumberUser;
     [HideInInspector] public string gradeUser;
     
-    [HideInInspector] public int characterIndex = 0;
+    public int characterIndex = 0;
     [HideInInspector] public bool miniGameCompleted = false;
     [HideInInspector] public bool miniGameTutorial = true;
     //[HideInInspector] 
@@ -356,4 +355,8 @@ public class GameManager : MonoBehaviour
         currentZone = zone;
     }
 
+    public void ChangeCharacter()
+    {
+        character.player.ChangeNewCharacter();
+    }
 }

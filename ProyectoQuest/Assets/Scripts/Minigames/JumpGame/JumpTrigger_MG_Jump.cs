@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Security.Cryptography;
 using UnityEngine;
 
 public class JumpTrigger_MG_Jump : MonoBehaviour
@@ -22,11 +23,14 @@ public class JumpTrigger_MG_Jump : MonoBehaviour
                 }
             }
         }
-        if(collision.CompareTag("Floor"))
+        if (collision.CompareTag("Floor"))
         {
-            Debug.Log("Se redirigio el suelo");
-            SendSpawnNewObject(this.transform);
-            Destroy(this.gameObject);
+            if (Random.Range(0, 100) > 50)
+            {
+                Debug.Log("Se redirigio el suelo");
+                SendSpawnNewObject(this.transform);
+                Destroy(this.gameObject);
+            }
         }
     }
 

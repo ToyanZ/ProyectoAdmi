@@ -32,17 +32,20 @@ public class Jumping_MG_Jump : MonoBehaviour
 
     void Movement()
     {
-        float horizontal = Input.GetAxisRaw("Horizontal");
+        //float horizontal = Input.GetAxisRaw("Horizontal");
+        Debug.Log(horizontal);
         rb.velocity = new Vector2(horizontal * speed, rb.velocity.y);
     }
 
     public void MoveLeft()
     {
+        Debug.Log("Left");
         horizontal = -1;
     }
 
     public void MoveRight()
     {
+        Debug.Log("Right");
         horizontal = 1;
     }
 

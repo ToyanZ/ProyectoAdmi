@@ -34,6 +34,8 @@ public class SelectorCharacter : MonoBehaviour
         spriteBackground[characterSelect].enabled = false;
         spriteBackground[id].enabled = true;
         characterSelect = id;
+        GameManager.instance.characterIndex = id;
+        GameManager.instance.ChangeCharacter();
     }
 
     public void GoToShop()
