@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 6716786230437159419}
   - component: {fileID: 7023161409209974317}
   - component: {fileID: 7017234228607761790}
+  - component: {fileID: 1340263016442525391}
   m_Layer: 0
   m_Name: CarEnemi
   m_TagString: Untagged
@@ -100,9 +101,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3bf214adfe3fec043b575b37f6362e97, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  panelLose: {fileID: 0}
   carVelocity: 10
   streetTarget: {fileID: 0}
+  panelMinigameComplete: {fileID: 0}
   vehicle: {fileID: 7500743809099884165}
   vehicles:
   - {fileID: 1052011681, guid: db6d0cf00e2a6194b9eaa27a74de5d1b, type: 3}
@@ -158,6 +159,26 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 0
+--- !u!95 &1340263016442525391
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6716786230437159418}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 8be18cfabe095b4408daeaea11a1abd0, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &8330551798770832706
 GameObject:
   m_ObjectHideFlags: 0

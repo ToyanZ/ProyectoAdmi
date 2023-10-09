@@ -30,6 +30,8 @@ public class StreetTarget : MonoBehaviour
     public SpriteRenderer[] characters;
     private int currentCharacter;
 
+    public Animator anim;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -140,6 +142,7 @@ public class StreetTarget : MonoBehaviour
     public void ChangeStreet()
     {
         carPlayer.transform.position = Vector2.MoveTowards(carPlayer.transform.position, new Vector2(carPlayer.transform.position.x, streets[currentStreet - 1].transform.position.y),playerVelocity*Time.deltaTime);
+        anim.SetBool("Walking", carPlayer.transform.position.y == streets[currentStreet - 1].transform.position.y ? false : true);
         if(currentStreet == 1) characters[currentCharacter].GetComponent<SpriteRenderer>().sortingOrder = 1;
         else if(currentStreet == 2) characters[currentCharacter].GetComponent<SpriteRenderer>().sortingOrder = 100;
         else if(currentStreet == 3) characters[currentCharacter].GetComponent<SpriteRenderer>().sortingOrder = 150;
