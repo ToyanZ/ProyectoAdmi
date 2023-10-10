@@ -8,6 +8,9 @@ public class JumpTrigger_MG_Jump : MonoBehaviour
     public float upForce;
     public bool isDestroyed;
     public bool disableSpawnPlatform = true;
+    public Animator anim;
+    public AudioSource audio;
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Player"))
@@ -19,7 +22,15 @@ public class JumpTrigger_MG_Jump : MonoBehaviour
                 {
                     SendSpawnNewObject(collision.transform);
                     disableSpawnPlatform = false;
-                    if (isDestroyed) Destroy(this.gameObject);
+                    if (isDestroyed)
+                    {
+                        if (anim != null)
+                        {
+                            anim.SetTrigger("Destroy");
+                            audio.Play();
+                        }
+                        else Destroy(this.gameObject);
+                    }
                 }
             }
         }
@@ -29,13 +40,14 @@ public class JumpTrigger_MG_Jump : MonoBehaviour
             {
                 Debug.Log("Se redirigio el suelo");
                 SendSpawnNewObject(this.transform);
-                Destroy(this.gameObject);
+                Destroy(this.transform);
             }
         }
     }
 
     void JumpUp(Collider2D collision)
     {
+        SFX_Manager.instance.PlaySound(0);
         collision.GetComponent<Jumping_MG_Jump>().AnimJump();
         Vector2 impulso = transform.up.normalized * upForce;
         collision.gameObject.GetComponent<Rigidbody2D>().velocity = impulso;
@@ -48,5 +60,10 @@ public class JumpTrigger_MG_Jump : MonoBehaviour
         { 
             InstantiateManager_MG_Jump.instance.InstantiateNewFloor(playerPosition);
         }
+    }
+
+    public void DestroyPlatform()
+    {
+        Destroy(this.gameObject);
     }
 }

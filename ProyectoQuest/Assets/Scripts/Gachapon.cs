@@ -125,6 +125,7 @@ public class Gachapon : MonoBehaviour
             yield return new WaitForSeconds(0.1f);
             GameManager.instance.playerCoins--;
             coinsTXT.text = "" + GameManager.instance.playerCoins;
+            GameManager.instance.SaveCoins();
         }
         else
         {
@@ -159,4 +160,6 @@ public class Gachapon : MonoBehaviour
         principalCanvas[0].SetActive(false);
         principalCanvas[1].SetActive(true);
     }
+
+    
 }

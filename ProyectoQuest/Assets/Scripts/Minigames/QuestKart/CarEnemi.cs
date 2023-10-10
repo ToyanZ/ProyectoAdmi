@@ -38,6 +38,7 @@ public class CarEnemi : MonoBehaviour
     {
         Instantiate(particles, collision.transform.position, Quaternion.identity);
         collision.gameObject.SetActive(false);
+        GetComponent<AudioSource>().Play();
         if (GameManager.instance.minigamesTry == 1)
         {
             streetTarget.GetComponent<StreetTarget>().Victory(1);

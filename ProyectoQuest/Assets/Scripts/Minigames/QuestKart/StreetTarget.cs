@@ -167,6 +167,7 @@ public class StreetTarget : MonoBehaviour
         panelMinigameComplete.SetActive(true);
         coinsCount.text = "X " + numberCoint.ToString();
         GameManager.instance.playerCoins += numberCoint;
+        GameManager.instance.SaveCoins();
         GameManager.instance.minigamesTry = 3;
 
     }

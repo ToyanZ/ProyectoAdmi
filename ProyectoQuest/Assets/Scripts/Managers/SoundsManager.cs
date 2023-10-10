@@ -6,11 +6,16 @@ using UnityEngine.SceneManagement;
 public class SoundsManager : MonoBehaviour
 {
     public AudioClip[] temes;
+    private bool isForm;
 
     private void Awake()
     {
-        gameObject.GetComponent<AudioSource>().volume = 0.3f;
-        SelectASong();
+        
+        
+    }
+    private void Start()
+    {
+        gameObject.GetComponent<AudioSource>().volume = 0.2f;
     }
 
     private void Update()
@@ -21,12 +26,31 @@ public class SoundsManager : MonoBehaviour
         }
         else
         {
-            gameObject.GetComponent<AudioSource>().volume = 0.3f;
+            gameObject.GetComponent<AudioSource>().volume = 0.2f;
         }
-        if (!gameObject.GetComponent<AudioSource>().isPlaying)
+        if (GameManager.instance.menuState == GameManager.MenuState.SignIn)
         {
-            SelectASong();
+            print("holaaaa");
+            gameObject.GetComponent<AudioSource>().clip = temes[temes.Length - 1];
+            if (!gameObject.GetComponent<AudioSource>().isPlaying)
+            {
+                gameObject.GetComponent<AudioSource>().Play();
+            }
+            isForm = true;
         }
+        else if(GameManager.instance.menuState == GameManager.MenuState.MainMenu)
+        {
+            if (isForm)
+            {
+                gameObject.GetComponent<AudioSource>().Stop();
+                isForm = false;
+            }
+            if (!gameObject.GetComponent<AudioSource>().isPlaying)
+            {
+                SelectASong();
+            }
+        }
+        
     }
 
     private void SelectASong()
