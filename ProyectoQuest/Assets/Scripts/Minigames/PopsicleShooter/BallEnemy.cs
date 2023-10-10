@@ -59,6 +59,18 @@ public class BallEnemy : MonoBehaviour
             health -= 2;
             if (health <= 0) Destroy(gameObject);
         }
-        
+        ShooterGameManager.instance.shooter.TakeHealing();
+    }
+
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        Shooter shooter = null;
+        if(collision.gameObject.TryGetComponent<Shooter>(out shooter))
+        {
+            shooter.TakeDamage();
+            Destroy(gameObject);
+        }
+
     }
 }

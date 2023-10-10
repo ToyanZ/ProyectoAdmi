@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Security.Cryptography;
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -11,6 +12,8 @@ public class ShooterGameManager : MonoBehaviour
     public Shooter shooter;
 
     public Image timeBar;
+    public TMP_Text timeText;
+    public TMP_Text coinsText;
     public float maxTime = 15;
     [HideInInspector] public float time = 0;
     public float enemyMoveAmount = 2;
@@ -28,6 +31,22 @@ public class ShooterGameManager : MonoBehaviour
         {
             instance = this;
         }
+    }
+
+    private void Update()
+    {
+        if(GameManager.instance == null)
+        {
+            if (Input.GetMouseButtonDown(0))
+            {
+                shooter.Shoot();
+            }
+            Vector2 direction = Camera.main.ScreenToWorldPoint(Input.mousePosition) - shooter.center.position;
+            shooter.tip.position = (Vector2)shooter.center.position + (direction.normalized * shooter.tipRadius);
+
+            //shooter.rb.velocity = (shooter.walkForce * direction.normalized * Time.deltaTime);
+        }
+
     }
 
     public void StartGame()
@@ -49,13 +68,17 @@ public class ShooterGameManager : MonoBehaviour
             {
                 time -= Time.deltaTime;
                 timeBar.fillAmount = time / maxTime;
+                timeText.text = time.ToString("0.00");
             }
 
             if (time <= 0)
             {
+                timeText.text = "0";
                 if (!ending)
                 {
                     ending = true;
+                    coinsText.text = "3";
+                    GameManager.instance.playerCoins += 3;
                     endScreen.SetActive(true);
                 }
             }
@@ -64,6 +87,8 @@ public class ShooterGameManager : MonoBehaviour
                 if (!ending)
                 {
                     ending = true;
+                    coinsText.text = "1";
+                    GameManager.instance.playerCoins += 1;
                     endScreen.SetActive(true);
                 }
             }

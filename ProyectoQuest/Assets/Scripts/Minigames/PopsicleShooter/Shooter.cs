@@ -6,6 +6,7 @@ using UnityEngine.UI;
 
 public class Shooter : MonoBehaviour
 {
+    public float maxHealth = 6;
     public float health = 3;
     public Image healthBar;
     public Rigidbody2D rb;
@@ -26,9 +27,10 @@ public class Shooter : MonoBehaviour
     public float powerRadius = 3;
     public float powerForce = 20;
 
-    float tipRadius = 0;
+    [HideInInspector] public float tipRadius = 0;
     private void Start()
     {
+        health = maxHealth;
         healthBar.fillAmount = 1;
         tipRadius = (tip.position - center.position).magnitude;
     }
@@ -46,9 +48,16 @@ public class Shooter : MonoBehaviour
             {
                 tip.position = (Vector2)center.position + (direction.normalized * tipRadius);
 
-                rb.velocity = (walkForce * direction.normalized * Time.deltaTime);
+                //rb.velocity = (walkForce * direction.normalized * Time.deltaTime);
             }
         }
+    }
+
+    public void TakeHealing()
+    {
+        health += 0.25f;
+        if (health >= maxHealth) health = maxHealth;
+        healthBar.fillAmount = health / maxHealth;
     }
 
     public void TakeDamage()
@@ -56,7 +65,7 @@ public class Shooter : MonoBehaviour
         health -= 1;
 
         if (health < 0) health = 0;
-        healthBar.fillAmount = health / 3;
+        healthBar.fillAmount = health / maxHealth;
     }
 
     public void Shoot()
