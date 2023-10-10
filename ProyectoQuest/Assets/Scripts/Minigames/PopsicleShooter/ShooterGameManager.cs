@@ -67,6 +67,7 @@ public class ShooterGameManager : MonoBehaviour
                     endScreen.SetActive(true);
                 }
             }
+            yield return null;
         }
     }
 
