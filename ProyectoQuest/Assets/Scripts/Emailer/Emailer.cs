@@ -65,7 +65,7 @@ public class Emailer : MonoBehaviour
                              "**** Áreas Santo Tomas Concepción ****" + "\n";
         foreach (Area area in interfaceScript.afinityAreas)
         {
-            formMessage += area.aName + ": " + area.affinity + "%\n";
+            formMessage += area.aName + ": " + (area.affinity/4f)*100f + "%\n";
          }
 
         return formMessage;

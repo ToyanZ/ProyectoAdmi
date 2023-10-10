@@ -69,6 +69,8 @@ public class InstantiateManager_MG_Jump : MonoBehaviour
         }
         else
         {
+            player.gameObject.tag = "Untagged";
+            player.GetComponent<Rigidbody2D>().isKinematic = true;
             time = 15;
             triesCount.text ="X " + GameManager.instance.minigamesTry.ToString()  ;
             canvas[1].SetActive(false);
@@ -85,6 +87,8 @@ public class InstantiateManager_MG_Jump : MonoBehaviour
     }
     public void ResetToWorld(int numberCoint)
     {
+        player.gameObject.tag = "Untagged";
+        player.GetComponent<Rigidbody2D>().isKinematic = true;
         canvas[1].SetActive(false);
         canvas[3].SetActive(true);
         coinsCount.text = "X " + numberCoint.ToString();
