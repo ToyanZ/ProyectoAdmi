@@ -47,7 +47,12 @@ public class Joystick : MonoBehaviour, IPointerDownHandler, IPointerClickHandler
     }
 
 
-
+    public void ResetPos()
+    {
+        dragging = false;
+        handler.localPosition = initPos;
+        print("D");
+    }
 
     //-------------
     public void OnBeginDrag(PointerEventData eventData)

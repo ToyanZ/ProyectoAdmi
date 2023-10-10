@@ -30,7 +30,6 @@ public class SoundsManager : MonoBehaviour
         }
         if (GameManager.instance.menuState == GameManager.MenuState.SignIn)
         {
-            print("holaaaa");
             gameObject.GetComponent<AudioSource>().clip = temes[temes.Length - 1];
             if (!gameObject.GetComponent<AudioSource>().isPlaying)
             {

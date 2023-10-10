@@ -125,6 +125,35 @@ public class CameraTracking : MonoBehaviour
         goingTo = false;
     }
 
+    public void GoTo(List<GameObject> go)
+    {
+        if (!goingTo) StartCoroutine(GoToIE(go));
+    }
+    IEnumerator GoToIE(List<GameObject> go)
+    {
+        goingTo = true;
+
+        foreach (GameObject go2 in go)
+        {
+            Vector3 start = camController.tCamera.transform.position;
+            Vector3 end = go2.transform.position;
+            float time = 0;
+            while (time < 0.5f)
+            {
+                time += Time.deltaTime;
+                Vector2 dir = Vector2.Lerp(start, end, animationCurve.Evaluate(time / 0.5f));
+                camController.tCamera.transform.position = new Vector3(dir.x, dir.y, start.z);
+                yield return new WaitForSeconds(Time.deltaTime);
+            }
+            yield return null;
+        }
+
+        
+        goingTo = false;
+    }
+
+
+
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.red;

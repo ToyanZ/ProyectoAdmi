@@ -103,7 +103,7 @@ public class Zone : MonoBehaviour
         GameManager.instance.doorInfo.Find(d => d.id == id).unlocked = true;
 
         InterfaceManager.instance.ShowMainGameUI();
-
+        GameManager.instance.character.player.joystick.ResetPos();
 
         open = false;
         yield return null;

@@ -69,6 +69,7 @@ public class GameManager : MonoBehaviour
     bool mainProgressBarUpdating = false;
     MatchState prevState = MatchState.Walking;
     bool gachaponEntered = false;
+    List<GameObject> points;
     private void Awake()
     {
         playerCoins = PlayerPrefs.GetInt("coins", 0);
@@ -85,6 +86,7 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
+        points = new List<GameObject>();
         List<Door> doors = FindObjectsOfType<Door>().ToList();
         doorInfo = new List<DoorInfo>();
 
@@ -311,6 +313,7 @@ public class GameManager : MonoBehaviour
             matchState = MatchState.Walking;
             currentZone.Open();
             miniGameCompleted = false;
+            
         }
     }
     private void End()
@@ -374,6 +377,7 @@ public class GameManager : MonoBehaviour
     {
         if (currentZone != null && currentZone != zone) cameraTracking.GoTo(zone.cameraPosition);
         currentZone = zone;
+        if (!points.Contains(currentZone.cameraPosition)) points.Add(currentZone.cameraPosition);
     }
 
     public void ChangeCharacter()
@@ -393,7 +397,7 @@ public class GameManager : MonoBehaviour
             {
                 doorInfo.door = doors.Find(d => d.id == doorInfo.id);
             }
-            if (!doorInfo.unlocked)
+            if (!doorInfo.unlocked && doorInfo.door.id != 5)
             {
                 doorInfo.door.unlocked = true;
                 doorInfo.unlocked = true;
@@ -406,5 +410,36 @@ public class GameManager : MonoBehaviour
     public void SaveCoins()
     {
         PlayerPrefs.SetInt("coins", playerCoins);
+    }
+
+    public void TpToMinigames(Transform tpPoint)
+    {
+        character.transform.position = tpPoint.position;
+        cameraTracking.StopAllCoroutines();
+
+        List<Zone> zone = new List<Zone>(FindObjectsOfType<Zone>());
+        Zone lastZone = zone.Find(d => d.id == 5);
+        if (!points.Contains(lastZone.cameraPosition))
+        {
+            points.Reverse();
+            points.Add(lastZone.cameraPosition);
+        }
+
+        cameraTracking.GoTo(points);
+        
+        List<Door> doors = new List<Door>(FindObjectsOfType<Door>());
+        foreach (DoorInfo doorInfo in doorInfo)
+        {
+            if (doorInfo.door == null)
+            {
+                doorInfo.door = doors.Find(d => d.id == doorInfo.id);
+            }
+            if (doorInfo.door.id == 5)
+            {
+                doorInfo.door.unlocked = true;
+                doorInfo.unlocked = true;
+                if(doorInfo.door.gameObject.activeSelf) doorInfo.door.Open();
+            }
+        }
     }
 }
