@@ -51,7 +51,6 @@ public class Joystick : MonoBehaviour, IPointerDownHandler, IPointerClickHandler
     {
         dragging = false;
         handler.localPosition = initPos;
-        print("D");
     }
 
     //-------------
@@ -62,21 +61,29 @@ public class Joystick : MonoBehaviour, IPointerDownHandler, IPointerClickHandler
     public void OnDrag(PointerEventData eventData)
     {
         state = State.Drag;
-        
-        //if (Input.touchCount > 0)
-        //{
-        //    Touch touch = Input.GetTouch(0);
-        //    touchPos = Camera.main.ScreenToWorldPoint(touch.position);
-        //    touchPos.z = 0;
-        //    dragging = true;
-        //}
 
-        if (Input.GetMouseButton(0))
+        switch (GameManager.instance.buildType)
         {
-            touchPos = Input.mousePosition; //Camera.main.ScreenToViewportPoint();
-            touchPos.z = 0;
-            dragging = true;
+            case GameManager.BuildType.Pc:
+                if (Input.GetMouseButton(0))
+                {
+                    touchPos = Input.mousePosition; //Camera.main.ScreenToViewportPoint();
+                    touchPos.z = 0;
+                    dragging = true;
+                }
+                break;
+            case GameManager.BuildType.Phone:
+                if (Input.touchCount > 0)
+                {
+                    Touch touch = Input.GetTouch(0);
+                    touchPos = touch.position;
+                    touchPos.z = 0;
+                    dragging = true;
+                    //touchPos = Camera.main.ScreenToWorldPoint(touch.position);
+                }
+                break;
         }
+        
     }
     public void OnEndDrag(PointerEventData eventData)
     {
