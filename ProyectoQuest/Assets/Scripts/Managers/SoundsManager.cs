@@ -9,7 +9,7 @@ public class SoundsManager : MonoBehaviour
 
     private void Awake()
     {
-        gameObject.GetComponent<AudioSource>().volume = 0.3f;
+        gameObject.GetComponent<AudioSource>().volume = 0.1f;
         SelectASong();
     }
 
@@ -21,7 +21,7 @@ public class SoundsManager : MonoBehaviour
         }
         else
         {
-            gameObject.GetComponent<AudioSource>().volume = 0.3f;
+            gameObject.GetComponent<AudioSource>().volume = 0.1f;
         }
         if (!gameObject.GetComponent<AudioSource>().isPlaying)
         {
