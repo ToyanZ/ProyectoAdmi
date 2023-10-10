@@ -16,6 +16,7 @@ public class InstantiateManager_MG_Jump : MonoBehaviour
     private float time;
     public GameObject player;
     public static InstantiateManager_MG_Jump instance;
+    public bool stopGame;
     //public Vector3 addPosition = new Vector3(0, 10f, 0);
 
     private void Awake()
@@ -45,7 +46,11 @@ public class InstantiateManager_MG_Jump : MonoBehaviour
         timeText.text = FormatearTiempo();
         if(time <= 0)
         {
-            ResetToWorld(2);
+            if (!stopGame)
+            {
+                stopGame = true;
+                ResetToWorld(2);
+            }
         }
     }
 
@@ -85,6 +90,7 @@ public class InstantiateManager_MG_Jump : MonoBehaviour
         coinsCount.text = "X " + numberCoint.ToString();
         GameManager.instance.playerCoins += numberCoint;
         GameManager.instance.minigamesTry = 3;
+        GameManager.instance.SaveCoins();
     }
 
     public void InstantiateNewFloor(Transform newSpawnPosition)

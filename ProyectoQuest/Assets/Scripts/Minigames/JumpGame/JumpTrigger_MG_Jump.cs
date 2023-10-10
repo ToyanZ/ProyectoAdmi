@@ -36,12 +36,8 @@ public class JumpTrigger_MG_Jump : MonoBehaviour
         }
         if (collision.CompareTag("Floor"))
         {
-            if (Random.Range(0, 100) > 50)
-            {
-                Debug.Log("Se redirigio el suelo");
-                SendSpawnNewObject(this.transform);
-                Destroy(this.transform);
-            }
+            RespawnFloor();
+            Debug.Log("Se redirigio el suelo");
         }
     }
 
@@ -60,6 +56,11 @@ public class JumpTrigger_MG_Jump : MonoBehaviour
         { 
             InstantiateManager_MG_Jump.instance.InstantiateNewFloor(playerPosition);
         }
+    }
+
+    public void RespawnFloor()
+    {
+        transform.position = new Vector2((Random.Range(-4, 4)), transform.position.y);
     }
 
     public void DestroyPlatform()

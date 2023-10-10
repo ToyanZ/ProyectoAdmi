@@ -79,6 +79,7 @@ public class ShooterGameManager : MonoBehaviour
                     ending = true;
                     coinsText.text = "3";
                     GameManager.instance.playerCoins += 3;
+                    GameManager.instance.SaveCoins();
                     endScreen.SetActive(true);
                 }
             }
@@ -89,9 +90,11 @@ public class ShooterGameManager : MonoBehaviour
                     ending = true;
                     coinsText.text = "1";
                     GameManager.instance.playerCoins += 1;
+                    GameManager.instance.SaveCoins();
                     endScreen.SetActive(true);
                 }
             }
+
             yield return null;
         }
     }
