@@ -70,9 +70,14 @@ public class GameManager : MonoBehaviour
     MatchState prevState = MatchState.Walking;
     bool gachaponEntered = false;
     List<GameObject> points;
+
+    public int gameCompleted = 0;
+
     private void Awake()
     {
         playerCoins = PlayerPrefs.GetInt("coins", 0);
+        gameCompleted = PlayerPrefs.GetInt("gameCompleted", 0);
+
         if (instance == null)
         {
             instance = this;
@@ -419,14 +424,22 @@ public class GameManager : MonoBehaviour
 
         List<Zone> zone = new List<Zone>(FindObjectsOfType<Zone>());
         Zone lastZone = zone.Find(d => d.id == 5);
-        if (!points.Contains(lastZone.cameraPosition))
+        if (!points.Contains(lastZone.cameraPosition) && gameCompleted == 0)
         {
             points.Reverse();
             points.Add(lastZone.cameraPosition);
+            gameCompleted = 1;
+            PlayerPrefs.SetInt("gameCompleted", gameCompleted);
         }
-
-        cameraTracking.GoTo(points);
+        StartCoroutine(OpenLastZone());
         
+    }
+    IEnumerator OpenLastZone()
+    {
+        cameraTracking.GoTo(points);
+
+        yield return new WaitForSeconds(points.Count * 0.5f);
+
         List<Door> doors = new List<Door>(FindObjectsOfType<Door>());
         foreach (DoorInfo doorInfo in doorInfo)
         {
@@ -438,8 +451,14 @@ public class GameManager : MonoBehaviour
             {
                 doorInfo.door.unlocked = true;
                 doorInfo.unlocked = true;
-                if(doorInfo.door.gameObject.activeSelf) doorInfo.door.Open();
+                if (doorInfo.door.gameObject.activeSelf) doorInfo.door.Open();
             }
         }
+    }
+
+
+    public void ResetGameData()
+    {
+        PlayerPrefs.DeleteAll();
     }
 }
