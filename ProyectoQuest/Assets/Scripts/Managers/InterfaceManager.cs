@@ -113,7 +113,7 @@ public class InterfaceManager : MonoBehaviour
 
     public void LoadQuestion(Question question)
     {
-        statement.text = question.statement;//Actualiza el texto de la nueva pregunta
+        StartCoroutine(AnimationText(question));//Actualiza el texto de la nueva pregunta
         question.portaitInstance = Instantiate(question.npcPortait);
         question.portaitInstance.SetParent(portrait);
         question.portaitInstance.localScale = Vector3.one;
@@ -135,6 +135,15 @@ public class InterfaceManager : MonoBehaviour
         }
 
         popUp.gameObject.SetActive(true);//Activa la ventana de pregunta
+    }
+    IEnumerator AnimationText(Question question)
+    {
+        statement.text = "";
+        foreach(char caracter in question.statement)
+        {
+            statement.text += caracter;
+            yield return new WaitForSeconds(0.05f);
+        }
     }
     private void CloseQuestion()
     {
