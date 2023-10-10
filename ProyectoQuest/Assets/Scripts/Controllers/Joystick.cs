@@ -73,13 +73,33 @@ public class Joystick : MonoBehaviour, IPointerDownHandler, IPointerClickHandler
                 }
                 break;
             case GameManager.BuildType.Phone:
-                if (Input.touchCount > 0)
+                if (Input.touchCount == 1)
                 {
                     Touch touch = Input.GetTouch(0);
                     touchPos = touch.position;
                     touchPos.z = 0;
                     dragging = true;
                     //touchPos = Camera.main.ScreenToWorldPoint(touch.position);
+                }
+                else if (Input.touchCount == 2)
+                {
+                    Vector2 d1 = Input.GetTouch(0).position - (Vector2)holder.position;
+                    Vector2 d2 = Input.GetTouch(1).position - (Vector2)holder.position;
+
+                    if(d1.magnitude < d2.magnitude)
+                    {
+                        Touch touch = Input.GetTouch(0);
+                        touchPos = touch.position;
+                        touchPos.z = 0;
+                        dragging = true;
+                    }
+                    else
+                    {
+                        Touch touch = Input.GetTouch(1);
+                        touchPos = touch.position;
+                        touchPos.z = 0;
+                        dragging = true;
+                    }
                 }
                 break;
         }
