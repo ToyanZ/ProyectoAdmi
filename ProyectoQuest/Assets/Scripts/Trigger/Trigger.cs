@@ -40,4 +40,9 @@ public abstract class Trigger : StatElement
     public void LoadLock() { loadingLocked = true; }
     public void StayLock() { stayLocked = true; }
     public void ExitLock() { exitLocked = true; }
+
+    public void EnterUnlock() { enterLocked = false; }
+    public void LoadUnlock() { loadingLocked = false; }
+    public void StayUnlock() { stayLocked = false; }
+    public void ExitUnlock() { exitLocked = false; }
 }

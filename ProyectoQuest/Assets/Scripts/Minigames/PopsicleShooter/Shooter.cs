@@ -8,12 +8,14 @@ public class Shooter : MonoBehaviour
 {
     public float health = 3;
     public Image healthBar;
+    public Rigidbody2D rb;
 
     [Space(20)]
     public Transform tip;
     public Transform center;
     public Projectile projectile;
     public float shootForce = 40;
+    public float walkForce = 10;
 
     [Space(20)]
     public float powerPointsMax = 24;
@@ -22,10 +24,13 @@ public class Shooter : MonoBehaviour
     public Button powerButton;
     public GameObject powerParticles;
     public float powerRadius = 3;
+    public float powerForce = 20;
 
+    float tipRadius = 0;
     private void Start()
     {
         healthBar.fillAmount = 1;
+        tipRadius = (tip.position - center.position).magnitude;
     }
 
     private void Update()
@@ -33,8 +38,17 @@ public class Shooter : MonoBehaviour
         powerBar.fillAmount = powerPoints / powerPointsMax;
         powerButton.interactable = powerPoints == powerPointsMax;
 
-        //transform.up = GameManager.instance.character.player.joystick.GetDirectionRaw();
-        //GameManager.instance.character.player.target.rigidBody.AddForce(50 * transform.up * Time.deltaTime);
+        if(GameManager.instance != null )
+        {
+            Vector2 direction = GameManager.instance.character.player.joystick.GetDirectionRaw();
+
+            if( direction != Vector2.zero )
+            {
+                tip.position = (Vector2)center.position + (direction.normalized * tipRadius);
+
+                rb.velocity = (walkForce * direction.normalized * Time.deltaTime);
+            }
+        }
     }
 
     public void TakeDamage()
@@ -74,7 +88,7 @@ public class Shooter : MonoBehaviour
             {
                 current.TakeDamage(false);
                 Vector2 direction= collider.transform.position - center.position;
-                current.rigidBody.AddForce(direction.normalized * 20);
+                current.rigidBody.AddForce(direction.normalized * powerForce, ForceMode2D.Impulse);
             }
         }
         powerPoints = 0;

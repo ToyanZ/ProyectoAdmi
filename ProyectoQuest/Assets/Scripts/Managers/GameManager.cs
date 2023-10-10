@@ -200,7 +200,7 @@ public class GameManager : MonoBehaviour
             {
                 doorInfo.door = doors.Find(door => door.id == doorInfo.id);
             }
-            doorInfo.door.gameObject.SetActive(!doorInfo.unlocked);
+            if (doorInfo.door != null) doorInfo.door.gameObject.SetActive(!doorInfo.unlocked);
         }
 
     }
@@ -301,7 +301,7 @@ public class GameManager : MonoBehaviour
     }
     private void MiniGame()
     {
-        if (miniGameCompleted)
+        if (miniGameCompleted && SceneManager.GetActiveScene().name == "Level1")
         {
             InterfaceManager.instance.inGameUI.SetActive(true);
             matchState = MatchState.Walking;
@@ -339,6 +339,14 @@ public class GameManager : MonoBehaviour
         prevState = matchState;
         matchState = MatchState.Gachapon;
     }
+
+    public void SetMiniGameState()
+    {
+        matchState = MatchState.MiniGame;
+        InterfaceManager.instance.HideMainGameUI();
+        character.gameObject.SetActive(false);
+    }
+
 
     private void ShowEndHUD()
     {

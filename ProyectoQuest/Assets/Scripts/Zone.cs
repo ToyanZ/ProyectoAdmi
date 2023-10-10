@@ -12,6 +12,7 @@ public class Zone : MonoBehaviour
 {
     public bool gamePlayed = false;
     public int id = 1;
+    public bool quiestionZone = true;
     [Space(20)]
     public Bar progressBar;
     public GameObject cameraPosition;
@@ -52,6 +53,12 @@ public class Zone : MonoBehaviour
 
     public void Open()
     {
+        if (!quiestionZone)
+        {
+            GameManager.instance.character.gameObject.SetActive(true);
+            InterfaceManager.instance.ShowMainGameUI();
+            return;
+        }
         if (!open) StartCoroutine(OpenDoor());
     }
     IEnumerator OpenDoor()
