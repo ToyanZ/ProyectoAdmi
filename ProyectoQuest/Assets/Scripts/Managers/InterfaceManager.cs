@@ -51,6 +51,8 @@ public class InterfaceManager : MonoBehaviour
     public TMP_Text coinText;
     public string coinName;
 
+    public TMP_Text alertText;
+
     private void Awake()
     {
         if (instance == null)
@@ -449,6 +451,17 @@ public class InterfaceManager : MonoBehaviour
         UserEmailControl(inputEmail);
         userPhone = inputPhone.text;
         userGrade = inputGrade.captionText.text;
+        if (userName != "" && userPhone != "" && userRut != "" && userEmail != "")
+        {
+            form.SetActive(false);
+            onScreenUI.SetActive(true);
+            joystick.SetActive(true);
+        }
+        else
+        {
+            alertText.text = "Por favor, revisa que tus datos estén correctamete ingresados.";
+            alertText.color = Color.red;
+        }
     }
     public void SendForm2()
     {
