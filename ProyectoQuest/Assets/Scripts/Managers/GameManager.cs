@@ -101,6 +101,15 @@ public class GameManager : MonoBehaviour
             door1.unlocked = false;
             doorInfo.Add(door1);
         }
+        if (gameCompleted == 1)
+        {
+            foreach(DoorInfo doorInfo in doorInfo)
+            {
+                doorInfo.door.unlocked = true;
+                doorInfo.unlocked = true;
+                doorInfo.door.Open();
+            }
+        }
     }
 
     private void Update()
