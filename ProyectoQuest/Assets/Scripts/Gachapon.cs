@@ -70,7 +70,7 @@ public class Gachapon : MonoBehaviour
 
     public void UnlockCharacter()
     {
-        if (currentCoins > 3)
+        if (currentCoins >= 3)
         {
             if (lockCharacters.Count == 0)
             {
