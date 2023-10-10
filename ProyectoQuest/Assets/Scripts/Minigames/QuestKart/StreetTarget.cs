@@ -51,7 +51,7 @@ public class StreetTarget : MonoBehaviour
         if (GameManager.instance != null) currentCharacter = GameManager.instance.characterIndex;
         else currentCharacter = 0;
             
-        Debug.Log("El personaje es " + GameManager.instance.characterIndex);
+        //Debug.Log("El personaje es " + GameManager.instance.characterIndex);
         characters[currentCharacter].enabled = true;
     }
 
@@ -64,7 +64,7 @@ public class StreetTarget : MonoBehaviour
             timeText.text = FormatearTiempo();
             if (time <= 0)
             {
-                Victory(2);
+                Victory(3);
             }
             count += Time.deltaTime;
             if (count > 1)

@@ -462,7 +462,7 @@ public class InterfaceManager : MonoBehaviour
         }
         else
         {
-            alertText.text = "Por favor, revisa que tus datos estén correctamete ingresados.";
+            alertText.text = "Por favor, revisa que tus datos estén correctamente ingresados.";
             alertText.color = Color.red;
         }
     }

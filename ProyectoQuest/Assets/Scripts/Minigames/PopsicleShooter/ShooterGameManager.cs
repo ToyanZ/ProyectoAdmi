@@ -77,7 +77,7 @@ public class ShooterGameManager : MonoBehaviour
                 if (!ending)
                 {
                     ending = true;
-                    coinsText.text = "3";
+                    coinsText.text = "X 3";
                     GameManager.instance.playerCoins += 3;
                     GameManager.instance.SaveCoins();
                     endScreen.SetActive(true);
@@ -88,7 +88,7 @@ public class ShooterGameManager : MonoBehaviour
                 if (!ending)
                 {
                     ending = true;
-                    coinsText.text = "1";
+                    coinsText.text = "X 1";
                     GameManager.instance.playerCoins += 1;
                     GameManager.instance.SaveCoins();
                     endScreen.SetActive(true);

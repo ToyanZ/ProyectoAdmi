@@ -49,7 +49,7 @@ public class InstantiateManager_MG_Jump : MonoBehaviour
             if (!stopGame)
             {
                 stopGame = true;
-                ResetToWorld(2);
+                ResetToWorld(3);
             }
         }
     }
@@ -70,7 +70,7 @@ public class InstantiateManager_MG_Jump : MonoBehaviour
         else
         {
             time = 15;
-            triesCount.text = GameManager.instance.minigamesTry.ToString()  ;
+            triesCount.text ="X " + GameManager.instance.minigamesTry.ToString()  ;
             canvas[1].SetActive(false);
             canvas[2].SetActive(true);
         }

@@ -75,6 +75,7 @@ public class GameManager : MonoBehaviour
 
     private void Awake()
     {
+        //ResetGameData();
         playerCoins = PlayerPrefs.GetInt("coins", 0);
         gameCompleted = PlayerPrefs.GetInt("gameCompleted", 0);
 
