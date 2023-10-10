@@ -142,6 +142,10 @@ public class GameManager : MonoBehaviour
     }
     private MenuState SignIn()
     {
+        if (InterfaceManager.instance.form.activeSelf)
+        {
+            return MenuState.SignIn;
+        }
         return MenuState.MainMenu;
     }
     private void MainMenu()
