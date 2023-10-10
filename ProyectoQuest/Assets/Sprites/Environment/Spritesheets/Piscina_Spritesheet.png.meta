@@ -47,7 +47,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 16
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -1398,7 +1398,7 @@ TextureImporter:
       Piscina_Spritesheet_43: 452574895
       Piscina_Spritesheet_24: 2141502955
       Piscina_Spritesheet_3: -1844826054
-      Piscina_Spritesheet_60: 1342731610
+      Piscina_Spritesheet_35: -134888399
       Piscina_Spritesheet_44: -113986244
       Piscina_Spritesheet_34: -555559702
       Piscina_Spritesheet_29: -1552548650
@@ -1454,8 +1454,8 @@ TextureImporter:
       Piscina_Spritesheet_26: 2009289055
       Piscina_Spritesheet_0: 1900445274
       Piscina_Spritesheet_46: -1945443110
+      Piscina_Spritesheet_60: 1342731610
       Piscina_Spritesheet_20: -1085423787
-      Piscina_Spritesheet_35: -134888399
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
