@@ -7,9 +7,9 @@ using UnityEngine;
 
 public class Emailer : MonoBehaviour
 {
-    const string kSenderEmailAddress = "jordan.rob997@gmail.com";
-    const string kSenderPassword = "zdkz vkpe qiah hkdb"; //App password gmail access;
-    const string kReceiverEmailAddress = "jordan.rob997@gmail.com";
+    const string kSenderEmailAddress = "quest.ipst@gmail.com";
+    const string kSenderPassword = "ozai gozf mdte mjvt"; //App password gmail access;
+    const string kReceiverEmailAddress = "quest.ipst@gmail.com";
 
     void Start()
     {
