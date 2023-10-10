@@ -63,7 +63,7 @@ public class InstantiateManager_MG_Jump : MonoBehaviour
 
     public void LostGame()
     {
-        if(GameManager.instance.minigamesTry == 0)
+        if(GameManager.instance.minigamesTry == 1)
         {
             ResetToWorld(1);
         }
@@ -72,6 +72,7 @@ public class InstantiateManager_MG_Jump : MonoBehaviour
             player.gameObject.tag = "Untagged";
             player.GetComponent<Rigidbody2D>().isKinematic = true;
             time = 15;
+            GameManager.instance.minigamesTry--;
             triesCount.text ="X " + GameManager.instance.minigamesTry.ToString()  ;
             canvas[1].SetActive(false);
             canvas[2].SetActive(true);
@@ -124,7 +125,7 @@ public class InstantiateManager_MG_Jump : MonoBehaviour
 
     public void ReloadScene()
     {
-        GameManager.instance.minigamesTry--;
+        
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 

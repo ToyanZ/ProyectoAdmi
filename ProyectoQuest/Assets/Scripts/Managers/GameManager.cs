@@ -429,6 +429,8 @@ public class GameManager : MonoBehaviour
 
     public void TpToMinigames(Transform tpPoint)
     {
+        InterfaceManager.instance.onScreenUI.SetActive(false);
+        InterfaceManager.instance.joystick.SetActive(false);
         character.transform.position = tpPoint.position;
         cameraTracking.StopAllCoroutines();
 
@@ -464,6 +466,8 @@ public class GameManager : MonoBehaviour
                 if (doorInfo.door.gameObject.activeSelf) doorInfo.door.Open();
             }
         }
+        InterfaceManager.instance.onScreenUI.SetActive(true);
+        InterfaceManager.instance.joystick.SetActive(true);
     }
 
 
