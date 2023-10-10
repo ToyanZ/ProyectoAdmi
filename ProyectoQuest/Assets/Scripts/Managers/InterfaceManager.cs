@@ -85,6 +85,7 @@ public class InterfaceManager : MonoBehaviour
 
         foreach(Area area in afinityAreas)
         {
+
             area.creerButton.onClick.AddListener(() =>
             {
                 //Minimiza todos los otros cuadros
@@ -111,6 +112,8 @@ public class InterfaceManager : MonoBehaviour
             rectTransform.localScale = new Vector3(scale.x, time / maxTime, scale.z);
             yield return new WaitForSeconds(Time.deltaTime);
         }
+        statsUI.gameObject.SetActive(false);
+        statsUI.gameObject.SetActive(true);
     }
 
     public void LoadQuestion(Question question)
