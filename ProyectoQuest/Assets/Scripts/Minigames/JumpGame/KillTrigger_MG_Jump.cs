@@ -14,16 +14,10 @@ public class KillTrigger_MG_Jump : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
+            SFX_Manager.instance.PlaySound(1);
             collision.GetComponent<Jumping_MG_Jump>().LostPlayer();
-            //Destroy(collision.gameObject);
             InstantiateManager_MG_Jump.instance.LostGame();
         }
-
-        /*if (collision.CompareTag("Wall"))
-        {
-            Debug.Log("Colisiona con la pared");
-            isLeft = !isLeft;
-        }*/
     }
 
     private void FixedUpdate()

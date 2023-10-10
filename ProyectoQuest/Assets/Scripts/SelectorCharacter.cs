@@ -34,6 +34,7 @@ public class SelectorCharacter : MonoBehaviour
         spriteBackground[characterSelect].enabled = false;
         spriteBackground[id].enabled = true;
         characterSelect = id;
+        SFX_Manager.instance.PlaySound(2);
         GameManager.instance.characterIndex = id;
         GameManager.instance.ChangeCharacter();
     }
@@ -42,5 +43,10 @@ public class SelectorCharacter : MonoBehaviour
     {
         principalCanvas[0].SetActive(true);
         principalCanvas[1].SetActive(false);
+    }
+
+    public void PlaySound(int id)
+    {
+        SFX_Manager.instance.PlaySound(id);
     }
 }

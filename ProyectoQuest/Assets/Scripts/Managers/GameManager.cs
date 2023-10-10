@@ -71,6 +71,7 @@ public class GameManager : MonoBehaviour
     bool gachaponEntered = false;
     private void Awake()
     {
+        playerCoins = PlayerPrefs.GetInt("coins", 0);
         if (instance == null)
         {
             instance = this;
@@ -202,7 +203,6 @@ public class GameManager : MonoBehaviour
             }
             if (doorInfo.door != null) doorInfo.door.gameObject.SetActive(!doorInfo.unlocked);
         }
-
     }
     private void Answering()
     {
@@ -397,5 +397,10 @@ public class GameManager : MonoBehaviour
             }
             
         }
+    }
+
+    public void SaveCoins()
+    {
+        PlayerPrefs.SetInt("coins", playerCoins);
     }
 }

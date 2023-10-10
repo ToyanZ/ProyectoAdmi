@@ -9,6 +9,7 @@ public class JumpTrigger_MG_Jump : MonoBehaviour
     public bool isDestroyed;
     public bool disableSpawnPlatform = true;
     public Animator anim;
+    public AudioSource audio;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -23,7 +24,11 @@ public class JumpTrigger_MG_Jump : MonoBehaviour
                     disableSpawnPlatform = false;
                     if (isDestroyed)
                     {
-                        if (anim != null) anim.SetTrigger("Destroy");
+                        if (anim != null)
+                        {
+                            anim.SetTrigger("Destroy");
+                            audio.Play();
+                        }
                         else Destroy(this.gameObject);
                     }
                 }
@@ -42,6 +47,7 @@ public class JumpTrigger_MG_Jump : MonoBehaviour
 
     void JumpUp(Collider2D collision)
     {
+        SFX_Manager.instance.PlaySound(0);
         collision.GetComponent<Jumping_MG_Jump>().AnimJump();
         Vector2 impulso = transform.up.normalized * upForce;
         collision.gameObject.GetComponent<Rigidbody2D>().velocity = impulso;
