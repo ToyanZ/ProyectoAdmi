@@ -12,7 +12,7 @@ public class Zone : MonoBehaviour
 {
     public bool gamePlayed = false;
     public int id = 1;
-    public bool quiestionZone = true;
+    public bool questionZone = true;
     [Space(20)]
     public Bar progressBar;
     public GameObject cameraPosition;
@@ -31,29 +31,34 @@ public class Zone : MonoBehaviour
     {
         updating = true;
         
-        float count = 0;
-        foreach (Question question in questions)
-        {
-            if(question.answered) count++;
-        }
-        float startPct = progressBar.filler.fillAmount;
-        float endPct = count / questions.Count * 1.0f;
 
-        float maxTime = GameManager.instance.questionHandlerBarUpdateTime;
-        float time = 0;
-        while (time < maxTime)
+        if(questionZone)
         {
-            time += Time.deltaTime;
-            progressBar.filler.fillAmount = Mathf.Lerp(startPct, endPct,  (time / maxTime));
-            yield return new WaitForSeconds(Time.deltaTime);
+            float count = 0;
+            foreach (Question question in questions)
+            {
+                if (question.answered) count++;
+            }
+            float startPct = progressBar.filler.fillAmount;
+            float endPct = count / questions.Count * 1.0f;
+
+            float maxTime = GameManager.instance.questionHandlerBarUpdateTime;
+            float time = 0;
+            while (time < maxTime)
+            {
+                time += Time.deltaTime;
+                progressBar.filler.fillAmount = Mathf.Lerp(startPct, endPct, (time / maxTime));
+                yield return new WaitForSeconds(Time.deltaTime);
+            }
         }
+        
 
         updating = false;
     }
 
     public void Open()
     {
-        if (!quiestionZone)
+        if (!questionZone)
         {
             GameManager.instance.character.gameObject.SetActive(true);
             InterfaceManager.instance.ShowMainGameUI();
