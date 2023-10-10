@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Security.Cryptography;
 using UnityEngine;
+using UnityEngine.TextCore.Text;
 using UnityEngine.UI;
 
 public class Shooter : MonoBehaviour
@@ -27,12 +28,23 @@ public class Shooter : MonoBehaviour
     public float powerRadius = 3;
     public float powerForce = 20;
 
+    public SpriteRenderer[] characters;
+
+    public AudioSource[] sfx;
+    
     [HideInInspector] public float tipRadius = 0;
     private void Start()
     {
         health = maxHealth;
         healthBar.fillAmount = 1;
         tipRadius = (tip.position - center.position).magnitude;
+
+        for (int i = 0; i < characters.Length; i++)
+        {
+            characters[i].enabled = false;
+        }
+        if (GameManager.instance != null) characters[GameManager.instance.characterIndex].enabled = true;
+        else characters[0].enabled = true;
     }
 
     private void Update()
@@ -55,13 +67,14 @@ public class Shooter : MonoBehaviour
 
     public void TakeHealing()
     {
-        health += 0.25f;
+        health += 0.1f;
         if (health >= maxHealth) health = maxHealth;
         healthBar.fillAmount = health / maxHealth;
     }
 
     public void TakeDamage()
     {
+        sfx[1] .Play();
         health -= 1;
 
         if (health < 0) health = 0;
@@ -70,6 +83,7 @@ public class Shooter : MonoBehaviour
 
     public void Shoot()
     {
+        sfx[0].Play();
         Projectile bullet = Instantiate(projectile, tip.position, Quaternion.identity);
         
         Vector2 direction = tip.position - center.position;
