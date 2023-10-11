@@ -35,18 +35,6 @@ public class ShooterGameManager : MonoBehaviour
 
     private void Update()
     {
-        if(GameManager.instance == null)
-        {
-            if (Input.GetMouseButtonDown(0))
-            {
-                shooter.Shoot();
-            }
-            Vector2 direction = Camera.main.ScreenToWorldPoint(Input.mousePosition) - shooter.center.position;
-            shooter.tip.position = (Vector2)shooter.center.position + (direction.normalized * shooter.tipRadius);
-
-            //shooter.rb.velocity = (shooter.walkForce * direction.normalized * Time.deltaTime);
-        }
-
     }
 
     public void StartGame()

@@ -43,13 +43,16 @@ public class InstantiateManager_MG_Jump : MonoBehaviour
 
     private void Update()
     {
-        timeText.text = FormatearTiempo();
-        if(time <= 0)
+        if(canvas[0].activeSelf == false && canvas[1].activeSelf == true)
         {
-            if (!stopGame)
+            timeText.text = FormatearTiempo();
+            if (time <= 0)
             {
-                stopGame = true;
-                ResetToWorld(3);
+                if (!stopGame)
+                {
+                    stopGame = true;
+                    ResetToWorld(3);
+                }
             }
         }
     }

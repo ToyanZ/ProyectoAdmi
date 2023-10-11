@@ -27,7 +27,20 @@ public class Jumping_MG_Jump : MonoBehaviour
 
     private void Update()
     {
-        Movement();
+        if (GameManager.instance != null)
+        {
+            if(GameManager.instance.buildType == GameManager.BuildType.Phone) Movement();
+            else
+            {
+                Movement();
+                if (Input.GetAxisRaw("Horizontal") == -1) MoveLeft();
+                else if (Input.GetAxisRaw("Horizontal") == 1) MoveRight();
+                else StopMove();
+                Movement();
+            }
+
+
+        }
     }
 
     void Movement()

@@ -116,7 +116,11 @@ public class GameManager : MonoBehaviour
     private void Update()
     {
         StateMachine();
-        if(buildType == BuildType.Pc) { InterfaceManager.instance.joystick.SetActive(false); }
+        if(buildType == BuildType.Pc) 
+        { 
+            InterfaceManager.instance.joystick.SetActive(false);
+            
+        }
 
         
     }

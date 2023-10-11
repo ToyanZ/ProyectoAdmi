@@ -31,6 +31,7 @@ public class Shooter : MonoBehaviour
     public SpriteRenderer[] characters;
 
     public AudioSource[] sfx;
+    public Camera cam;
     
     [HideInInspector] public float tipRadius = 0;
     private void Start()
@@ -47,6 +48,9 @@ public class Shooter : MonoBehaviour
         else characters[0].enabled = true;
     }
 
+    bool left = false;
+    bool right = false;
+
     private void Update()
     {
         powerBar.fillAmount = powerPoints / powerPointsMax;
@@ -54,16 +58,64 @@ public class Shooter : MonoBehaviour
 
         if(GameManager.instance != null )
         {
-            Vector2 direction = GameManager.instance.character.player.joystick.GetDirectionRaw();
-
-            if( direction != Vector2.zero )
+            if(GameManager.instance.buildType == GameManager.BuildType.Phone)
             {
+                Vector2 direction = GameManager.instance.character.player.joystick.GetDirectionRaw();
+
+                if (direction != Vector2.zero)
+                {
+                    tip.position = (Vector2)center.position + (direction.normalized * tipRadius);
+
+                }
+            }
+            else
+            {
+                Vector2 direction = cam.ScreenToWorldPoint(Input.mousePosition) - center.position;
                 tip.position = (Vector2)center.position + (direction.normalized * tipRadius);
 
-                //rb.velocity = (walkForce * direction.normalized * Time.deltaTime);
+                if (Input.GetMouseButtonDown(0))
+                {
+                    left = true;
+                    Shoot();
+                }
+                if (Input.GetMouseButtonDown(1))
+                {
+                    right = true;
+                    if (powerPoints == powerPointsMax)
+                    {
+                        Power();
+                    }
+                }
+            }
+            
+        }
+        else
+        {
+            Vector2 direction = cam.ScreenToWorldPoint(Input.mousePosition) - center.position;
+            tip.position = (Vector2)center.position + (direction.normalized * tipRadius);
+
+            if (Input.GetMouseButtonDown(0))
+            {
+                left = true;
+                Shoot();
+            }
+            if (Input.GetMouseButtonDown(1))
+            {
+                right = true;
+                if (powerPoints == powerPointsMax)
+                {
+                    Power();
+                }
             }
         }
+
     }
+
+    private void FixedUpdate()
+    {
+        
+    }
+
 
     public void TakeHealing()
     {
