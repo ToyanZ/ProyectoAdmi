@@ -7033,7 +7033,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Falta monedas
+  m_text: Faltan monedas
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8546ad25f031daa4398a73de1d519028, type: 2}
   m_sharedMaterial: {fileID: -8742261804490251392, guid: 8546ad25f031daa4398a73de1d519028, type: 2}

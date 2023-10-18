@@ -63,14 +63,14 @@ public class Gachapon : MonoBehaviour
         }
         else
         {
-            currentCoins = 10;
-            coinsTXT.text = "10";
+            currentCoins = 3;
+            coinsTXT.text = ""+currentCoins;
         }
     }
 
     public void UnlockCharacter()
     {
-        if (currentCoins >= 3)
+        if (GameManager.instance.playerCoins >= 3)
         {
             if (lockCharacters.Count == 0)
             {
