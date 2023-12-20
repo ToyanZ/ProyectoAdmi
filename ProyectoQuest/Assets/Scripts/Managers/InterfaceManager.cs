@@ -449,22 +449,25 @@ public class InterfaceManager : MonoBehaviour
     //Se llama desde trigger (editor)
     public void SendForm()
     {
-        UserNameControl(inputName);
-        UserRutControl(inputRut);
-        UserEmailControl(inputEmail);
-        userPhone = inputPhone.text;
-        userGrade = inputGrade.captionText.text;
-        if (userName != "" && userPhone != "" && userRut != "" && userEmail != "")
-        {
-            form.SetActive(false);
-            onScreenUI.SetActive(true);
-            joystick.SetActive(true);
-        }
-        else
-        {
-            alertText.text = "Por favor, revisa que tus datos estén correctamente ingresados.";
-            alertText.color = Color.red;
-        }
+        //UserNameControl(inputName);
+        //UserRutControl(inputRut);
+        //UserEmailControl(inputEmail);
+        //userPhone = inputPhone.text;
+        //userGrade = inputGrade.captionText.text;
+        //if (userName != "" && userPhone != "" && userRut != "" && userEmail != "")
+        //{
+        //    form.SetActive(false);
+        //    onScreenUI.SetActive(true);
+        //    joystick.SetActive(true);
+        //}
+        //else
+        //{
+        //    alertText.text = "Por favor, revisa que tus datos estén correctamente ingresados.";
+        //    alertText.color = Color.red;
+        //}
+        form.SetActive(false);
+        onScreenUI.SetActive(true);
+        joystick.SetActive(true);
     }
     public void SendForm2()
     {
