@@ -66,7 +66,7 @@ public class Emailer : MonoBehaviour
         foreach (Area area in interfaceScript.afinityAreas)
         {
             formMessage += area.aName + ": " + (area.affinity/4f)*100f + "%\n";
-         }
+        }
 
         return formMessage;
     }
@@ -75,6 +75,5 @@ public class Emailer : MonoBehaviour
     {
         string message = WriteMessage();
         SendAnEmail(message);
-            
     }
 }

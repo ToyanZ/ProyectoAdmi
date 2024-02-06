@@ -2601,7 +2601,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\xA1Carga la <color=blue> paleta azul </color>disarando con la<color=red>
+  m_text: "\xA1Carga la <color=blue> paleta azul </color>disparando con la<color=red>
     paleta roja!</color>"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: cb920166b8e4fcf47b9aedf3edde69af, type: 2}
