@@ -465,6 +465,10 @@ public class InterfaceManager : MonoBehaviour
             alertText.text = "Por favor, revisa que tus datos estén correctamente ingresados.";
             alertText.color = Color.red;
         }
+
+        //form.SetActive(false);
+        //onScreenUI.SetActive(true);
+        //joystick.SetActive(true);
     }
     public void SendForm2()
     {

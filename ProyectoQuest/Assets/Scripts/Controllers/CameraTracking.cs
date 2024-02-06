@@ -133,7 +133,9 @@ public class CameraTracking : MonoBehaviour
     {
         goingTo = true;
 
-        foreach (GameObject go2 in go)
+        List<GameObject> list = new List<GameObject>(go);
+
+        foreach (GameObject go2 in list)
         {
             Vector3 start = camController.tCamera.transform.position;
             Vector3 end = go2.transform.position;

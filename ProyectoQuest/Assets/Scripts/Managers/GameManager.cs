@@ -72,10 +72,10 @@ public class GameManager : MonoBehaviour
     List<GameObject> points;
 
     public int gameCompleted = 0;
-
+    public bool resetGame = false;
     private void Awake()
     {
-        //ResetGameData();
+        if (resetGame) ResetGameData();
         playerCoins = PlayerPrefs.GetInt("coins", 0);
         gameCompleted = PlayerPrefs.GetInt("gameCompleted", 0);
 
@@ -447,6 +447,11 @@ public class GameManager : MonoBehaviour
             gameCompleted = 1;
             PlayerPrefs.SetInt("gameCompleted", gameCompleted);
         }
+        if (points[points.Count - 1] != lastZone.gameObject)
+        {
+            points.Reverse();
+            if (!points.Contains(lastZone.gameObject)) points.Add(lastZone.gameObject);
+        }
         StartCoroutine(OpenLastZone());
         
     }
@@ -478,5 +483,11 @@ public class GameManager : MonoBehaviour
     public void ResetGameData()
     {
         PlayerPrefs.DeleteAll();
+    }
+
+
+    void CameraChecker()
+    {
+        
     }
 }
