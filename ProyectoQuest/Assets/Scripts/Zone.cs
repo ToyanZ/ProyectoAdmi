@@ -86,10 +86,12 @@ public class Zone : MonoBehaviour
         GameManager.instance.cameraTracking.StopAllCoroutines();
         GameManager.instance.cameraTracking.GoTo(cameraIndicativePosition);
 
-
+        //Instanciar particulas
+        Instantiate(GameManager.instance.dustParticleEffect, current.worldPosition.position, Quaternion.identity);
+        
+        //Trnsparentar la puerta
         float time = 0;
         float maxTime = GameManager.instance.doorsOpenTime;
-        Instantiate(GameManager.instance.dustParticleEffect, current.worldPosition.position, Quaternion.identity);
         while (time < maxTime)
         {
             time += Time.deltaTime;

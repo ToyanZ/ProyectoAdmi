@@ -109,7 +109,7 @@ public class CameraTracking : MonoBehaviour
     {
         if (!goingTo) StartCoroutine(GoToIE(go));
     }
-    IEnumerator GoToIE(GameObject go)
+    private IEnumerator GoToIE(GameObject go)
     {
         goingTo = true;
         Vector3 start = camController.tCamera.transform.position;
@@ -129,7 +129,7 @@ public class CameraTracking : MonoBehaviour
     {
         if (!goingTo) StartCoroutine(GoToIE(go));
     }
-    IEnumerator GoToIE(List<GameObject> go)
+    private IEnumerator GoToIE(List<GameObject> go)
     {
         goingTo = true;
 

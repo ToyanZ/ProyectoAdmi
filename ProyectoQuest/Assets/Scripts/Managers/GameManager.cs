@@ -117,12 +117,9 @@ public class GameManager : MonoBehaviour
     {
         StateMachine();
         if(buildType == BuildType.Pc) 
-        { 
+        {
             InterfaceManager.instance.joystick.SetActive(false);
-            
         }
-
-        
     }
     private void StateMachine()
     {
@@ -357,6 +354,8 @@ public class GameManager : MonoBehaviour
             gachaponEntered = false;
         }
     }
+
+
     //Se llama desde button (editor)
     public void SetGachaponState()
     {
@@ -422,7 +421,6 @@ public class GameManager : MonoBehaviour
                 doorInfo.unlocked = true;
                 doorInfo.door.Open();
             }
-            
         }
     }
 
